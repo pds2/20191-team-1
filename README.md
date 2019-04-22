@@ -13,4 +13,5 @@ How to play
 3. Do not let a hero die will in possesion of the stone or else you ill forever live in shame, for Thanos will have won
 4. Kill Thanos to be granted to title of saviour of the universe
 
-Can you handle the
+Can you handle the battle?
+
