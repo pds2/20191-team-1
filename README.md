@@ -10,7 +10,7 @@ How to play
 ----------
 1. You control a set of 5 heroes that will take turns atacking and being atacked by Thanos
 2. In you turn, choose one character and one action (atack, cure or pass the stone)
-3. Do not let a hero die will in possesion of the stone or else you ill forever live in shame, for Thanos will have won
+3. Do not let a hero die when in possesion of the stone or else you will forever live in shame, for Thanos will have won
 4. Kill Thanos to be granted to title of saviour of the universe
 
 Can you handle the battle?
