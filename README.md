@@ -15,3 +15,6 @@ How to play
 
 Can you handle the battle?
 
+
+
+> For User Stories and other material for development suport, check the Wiki
