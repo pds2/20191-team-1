@@ -2,7 +2,7 @@
 
 Marvel RPG
 
-> For User Stories and other material for development suport, check the Wiki
+> For User Stories and other development suport material, check the Wiki
 
 
 Can you protect the universe from semi-total annihilation? 
