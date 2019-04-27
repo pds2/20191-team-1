@@ -2,6 +2,9 @@
 
 Marvel RPG
 
+> For User Stories and other material for development suport, check the Wiki
+
+
 Can you protect the universe from semi-total annihilation? 
 Thanos is about to reach the last Infinity Stone but it is hidden with one of our marvel heroes. 
 Make smart choices to avoid being killed while holding the stone.
@@ -17,4 +20,4 @@ Can you handle the battle?
 
 
 
-> For User Stories and other material for development suport, check the Wiki
+
