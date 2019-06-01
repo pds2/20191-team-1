@@ -6,6 +6,7 @@ using namespace std;
 
 void Telas::tela_inicial()
 {
+	system("clear");
 	cout<<"Bem vido a Todos conta Thanos"<<endl;
 	cout<<"Aperte 1 - para ir para como jogoar"<<endl;
 	cout<<"Aperte 2 - para iniciar o jogo"<<endl;
@@ -24,15 +25,15 @@ void Telas::tela_inicial()
 
 void Telas::tela_como_jogar()
 {
+	system("clear");
 	cout<<"Seu objetivo é derrotar o poderoso Thanos antes que ele pegue a pedra do poder. "<<endl;
 	cout<<"Com o controle de 5 grandes herois, você poderar atacar e alterar a posse da  pedra. "<<endl;
 	cout<<"Planeje suas açoes e salve a humanidade! Aperte qualquer tecla para continuar"<<endl;
-	char opcao;
-	cin>>opcao;
 
 }
 
 char Telas::tela_dificuldade() {
+	system("clear");
 	cout<<"Selecione a dificuldade do jogo"<<endl;
 	cout<<"Digite F para Facil"<<endl;
 	cout<<"Digite M para Medio"<<endl;

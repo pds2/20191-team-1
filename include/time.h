@@ -16,7 +16,7 @@ class Time {
 
 
 	public:
-		Time(const int id_heroi);
+		Time();
 		void adiciona_heroi();
 		void remove_heroi(const int id_heroi);
 		void aplica_dano_time(const int id_heroi, const double dano);
