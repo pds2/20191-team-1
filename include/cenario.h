@@ -5,21 +5,18 @@
 #include <set>
 #include <heroi.h>
 
-
-using namespace std;
-
 class Cenario {
 
 private:
-	string name;
-	string mensagem;
-	set<int> herois_com_bonus;
+	std::string name;
+	std::string mensagem;
+	std::set<int> herois_com_bonus;
 
 public:
 	Cenario();
-	set<int> get_herois_com_bonus();
-	string get_name();
-	string get_mensagem();
+	std::set<int> get_herois_com_bonus();
+	std::string get_name();
+	std::string get_mensagem();
 
 };
 

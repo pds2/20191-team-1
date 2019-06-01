@@ -1,20 +1,20 @@
+#include <string>
 #include "cenario.h"
 
-Cenario::Cenario()
-{
+Cenario::Cenario(){
 }
 
-set<int> Cenario::get_herois_com_bonus()
+std::set<int> Cenario::get_herois_com_bonus()
 {
-	return set<int>();
+	return std::set<int>();
 }
 
-string Cenario::get_name()
+std::string Cenario::get_name()
 {
-	return string();
+	return std::string();
 }
 
-string Cenario::get_mensagem()
+std::string Cenario::get_mensagem()
 {
-	return string();
+	return std::string();
 }
