@@ -28,3 +28,7 @@ void Partida::set_dificuldade(char dificuldade){
 		this->taxa_recuperacao = 0.25;
 	}
 }
+
+void Partida::set_time(){
+	//his->time = time;
+}

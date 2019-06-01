@@ -21,6 +21,7 @@ class Partida {
 		Partida();
 		void roda_partida();
 		void set_dificuldade(char dificuldade);
+		void set_time();
 		double get_taxa_recuperacao();
 		char get_dificuldade();
 };
