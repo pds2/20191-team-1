@@ -1,4 +1,5 @@
 #include "telas.h"
+#include "time.h"
 #include <iostream>
 #include <algorithm>
 
@@ -49,8 +50,33 @@ char Telas::tela_dificuldade() {
 	return opcao;
 }
 
-void Telas::tela_personagem()
+Time Telas::tela_personagem()
 {
+	/*system("clear");
+	Time time = new Time();
+	//TODO: implementar a ASCII arte e os detalhes da tela personagem
+	//TODO: Recuperar as informações de acordo com hash map de personagens
+	cout<<"Descrição dos personagens e seus respectivos IDs"<<endl;
+	cout<<"1 - Capitã Marvel"<<endl;
+	cout<<"2 - Thor"<<endl;
+	cout<<"3 - Loki"<<endl;
+	cout<<"Digite o numero do ID + A para adicionar na sua party"<<endl;
+	cout<<"Digite o numero do ID + R para remover da sua party"<<endl;
+	cout<<"Digite o numero do ID + D para ver a destrição do personagem"<<endl;
+	while(time.tamanho_do_time() < 5){
+		int id;
+		char opcao;
+		cin>>id>>opcao;
+		opcao = toupper(opcao);
+		while(opcao != 'A' && opcao != 'R' && opcao != 'D'){
+			cout<<"Opcao invalida, favor digite novamente!"<<endl;
+			cin>>id>>opcao;
+			opcao = toupper(opcao);
+		}
+		if(opcao == 'A'){
+			time.adiciona_heroi(id);
+		}
+	}*/
 }
 
 void Telas::tela_resultado_ataque_jogador()

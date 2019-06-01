@@ -8,9 +8,11 @@ int main(){
 
 	Partida *partida = new Partida();
 	partida->set_dificuldade(telas.tela_dificuldade());
-	std::cout<< partida->get_taxa_recuperacao();
+	//Cout para verificaçao se foi setado também a taxa de recuperaçao junto com dificuldade
+	std::cout<<"Taxa de recuperação: " partida->get_taxa_recuperacao()<<endl;
+	partida->set_time(telas.tela_personagem);
 
 	//Todoist
-	std::cout<< "Main vazio !, Teste!" << std::endl;
+	std::cout<< "Fim de execução! Good Bye!" << std::endl;
     return 0;
 }

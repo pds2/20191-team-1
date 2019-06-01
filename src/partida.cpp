@@ -9,6 +9,7 @@ Partida::Partida()
 
 void Partida::roda_partida()
 {
+	//TODO: gerenciar a partida
 }
 
 double Partida::get_taxa_recuperacao() {

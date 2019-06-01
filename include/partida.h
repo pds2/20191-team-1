@@ -12,9 +12,9 @@ class Partida {
 		char dificuldade;
 		bool ganhador;
 		double taxa_recuperacao;
-		Time time;
-		Thanos thanos;
-		Batalha batalha;
+		Time *time();
+		Thanos *thanos();
+		Batalha *batalha();
 		
 
 	public:
