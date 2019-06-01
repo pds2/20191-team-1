@@ -16,6 +16,7 @@ class Batalha {
 	
 	public:
 		Batalha();
+		void set_cenario();
 		void processa_morte_heroi();
 		void troca_cenario();
 		void turno_jogador();

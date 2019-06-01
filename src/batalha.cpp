@@ -27,7 +27,9 @@ void Batalha::turno_jogador()
 {
 	//TODO: Processar ação do jogador, se for ataque:
 		//Buscar o heroi correspondente, verificar se aquele heroi esta vivo
-		//Recuperar o dano de heroi com bonus se houver
+		//Heroi esta no set de herois com bonus do cenario? 
+			//se sim pega dano com bonus
+			//se nao pega danos sem bonus
 		//causar dano no thanos
 	//Se for passar a pedra: 
 		//Retirar a pedra do heroi que esta com ela
