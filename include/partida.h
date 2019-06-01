@@ -18,8 +18,8 @@ class Partida {
 
 	public:
 		Partida();
-		void set_taxa_recuperacao(const char dificuldade);
 		void roda_partida();
+		void set_dificuldade(char dificuldade);
 		void get_taxa_recuperacao();
 };
 

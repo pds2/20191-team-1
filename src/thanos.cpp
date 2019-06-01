@@ -1,5 +1,7 @@
 #include "thanos.h"
 
+Thanos::Thanos()
+{
 /**
  * 
  * @method { Metodo define valor de atque do Vilao }
