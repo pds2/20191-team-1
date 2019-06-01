@@ -11,9 +11,9 @@ class Partida {
 	private:
 		char dificuldade;
 		double taxa_recuperacao;
-		//Time time;
-		//Thanos thanos;
-		//Batalha batalha;
+		Time time;
+		Thanos thanos;
+		Batalha batalha;
 		bool ganhador;
 
 	public:

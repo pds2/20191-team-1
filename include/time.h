@@ -9,7 +9,7 @@ using namespace std;
 class Time {
 
 	private:
-		//vector<Heroi> herois;
+		vector<Heroi> herois;
 		bool esta_completo;
 		int herois_vivos;
 		int  portador_pedra;
