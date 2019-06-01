@@ -9,10 +9,10 @@ using namespace std;
 class Randomizar {
 
 private:
-
+	
 
 public:
-
+	int gera_inteiro(int inicio, int fim);
 
 };
 

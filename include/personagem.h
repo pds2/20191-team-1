@@ -7,18 +7,21 @@ using namespace std;
 class Personagem {
 
 protected:
-    std::string name;
-    int force;
-    int agility;
-    float life;
+    string name;
+    int pt_vida;
+    int pt_ataque;
+    int pt_defesa;
+    bool vivo;
 
 public:
-    Personagem(std::string, int force, int agility, int life);
+    Personagem(string name, int pt_vida, int pt_ataque, int pt_defesa, bool vivo);
 
-    int get_life();
-    int get_agility();
-    int get_force();
-    std::string get_name();
+    int get_pt_vida();
+    int get_pt_ataque();
+    int get_pt_defesa();
+    string get_name();
+    void diminui_vida(int dano_recebido);
+    void realiza_ataque(int ataque_recebido);
 };
 
 #endif

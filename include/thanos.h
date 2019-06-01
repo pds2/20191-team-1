@@ -9,7 +9,9 @@ private:
    
 
 public:
-
+	Thanos();
+	void realiza_ataque(int dano_causado);
+	void diminui_vida(int dano_recebido)
 };
 
 #endif
