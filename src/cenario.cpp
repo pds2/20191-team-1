@@ -1,20 +1,46 @@
 #include <string>
 #include "cenario.h"
+#include "thanos.h"
 
+/**
+ * 
+ * @method { Metodo construtor da classe Cenario }
+ * @param { void }
+ * @return { void }
+ * 
+*/
 Cenario::Cenario(){
 }
 
-std::set<int> Cenario::get_herois_com_bonus()
-{
+/**
+ * 
+ * @method { Metodo que retorna Herois que tem bonus de ataque em um Cenario }
+ * @param { void }
+ * @return { void }
+ * 
+*/
+std::set<int> Cenario::get_herois_com_bonus(){
 	return std::set<int>();
 }
 
-std::string Cenario::get_name()
-{
+/**
+ * 
+ * @method { Metodo retorna nome do Cenario }
+ * @param { void }
+ * @return { void }
+ * 
+*/
+std::string Cenario::get_name(){
 	return std::string();
 }
 
-std::string Cenario::get_mensagem()
-{
+/**
+ * 
+ * @method { Metodo retorna mensagem do Cenario }
+ * @param { void }
+ * @return { void }
+ * 
+*/
+std::string Cenario::get_mensagem(){
 	return std::string();
 }
