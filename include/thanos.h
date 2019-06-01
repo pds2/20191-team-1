@@ -6,8 +6,8 @@
 class Thanos: public Personagem{
 	public:
 		Thanos();
-		void realiza_ataque(int dano_causado);
-		void diminui_vida(int dano_recebido);
+		void realiza_ataque(const int dano_causado);
+		void diminui_vida(const int dano_recebido);
 };
 
 #endif
