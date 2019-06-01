@@ -14,7 +14,7 @@ private:
 	set<int> herois_com_bonus;
 
 public:
-	Cenario(String name, String mensagem, set<int> herois_com_bonus);
+	Cenario(string name, string mensagem, set<int> herois_com_bonus);
 	set<int> get_herois_com_bonus();
 	string get_name();
 	string get_mensagem();

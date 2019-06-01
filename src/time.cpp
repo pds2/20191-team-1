@@ -1,4 +1,4 @@
-#include "..\include\time.h"
+#include "time.h"
 
 Time::Time(const int id_heroi)
 {

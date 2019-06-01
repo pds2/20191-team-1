@@ -1,4 +1,5 @@
 #include "batalha.h"
+#include "cenario.h"
 
 Batalha::Batalha(bool turno, bool jogo_rolando, Cenario cenario)
 {

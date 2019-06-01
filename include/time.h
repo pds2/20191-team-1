@@ -3,14 +3,14 @@
 
 #include <bits/stdc++.h>
 #include <vector>
-#include "hero.h"
+#include "heroi.h"
 
 using namespace std;
 
 class Time {
 
 	private:
-		vector<Hero> herois;
+		vector<Heroi> herois;
 		bool esta_completo;
 		int herois_vivos;
 		int  portador_pedra;
