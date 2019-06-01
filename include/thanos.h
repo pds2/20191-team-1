@@ -1,23 +1,15 @@
-#ifndef VILLAIN_H
-#define VILLAIN_H
+#ifndef THANOS_H
+#define THANOS_H
 #include <string>
 #include "personagem.h"
 
-class Villain: public Personagem{
+class Thanos: public Personagem{
 
 private:
-    std::string name;
-    int force;
-    int agility;
-    float life;
+   
 
 public:
-    Villain(std::string, int force, int agility, int life);
 
-    int get_life();
-    int get_agility();
-    int get_force();
-    std::string get_name();
 };
 
 #endif

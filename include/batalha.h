@@ -1,22 +1,27 @@
 #ifndef BATALHA_H
 #define BATALHA_H
-#include <string>
 
-class Batalha{
+#include <bits/stdc++.h>
+#include <cenario.h>
 
-private:
-    std::string name;
-    int force;
-    int agility;
-    float life;
 
-public:
-    Batalha(std::string, int force, int agility, int life);
+using namespace std;
 
-    int get_life();
-    int get_agility();
-    int get_force();
-    std::string get_name();
+class Batalha {
+
+	private:
+		bool turno;
+		bool jogo_rolando;
+		Cenario cenario;
+	
+	public:
+		Batalha(bool turno, bool jogo_rolando, Cenario cenario);
+		bool chama_turno();
+		void processa_morte_heroi();
+		void troca_cenario();
+		void turno_jogador();
+		void turno_heroi();
+
 };
 
 #endif

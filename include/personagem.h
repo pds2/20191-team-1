@@ -1,17 +1,19 @@
-#ifndef VILAO_H
-#define VILAO_H
-#include <string>
+#ifndef PERSONAGEM_H
+#define PERSONAGEM_H
+#include <bits/stdc++.h>
 
-class Vilao {
+using namespace std;
 
-private:
+class Personagem {
+
+protected:
     std::string name;
     int force;
     int agility;
     float life;
 
 public:
-    Vilao(std::string, int force, int agility, int life);
+    Personagem(std::string, int force, int agility, int life);
 
     int get_life();
     int get_agility();
