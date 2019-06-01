@@ -8,6 +8,7 @@ int main(){
 
 	Partida *partida = new Partida();
 	partida->set_dificuldade(telas.tela_dificuldade());
+	std::cout<< partida->get_taxa_recuperacao();
 
 	//Todoist
 	std::cout<< "Main vazio !, Teste!" << std::endl;

@@ -10,17 +10,19 @@ class Partida {
 
 	private:
 		char dificuldade;
+		bool ganhador;
 		double taxa_recuperacao;
 		Time time;
 		Thanos thanos;
 		Batalha batalha;
-		bool ganhador;
+		
 
 	public:
 		Partida();
 		void roda_partida();
 		void set_dificuldade(char dificuldade);
-		void get_taxa_recuperacao();
+		double get_taxa_recuperacao();
+		char get_dificuldade();
 };
 
 #endif
