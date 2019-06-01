@@ -1,8 +1,6 @@
-#include <thanos.h>
+#include "thanos.h"
 
-Thanos::Thanos()
-{
-}
+
 
 void Thanos::realiza_ataque(int dano_causado)
 {

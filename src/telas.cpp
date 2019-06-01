@@ -1,6 +1,4 @@
-#include "..\include\telas.h"
-
-#Inclue <"telas.h">
+#include "telas.h"
 
 void Telas::tela_inicial()
 {

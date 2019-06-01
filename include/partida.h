@@ -11,13 +11,13 @@ class Partida {
 	private:
 		char dificuldade;
 		double taxa_recuperacao;
-		Time time;
-		Vilao Thanos;
-		Batalha batalha;
+		//Time time;
+		//Thanos thanos;
+		//Batalha batalha;
 		bool ganhador;
 
 	public:
-		Partida(Time time, Vilao Thanos, Batalha batalha);
+		Partida();
 		void set_taxa_recuperacao(const char dificuldade);
 		void roda_partida();
 		void get_taxa_recuperacao();

@@ -1,8 +1,8 @@
 #ifndef TABELAS_H
 #define TABELAS_H
 
-#include <bits/stdc++.h>
-
+#include <string>
+#include <map>
 
 using namespace std;
 
@@ -17,7 +17,7 @@ private:
 public:
 	void popular_set_herois_disponiveis();
 	void popular_set_cenarios_disponiveis();
-	void popular_set_ataques_thanos_disponiveis
+	void popular_set_ataques_thanos_disponiveis();
 
 };
 

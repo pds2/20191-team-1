@@ -12,10 +12,10 @@ class Batalha {
 	private:
 		bool turno;
 		bool jogo_rolando;
-		Cenario cenario;
+//		Cenario cenario;
 	
 	public:
-		Batalha(bool turno, bool jogo_rolando, Cenario cenario);
+		Batalha();
 		bool chama_turno();
 		void processa_morte_heroi();
 		void troca_cenario();

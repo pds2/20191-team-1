@@ -1,6 +1,6 @@
-#include "..\include\partida.h"
-
-Partida::Partida(Time time, Vilao Thanos, Batalha batalha)
+#include "partida.h"
+#include <string>
+Partida::Partida()
 {
 }
 

@@ -1,6 +1,6 @@
 #include "cenario.h"
 
-Cenario::Cenario(string name, string mensagem, set<int> herois_com_bonus)
+Cenario::Cenario()
 {
 }
 

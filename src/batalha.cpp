@@ -1,7 +1,8 @@
 #include "batalha.h"
 #include "cenario.h"
+#include <string>
 
-Batalha::Batalha(bool turno, bool jogo_rolando, Cenario cenario)
+Batalha::Batalha()
 {
 }
 

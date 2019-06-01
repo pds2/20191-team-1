@@ -1,7 +1,7 @@
 #ifndef HEROI_H
 #define HEROI_H
 
-#include <bits/stdc++.h>
+#include <string>
 #include "personagem.h"
 
 using namespace std;
@@ -14,7 +14,7 @@ class Heroi : public Personagem {
 	
 
 	public:
-		Heroi(int id);
+		Heroi();
 	    void realiza_ataque();
 		void get_bonus_ataque();
 		void get_vivo();
