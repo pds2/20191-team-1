@@ -9,7 +9,7 @@ class Telas {
 		void tela_inicial();
 		void tela_como_jogar();
 		char tela_dificuldade();
-		Time tela_personagem();
+		void tela_personagem();
 		void tela_resultado_ataque_jogador();
 		void tela_descricao_persoangem();
 		void tela_morte_heroi_sem_pedra();

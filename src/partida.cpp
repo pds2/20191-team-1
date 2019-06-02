@@ -4,6 +4,9 @@ Partida::Partida()
 {
 	this->ganhador = false;
 	this-> taxa_recuperacao = 0;
+	this->time = nullptr;
+	this->thanos = nullptr;
+	this->batalha = nullptr;
 }
 
 
@@ -29,6 +32,14 @@ void Partida::set_dificuldade(char dificuldade){
 	}
 }
 
-void Partida::set_time(){
-	//his->time = time;
+void Partida::set_time(Time* time) {
+ 	this->time = time;
+}
+
+void Partida::set_batalha(Batalha* batalha) {
+	this->batalha = batalha;
+}
+
+void Partida::set_thanos(Thanos* thanos){
+	this->thanos = thanos;
 }

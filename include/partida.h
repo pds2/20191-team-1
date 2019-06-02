@@ -12,16 +12,18 @@ class Partida {
 		char dificuldade;
 		bool ganhador;
 		double taxa_recuperacao;
-		Time *time();
-		Thanos *thanos();
-		Batalha *batalha();
+		Time *time;
+		Thanos *thanos;
+		Batalha *batalha;
 		
 
 	public:
 		Partida();
 		void roda_partida();
 		void set_dificuldade(char dificuldade);
-		void set_time();
+		void set_time(Time *time);
+		void set_thanos(Thanos *thanos);
+		void set_batalha(Batalha *batalha);
 		double get_taxa_recuperacao();
 		char get_dificuldade();
 };
