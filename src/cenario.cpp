@@ -1,6 +1,6 @@
 #include <string>
-#include "cenario.h"
 #include "thanos.h"
+#include "cenario.h"
 
 using namespace std;
 
@@ -25,8 +25,8 @@ Cenario::Cenario(string name, string mensagem, set<int> ids_herois_beneficiados)
  * @return { void }
  * 
 */
-std::set<int> Cenario::get_herois_com_bonus(){
-	return std::set<int>();
+set<int> Cenario::get_herois_com_bonus() {
+	return set<int>();
 }
 
 /**
@@ -36,8 +36,8 @@ std::set<int> Cenario::get_herois_com_bonus(){
  * @return { void }
  * 
 */
-std::string Cenario::get_name(){
-	return std::string();
+string Cenario::get_name() {
+	return string();
 }
 
 /**
@@ -47,6 +47,6 @@ std::string Cenario::get_name(){
  * @return { void }
  * 
 */
-std::string Cenario::get_mensagem(){
-	return std::string();
+string Cenario::get_mensagem() {
+	return string();
 }

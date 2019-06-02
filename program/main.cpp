@@ -2,7 +2,8 @@
 #include "telas.h"
 #include "partida.h"
 
-int main(){
+int main() {
+
 	Telas telas;
 	telas.tela_inicial();
 
@@ -10,8 +11,6 @@ int main(){
 	partida->set_dificuldade(telas.tela_dificuldade());
 	partida->set_time();
 	
-	//partida->set_time();
-	//Proxima parte setTime
 	//Começa batalha
 	//Inicia rodada
 	//partida->set_time(telas.tela_personagem);

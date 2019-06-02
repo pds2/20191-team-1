@@ -4,7 +4,6 @@
 #include "time.h"
 
 class Telas {
-
 	public:
 		void tela_inicial();
 		void tela_como_jogar();

@@ -1,9 +1,9 @@
 #ifndef TABELAS_H
 #define TABELAS_H
 
-#include <string>
 #include <map>
 #include <set>
+#include <string>
 
 using namespace std;
 
