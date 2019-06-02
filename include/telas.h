@@ -1,6 +1,8 @@
 #ifndef TELAS_H
 #define TELAS_H
 
+#include "time.h"
+
 class Telas {
 
 	public:
