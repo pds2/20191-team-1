@@ -1,23 +1,35 @@
+#include <iostream>
 #include <string>
+
 #include "time.h"
 #include "telas.h"
 #include "partida.h"
-#include <iostream>
-
+#include "batalha.h"
+#include "thanos.h"
 
 using namespace std;
 
 Partida::Partida() {
 	this->ganhador = false;
 	this-> taxa_recuperacao = 0;
-	this->time = nullptr;
-	this->thanos = nullptr;
-	this->batalha = nullptr;
+	this->time = new Time();
+	this->thanos = new Thanos();
+	this->batalha = new Batalha();
 }
 
 
 void Partida::roda_partida() {
-	//TODO: gerenciar a partida
+    //1-coleta dificuldade que o jogador escolher
+    this-> get_dificuldade();
+
+    // Aguarda a formação do Time
+    //    time.forma_time()
+    this->set_tme
+
+//    enquanto (Batalha::jogo_rolando):
+//    Batalha::chama_turno()
+//    retorna pra main
+
 }
 
 double Partida::get_taxa_recuperacao() {
