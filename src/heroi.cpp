@@ -1,4 +1,5 @@
 #include "heroi.h"
+#include "personagem.h"
 
 Heroi::Heroi() {
 

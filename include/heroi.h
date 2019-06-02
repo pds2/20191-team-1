@@ -4,9 +4,9 @@
 #include <string>
 #include "personagem.h"
 
-using namespace std;
 
-class Heroi : public Personagem {
+
+class Heroi: public Personagem {
 
 	private:
 		int id;

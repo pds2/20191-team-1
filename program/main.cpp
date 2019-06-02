@@ -8,7 +8,8 @@ int main(){
 
 	Partida *partida = new Partida();
 	partida->set_dificuldade(telas.tela_dificuldade());
-	telas.tela_personagem();
+	partida->set_time();
+	
 	//partida->set_time();
 	//Proxima parte setTime
 	//Começa batalha

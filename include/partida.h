@@ -6,6 +6,8 @@
 #include "thanos.h"
 #include "batalha.h"
 
+using namespace std;
+
 class Partida {
 
 	private:
@@ -21,7 +23,7 @@ class Partida {
 		Partida();
 		void roda_partida();
 		void set_dificuldade(char dificuldade);
-		void set_time(Time *time);
+		void set_time();
 		void set_thanos(Thanos *thanos);
 		void set_batalha(Batalha *batalha);
 		double get_taxa_recuperacao();
