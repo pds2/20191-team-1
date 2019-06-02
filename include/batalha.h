@@ -12,7 +12,7 @@ class Batalha {
 	private:
 		bool turno;
 		bool jogo_rolando;
-		Cenario cenario;
+		Cenario *cenario;
 	
 	public:
 		Batalha();
