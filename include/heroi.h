@@ -4,14 +4,11 @@
 #include <string>
 #include "personagem.h"
 
-
-
 class Heroi: public Personagem {
 
 	private:
 		int id;
 		double bonus_ataque;
-	
 
 	public:
 		Heroi();

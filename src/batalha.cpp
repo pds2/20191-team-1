@@ -3,15 +3,13 @@
 #include "randomizar.h"
 #include <string>
 
-Batalha::Batalha()
-{
+Batalha::Batalha() {
 }
 
-void Batalha::set_cenario(Cenario *cenario){
+void Batalha::set_cenario(Cenario *cenario) {
 	this->cenario = cenario;
 }
-void Batalha::processa_morte_heroi()
-{
+void Batalha::processa_morte_heroi() {
 	//Verificar se algum heroi morreu
 		//Se for heroi com pedra:
 			//Chama fim de jogo.
@@ -20,14 +18,13 @@ void Batalha::processa_morte_heroi()
 	//Chama turno_jogador()
 }
 
-void Batalha::troca_cenario(){
+void Batalha::troca_cenario() {
 	//TODO: Busca numero randomico entre 1 a 6 na classe randomize;
 	//TODO: recupera os dados do cenario do  numero gerado
 	//Set como cenario o novo cenario encontrado;
 }
 
-void Batalha::turno_jogador()
-{
+void Batalha::turno_jogador() {
 	//TODO: Processar ação do jogador, se for ataque:
 		//Buscar o heroi correspondente, verificar se aquele heroi esta vivo
 		//Heroi esta no set de herois com bonus do cenario? 

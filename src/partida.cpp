@@ -1,14 +1,13 @@
-#include "partida.h"
+#include <string>
 #include "time.h"
 #include "telas.h"
-#include <string>
+#include "partida.h"
 #include <iostream>
 
 
 using namespace std;
 
-Partida::Partida()
-{
+Partida::Partida() {
 	this->ganhador = false;
 	this-> taxa_recuperacao = 0;
 	this->time = nullptr;
@@ -17,8 +16,7 @@ Partida::Partida()
 }
 
 
-void Partida::roda_partida()
-{
+void Partida::roda_partida() {
 	//TODO: gerenciar a partida
 }
 
@@ -30,7 +28,7 @@ char Partida::get_dificuldade() {
 	return this->dificuldade;
 }
 
-void Partida::set_dificuldade(char dificuldade){
+void Partida::set_dificuldade(char dificuldade) {
 	this->dificuldade = dificuldade;
 	if(dificuldade == 'F') {
 		this->taxa_recuperacao = 0.5;
@@ -62,7 +60,6 @@ void Partida::set_time() {
 		}
 	}
  	this->time = &time;
- 	cout<<"deu bom"<<endl;
 }
 
 void Partida::set_batalha(Batalha* batalha) {
