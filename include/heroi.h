@@ -15,9 +15,9 @@ class Heroi : public Personagem {
 
 	public:
 		Heroi();
-	    void realiza_ataque();
-		void get_bonus_ataque();
-		void get_vivo();
+		int get_ataque();
+		int get_ataque_com_bonus();
+		bool get_vivo();
 };
 
 #endif
