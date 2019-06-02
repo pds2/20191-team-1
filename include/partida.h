@@ -17,7 +17,7 @@ class Partida {
 		Time *time;
 		Thanos *thanos;
 		Batalha *batalha;
-		
+
 
 	public:
 		Partida();

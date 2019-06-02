@@ -1,13 +1,16 @@
 #ifndef THANOS_H
 #define THANOS_H
+
 #include <string>
 #include "personagem.h"
+
+using namespace std;
 
 class Thanos: public Personagem {
 	public:
 		Thanos();
-		void realiza_ataque(const int dano_causado);
-		void diminui_vida(const int dano_recebido);
+        void diminui_vida(const int dano_recebido);
+        const int realiza_ataque();
 };
 
 #endif

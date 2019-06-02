@@ -24,7 +24,7 @@ void Partida::roda_partida() {
 
     // Aguarda a formação do Time
     //    time.forma_time()
-    this->set_tme
+    this->set_time();
 
 //    enquanto (Batalha::jogo_rolando):
 //    Batalha::chama_turno()
