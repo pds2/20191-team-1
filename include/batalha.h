@@ -4,7 +4,6 @@
 #include <string.h>
 #include <cenario.h>
 
-
 using namespace std;
 
 class Batalha {
@@ -12,11 +11,11 @@ class Batalha {
 	private:
 		bool turno;
 		bool jogo_rolando;
-		Cenario cenario;
+		Cenario *cenario;
 	
 	public:
 		Batalha();
-		void set_cenario();
+		void set_cenario(Cenario *cenario);
 		void processa_morte_heroi();
 		void troca_cenario();
 		void turno_jogador();

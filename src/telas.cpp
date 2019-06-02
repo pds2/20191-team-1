@@ -53,11 +53,10 @@ char Telas::tela_dificuldade() {
 void Telas::tela_personagem()
 {
 	system("clear");
-	cout<<"Descrição dos personagens e seus respectivos IDs:"<<endl;
+	cout<<"Descrição dos personagens e seus respectivos IDs"<<endl;
 	cout<<"1 - Capitã Marvel"<<endl;
 	cout<<"2 - Thor"<<endl;
 	cout<<"3 - Loki"<<endl;
-	cout<<"***COMANDOS:";
 	cout<<"Digite o numero do ID + A para adicionar na sua party"<<endl;
 	cout<<"Digite o numero do ID + R para remover da sua party"<<endl;
 	cout<<"Digite o numero do ID + D para ver a destrição do personagem"<<endl;
@@ -68,7 +67,7 @@ void Telas::tela_resultado_ataque_jogador()
 {
 }
 
-void Telas::tela_descricao_persoangem()
+void Telas::tela_descricao_persoangem(int id)
 {
 }
 

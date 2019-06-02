@@ -2,6 +2,8 @@
 #include "cenario.h"
 #include "thanos.h"
 
+using namespace std;
+
 /**
  * 
  * @method { Metodo construtor da classe Cenario }
@@ -9,7 +11,11 @@
  * @return { void }
  * 
 */
-Cenario::Cenario(){
+
+Cenario::Cenario(string name, string mensagem, set<int> ids_herois_beneficiados) {
+	this->name = name;
+	this->mensagem = mensagem;
+	this->ids_herois_beneficiados = ids_herois_beneficiados;
 }
 
 /**

@@ -1,3 +1,4 @@
+
 #ifndef CENARIO_H
 #define CENARIO_H
 
@@ -5,18 +6,20 @@
 #include <set>
 #include <heroi.h>
 
+using namespace std;
+
 class Cenario {
 
 private:
-	std::string name;
-	std::string mensagem;
-	std::set<int> herois_com_bonus;
+	string name;
+	string mensagem;
+	set<int> ids_herois_beneficiados;
 
 public:
-	Cenario();
-	std::set<int> get_herois_com_bonus();
-	std::string get_name();
-	std::string get_mensagem();
+	Cenario(string name, string mensagem, set<int> ids_herois_beneficiados);
+	set<int> get_herois_com_bonus();
+	string get_name();
+	string get_mensagem();
 
 };
 

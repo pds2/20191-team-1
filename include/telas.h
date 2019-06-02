@@ -11,7 +11,7 @@ class Telas {
 		char tela_dificuldade();
 		void tela_personagem();
 		void tela_resultado_ataque_jogador();
-		void tela_descricao_persoangem();
+		void tela_descricao_persoangem(int id);
 		void tela_morte_heroi_sem_pedra();
 		void tela_batalha();
 		void tela_vitoria_thanos();

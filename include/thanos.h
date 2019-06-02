@@ -3,7 +3,7 @@
 #include <string>
 #include "personagem.h"
 
-class Thanos: public Personagem{
+class Thanos: public Personagem {
 	public:
 		Thanos();
 		void realiza_ataque(const int dano_causado);

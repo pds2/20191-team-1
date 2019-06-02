@@ -1,5 +1,12 @@
 #include "partida.h"
+#include "time.h"
+#include "telas.h"
 #include <string>
+#include <iostream>
+
+
+using namespace std;
+
 Partida::Partida()
 {
 	this->ganhador = false;
@@ -32,8 +39,30 @@ void Partida::set_dificuldade(char dificuldade){
 	}
 }
 
-void Partida::set_time(Time* time) {
- 	this->time = time;
+void Partida::set_time() {
+	Time time;
+	Telas telas;
+	telas.tela_personagem();
+	while(time.quantidade_heroi() < 5){
+		int id;
+		char opcao;
+		cin>>id>>opcao;
+		opcao = toupper(opcao);
+		while(opcao != 'A' && opcao != 'R' && opcao != 'D'){
+			cout<<"Opcao invalida, favor digite novamente!"<<endl;
+			cin>>opcao;
+			opcao = toupper(opcao);
+		}
+		if(opcao == 'A') {
+			time.adiciona_heroi(id);
+		}else if(opcao == 'R') {
+			time.remove_heroi(id);
+		}else if(opcao == 'D') {
+			telas.tela_descricao_persoangem(id);
+		}
+	}
+ 	this->time = &time;
+ 	cout<<"deu bom"<<endl;
 }
 
 void Partida::set_batalha(Batalha* batalha) {
