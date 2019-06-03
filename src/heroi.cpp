@@ -3,7 +3,7 @@
 
 
 //Heroi::Heroi(int pt_vida, int pt_ataque, int defesa, string name){
-Heroi::Heroi(int pt_vida, int pt_ataque, int defesa){
+Heroi::Heroi(const int pt_vida, const int pt_ataque, const int defesa){
     this->pt_vida = pt_vida;
     this->pt_ataque = pt_ataque;
     this->pt_defesa = pt_defesa;
