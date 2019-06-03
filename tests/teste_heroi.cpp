@@ -1,19 +1,24 @@
 #include "doctest.h"
+#include <iostream>
 #include "heroi.h"
 
-using namespace  std;
+//using namespace  std;
 
 TEST_CASE("1 - [Heroi] - Construtor") {
+    //Heroi heroi = Heroi(100, 10, 80);
+    //CHECK(heroi.get_pt_vida, 100);
+    //CHECK(heroi.get_pt_ataque, 11);
+    //CHECK(heroi.get_pt_defesa, 80);
 }
 
-TEST_CASE("2 - [Heroi] - Getters") {
-}
-
-TEST_CASE("3 - [Heroi] - Diminui vida") {
-}
-
-TEST_CASE("4 - [Heroi] - Realiza ataque") {
-}
+//TEST_CASE("2 - [Heroi] - Getters") {
+//}
+//
+//TEST_CASE("3 - [Heroi] - Diminui vida") {
+//}
+//
+//TEST_CASE("4 - [Heroi] - Realiza ataque") {
+//}
 
 //Heroi::Heroi(int pt_vida, int pt_ataque, int defesa);
     

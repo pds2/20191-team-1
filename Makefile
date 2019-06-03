@@ -27,6 +27,14 @@ tests: $(OBJECTS)
 	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) $(INC) $(TESTER) $(TSTSOURCES) $^ -o $(BINDIR)/tester
 	$(BINDIR)/tester
+	
+tests-unit: $(OBJECTS)
+	echo $(CC) 
+	echo $(CFLAGS)
+	echo $(INC)
+	echo $(TESTER)
+	echo $(TSTSOURCES)
+	echo $(BINDIR)
 
 valgrind: main
 	valgrind --leak-check=full --track-origins=yes $(BINDIR)/main
