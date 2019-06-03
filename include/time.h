@@ -14,7 +14,6 @@ class Time {
 		int herois_vivos;
 		int  portador_pedra;
 
-
 	public:
 		Time();
 		void adiciona_heroi(int id_heroi);

@@ -1,16 +1,22 @@
-#include <string>
 #include "personagem.h"
 
-Personagem::Personagem(){
-
+int Personagem::get_pt_vida(){
+    //Todo
+//    return 1;
+    return this->pt_vida;
 }
 
-/*Personagem::Personagem(string nome, int pt_vida, int pt_ataque, int pt_defesa){
-	//this->nome = nome;
-	this->pt_vida = pt_vida;
-	this->pt_ataque = pt_ataque;
-	this->pt_defesa =s pt_defesa;
-	this->vivo = true;
-} */
+int Personagem::get_pt_ataque(){
+    //Todo
+    return 1;
+}
 
+int Personagem::get_pt_defesa(){
+    //Todo
+    return 1;
+}
 
+string Personagem::get_name(){
+    //Todo
+    return "Teste";
+}

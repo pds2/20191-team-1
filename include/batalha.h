@@ -12,7 +12,7 @@ class Batalha {
 		bool turno;
 		bool jogo_rolando;
 		Cenario *cenario;
-	
+
 	public:
 		Batalha();
 		void set_cenario(Cenario *cenario);
