@@ -1,3 +1,9 @@
-./vscode
+.vscode
 
+.idea
 *.bat
+*.o
+*.exe
+*.out
+./bind/*
+./build/*
