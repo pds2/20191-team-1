@@ -7,7 +7,7 @@ using namespace std;
 class Personagem {
 
 protected:
-    //string nome;
+    string nome;
     int pt_vida;
     int pt_ataque;
     int pt_defesa;

@@ -4,7 +4,7 @@ Heroi::Heroi(int pt_vida, int pt_ataque, int defesa, string nome){
     this->pt_vida = pt_vida;
     this->pt_ataque = pt_ataque;
     this->pt_defesa = pt_defesa;
-    //this->nome = nome;
+    this->nome = nome;
     this->bonus_ataque = 0.05;
     this->vivo = true;
 }
