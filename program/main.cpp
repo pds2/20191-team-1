@@ -1,4 +1,5 @@
 #include <iostream>
+#include <set>
 #include "telas.h"
 #include "partida.h"
 #include "heroi.h"

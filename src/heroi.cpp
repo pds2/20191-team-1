@@ -1,8 +1,20 @@
-#include "personagem.h"
 #include "heroi.h"
+#include "personagem.h"
+
+#include <string>
+#include <iostream>
 
 
-//Heroi::Heroi(int pt_vida, int pt_ataque, int defesa, string name){
+
+Heroi::Heroi(int pt_vida, int pt_ataque, int defesa, string nome){
+    this->pt_vida = pt_vida;
+    this->pt_ataque = pt_ataque;
+    this->pt_defesa = pt_defesa;
+    //this->nome = nome;
+    this->bonus_ataque = 0.05;
+    this->vivo = true;
+}
+
 Heroi::Heroi(int pt_vida, int pt_ataque, int defesa){
     this->pt_vida = pt_vida;
     this->pt_ataque = pt_ataque;

@@ -1,4 +1,3 @@
-
 #ifndef CENARIO_H
 #define CENARIO_H
 

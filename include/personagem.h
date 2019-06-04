@@ -1,14 +1,15 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
 
-#include <string>
+#include <iostream>
+
 
 using namespace std;
 
 class Personagem {
 
 protected:
-    // std::string nome;
+    //string nome;
     int pt_vida;
     int pt_ataque;
     int pt_defesa;
