@@ -2,6 +2,9 @@
 #define TELAS_H
 
 #include "time.h"
+#include <iostream>
+#include <algorithm>
+
 
 class Telas {
 	public:

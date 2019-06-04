@@ -1,13 +1,12 @@
 #ifndef HEROI_H
 #define HEROI_H
 
-#include <string>
-#include <iostream>
+
 #include "personagem.h"
 
 using namespace std;
 
-class Heroi {
+class Heroi : public Personagem {
 //class Heroi{
 //todo: resolver essa herança
 

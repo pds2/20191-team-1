@@ -1,11 +1,4 @@
-#include <iostream>
-#include <string>
-
-#include "time.h"
-#include "telas.h"
 #include "partida.h"
-#include "batalha.h"
-#include "thanos.h"
 
 using namespace std;
 

@@ -1,7 +1,4 @@
 #include "telas.h"
-#include "time.h"
-#include <iostream>
-#include <algorithm>
 
 using namespace std;
 

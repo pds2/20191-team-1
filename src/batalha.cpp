@@ -1,13 +1,10 @@
 #include "batalha.h"
-#include "cenario.h"
-#include "randomizar.h"
-#include <string>
 
 Batalha::Batalha() {
 }
 
 void Batalha::set_cenario(Cenario *cenario) {
-	this->cenario = cenario;
+//	this->cenario = cenario;
 }
 void Batalha::processa_morte_heroi() {
 	//Verificar se algum heroi morreu

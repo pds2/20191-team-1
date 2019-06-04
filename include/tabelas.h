@@ -3,8 +3,8 @@
 
 #include "heroi.h"
 #include "cenario.h"
-#include <map>
 
+#include <map>
 using namespace std;
 
 class Tabelas {

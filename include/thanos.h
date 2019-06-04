@@ -1,7 +1,6 @@
 #ifndef THANOS_H
 #define THANOS_H
 
-#include <string>
 #include "personagem.h"
 
 using namespace std;

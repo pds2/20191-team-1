@@ -1,9 +1,7 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
 
-#include <iostream>
-
-
+#include <string>
 using namespace std;
 
 class Personagem {

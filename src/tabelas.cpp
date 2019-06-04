@@ -1,7 +1,4 @@
 #include "tabelas.h"
-#include "heroi.h"
-#include "cenario.h"
-
 
 using namespace std;
 

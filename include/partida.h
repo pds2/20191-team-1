@@ -1,10 +1,12 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
-#include <string>
 #include "time.h"
 #include "thanos.h"
 #include "batalha.h"
+#include "telas.h"
+#include "partida.h"
+#include <iostream>
 
 using namespace std;
 

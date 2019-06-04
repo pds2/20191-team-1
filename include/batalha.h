@@ -1,7 +1,6 @@
 #ifndef BATALHA_H
 #define BATALHA_H
 
-#include <string.h>
 #include <cenario.h>
 
 using namespace std;

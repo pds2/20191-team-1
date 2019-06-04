@@ -1,5 +1,3 @@
-#include <string>
-#include "thanos.h"
 #include "cenario.h"
 
 using namespace std;

@@ -1,5 +1,4 @@
 #include "personagem.h"
-#include <string>
 
 int Personagem::get_pt_vida(){
     //Todo
