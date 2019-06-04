@@ -25,8 +25,8 @@ public:
     string get_name();
 
     // métodos puramente virtais
-        //são virtuais pois espera-se polimorfismo
-        //são puros pois não há implementação padrão. Todas são diferentes
+    //são virtuais pois espera-se polimorfismo
+    //são puros pois não há implementação padrão. Todas são diferentes
     virtual void diminui_vida(const int dano_recebido) = 0;
     virtual const int realiza_ataque() = 0;
 };

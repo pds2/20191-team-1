@@ -8,11 +8,10 @@
 using namespace std;
 int main() {
 //    int pt_vida, int pt_ataque, int defesa, string name
-    Heroi viuva_negra = Heroi(10, 10, 5);
+//    Heroi viuva_negra = Heroi(10, 10, 5);
 //    cout << viuva_negra.get_pt_vida() <<endl;
-
-    Thanos thanos = Thanos();
-
+//    Thanos thanos = Thanos();
+//
 //	Telas telas;
 //	telas.tela_inicial();
 //

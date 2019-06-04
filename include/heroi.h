@@ -30,6 +30,17 @@ public:
     //extensões
     int get_ataque_com_bonus();
     bool get_vivo();
+
+    // Inicio Gets alternativos 
+    /*
+     * Avaliar se é melhor implementar na interface ou criar um tipo abastrado
+    */
+    int get_pt_vida();
+    int get_pt_ataque();
+    int get_pt_defesa();
+
+    // FIm Gets alternativos
+
 };
 
 #endif

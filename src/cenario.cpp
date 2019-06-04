@@ -11,7 +11,6 @@ using namespace std;
  * @return { void }
  *
 */
-
 Cenario::Cenario(string name, string mensagem, set<int> ids_herois_beneficiados) {
 	this->name = name;
 	this->mensagem = mensagem;
