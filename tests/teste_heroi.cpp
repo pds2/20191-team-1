@@ -9,7 +9,6 @@
 #define DEFESA 80
 #define VIVO true
 
-
 TEST_CASE("1 - [Heroi] - Construtor/Getters ") {
     Heroi heroi = Heroi(100, 10, 80);
 
@@ -62,3 +61,4 @@ TEST_CASE("8 - [Heroi] - Heroi morto") {
 
     CHECK_EQ(heroi.get_vivo(),!VIVO);
 }
+
