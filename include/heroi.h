@@ -7,11 +7,8 @@
 using namespace std;
 
 class Heroi : public Personagem {
-//class Heroi{
-//todo: resolver essa herança
 
 private:
-    //int id; //todo: decidir se vai precisar controlar o ID
     int pt_vida;
     int pt_ataque;
     int pt_defesa;
