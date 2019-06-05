@@ -23,7 +23,7 @@ public:
     Heroi(int pt_vida, int pt_ataque, int pt_defesa);
 
     // polimorfismos
-    void diminui_vida(const int dano_recebido);
+    void diminui_vida(const unsigned int dano_recebido);
     const int realiza_ataque();
 
     //extensões
