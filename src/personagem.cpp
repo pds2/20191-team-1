@@ -1,7 +1,9 @@
 #include "personagem.h"
 
+//=======================
+//======= COMPLETA ======
+//=======================
 
-// COMPLETA
 
 int Personagem::get_pt_vida(){
     return this->pt_vida;

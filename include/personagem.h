@@ -1,7 +1,11 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
-
 #include <string>
+
+//=======================
+//======= COMPLETA ======
+//=======================
+
 using namespace std;
 
 class Personagem {
