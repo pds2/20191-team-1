@@ -2,7 +2,6 @@
 // ASCII arts were generated with http://patorjk.com/software/taag/#p=display&f=Graffiti&t=
 // --------------------------------------------------------------------------------------------
 
-
 #include "telas.h"
 
 using namespace std;
@@ -12,12 +11,12 @@ void Telas::tela_inicial(){
 
     system("clear");
     cout << "\n"
-    " _____          _                             _               _____ _                           \n"
-    "/__   \\___   __| | ___  ___    ___ ___  _ __ | |_ _ __ __ _  /__   \\ |__   __ _ _ __   ___  ___ \n"
-    "  / /\\/ _ \\ / _` |/ _ \\/ __|  / __/ _ \\| '_ \\| __| '__/ _` |   / /\\/ '_ \\ / _` | '_ \\ / _ \\/ __|\n"
-    " / / | (_) | (_| | (_) \\__ \\ | (_| (_) | | | | |_| | | (_| |  / /  | | | | (_| | | | | (_) \\__ \\\n"
-    " \\/   \\___/ \\__,_|\\___/|___/  \\___\\___/|_| |_|\\__|_|  \\__,_|  \\/   |_| |_|\\__,_|_| |_|\\___/|___/\n"
-    "                                                                                                " << endl;
+            " _____          _                             _               _____ _                           \n"
+            "/__   \\___   __| | ___  ___    ___ ___  _ __ | |_ _ __ __ _  /__   \\ |__   __ _ _ __   ___  ___ \n"
+            "  / /\\/ _ \\ / _` |/ _ \\/ __|  / __/ _ \\| '_ \\| __| '__/ _` |   / /\\/ '_ \\ / _` | '_ \\ / _ \\/ __|\n"
+            " / / | (_) | (_| | (_) \\__ \\ | (_| (_) | | | | |_| | | (_| |  / /  | | | | (_| | | | | (_) \\__ \\\n"
+            " \\/   \\___/ \\__,_|\\___/|___/  \\___\\___/|_| |_|\\__|_|  \\__,_|  \\/   |_| |_|\\__,_|_| |_|\\___/|___/\n"
+            "                                                                                                " << endl;
 
     cout<<"=============================="<<endl;
     cout<<"Bem vindo a TODOS CONTRA THANOS!\n"
@@ -29,20 +28,6 @@ void Telas::tela_inicial(){
     cout<<"Aperte 2 - Iniciar o jogo"<<endl;
     cout<<"Aperte 3 - Sair"<<endl;
     cout<<"\nOpção: ";
-    int opcao;
-    cin>>opcao;
-    if(opcao == 1){
-        cout << "Você selecionou 1 - como jogar" << endl;
-        tela_como_jogar();
-
-    }else if (opcao == 2){
-        cout << "Você selecionou 2 - começar" << endl;
-//        tela_dificuldade();
-    }else if (opcao == 3){
-        system("exit");
-    }else{
-        cout<<"Opção invalida, digite novamente"<<endl;
-    }
 
 }
 

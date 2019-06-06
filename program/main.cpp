@@ -3,33 +3,32 @@
 #include "heroi.h"
 #include "thanos.h"
 #include "telas.h"
+#include "partida.h"
 
 using namespace std;
+
 int main() {
 
     Telas controle = Telas();
     controle.tela_inicial();
 
-//
-//    // "testa" construtor e métodos
-//    Heroi capitao_america = Heroi(10, 20, 30, "capitao america");
-//    bool vivo = capitao_america.get_vivo();
-//    cout << "heroi está vivo? "<< vivo << endl;
-//    int vida = capitao_america.get_pt_vida();
-//    cout << "pt vida heroi "<<vida << endl;
-//
-//    // "testa" construtor e métodos
-//    Thanos thanos = Thanos();
-//    int dano_causado = thanos.realiza_ataque();
-//    cout << "Thanos causou o seguinte dano "<< dano_causado << endl;
-//
-//
-//    //causa dano suficiente pra mata thanos
-//    thanos.diminui_vida(500);
-//
-//    //verifica se thanos morreu
-//    bool vivot = thanos.get_vivo();
-//    cout << "Thanos está vivo? "<< vivot << endl;
+    int opcao;
+    do
+    {
+        cin>>opcao;
+        if (opcao == 1)
+            controle.tela_como_jogar();
+        else if (opcao == 2)
+            cout << "Você selecionou 2 - começar" << endl;
+        else if (opcao == 3)
+            exit (EXIT_SUCCESS);
+        else
+            cout << "Opção invalida, digite novamente" << endl;
+    }while(opcao != 2);
+
+    // A partir desse ponto, o controle fica com a Classe Partida
+    Partida partida = Partida();
+    partida.set_dificuldade();
 
     return 0;
 }
