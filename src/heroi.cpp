@@ -1,17 +1,7 @@
 #include "heroi.h"
 #include "constants.h"
 
-
-
-
-Heroi::Heroi(int pt_vida, int pt_ataque, int defesa, string nome){
-    this->nome = nome;
-    this->pt_vida = pt_vida;
-    this->pt_ataque = pt_ataque;
-    this->pt_defesa = pt_defesa;
-    this->bonus_ataque = BONUS_ATAQUE; //a variável está definida em constants.h
-    this->vivo = true;
-}
+; //todo descobrir pq tá pedindo esse ; aqui!!
 
 void Heroi::diminui_vida(const int dano_recebido){
     this->pt_vida -= dano_recebido;
@@ -19,6 +9,15 @@ void Heroi::diminui_vida(const int dano_recebido){
     if (this->pt_vida <=0){
         this->vivo = false;
     }
+}
+
+Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, string nome){
+    this->nome = nome;
+    this->pt_vida = pt_vida;
+    this->pt_ataque = pt_ataque;
+    this->pt_defesa = pt_defesa;
+    this->bonus_ataque = BONUS_ATAQUE; //a variável está definida em constants.h
+    this->vivo = true;
 }
 
 const int Heroi::realiza_ataque(){
