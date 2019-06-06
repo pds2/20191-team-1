@@ -1,10 +1,7 @@
-//
-// Created by valer on 05/06/2019.
-//
-
 #ifndef INC_20191_TEAM_1_CONSTANTS_H
 #define INC_20191_TEAM_1_CONSTANTS_H
 
+#include <string>
 #include<map>
 
 double BONUS_ATAQUE = 0.05;
@@ -29,6 +26,8 @@ map<int, pair<int, bool>> ataque_thanos = {
 	{5, make_pair(05, false)},
 	{6, make_pair(10, false)}
 };
+
+
 //map<int, Cenario>dados_cenarios = {
 //          {1, Cenario("Asgar", "Bem vindo a asgar", {1,2,3})},
 //         {2, Cenario("Torre Stark", "Bem vindo a torre stark",{1,3,9} )}
