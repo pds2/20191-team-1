@@ -2,7 +2,6 @@
 #define TIME_H
 
 #include <set>
-#include "heroi.h"
 
 using namespace std;
 

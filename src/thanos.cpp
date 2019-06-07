@@ -1,17 +1,9 @@
 #include "personagem.h"
 #include "thanos.h"
 
-Thanos::Thanos(){
-    //TODO
-    //Ler o arquivo de tabelas.h
-    //Trocar os valores chumbados abaixo
-
-    this->nome = "Thanos";
-    this->pt_vida = 100;
-    this->pt_ataque = 10;
-    this->pt_defesa = 20;
-    this->vivo = true;
-}
+Thanos::Thanos(int pt_vida, int pt_ataque, int pt_defesa, string nome):
+    Personagem( pt_vida, pt_ataque, pt_defesa, nome)
+{}
 
 // Metodo se repete em duas classes da mesma forma
 /*void Thanos::diminui_vida(const unsigned int dano_recebido){

@@ -18,6 +18,8 @@ protected:
     bool vivo;
 
 public:
+    Personagem(int pt_vida, int pt_ataque, int pt_defesa, string nome);
+    ~Personagem();
     int get_pt_vida();
     int get_pt_ataque();
     int get_pt_defesa();

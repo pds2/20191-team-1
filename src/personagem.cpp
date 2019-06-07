@@ -4,6 +4,16 @@
 //======= COMPLETA ======
 //=======================
 
+using namespace std;
+
+Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, string nome){
+	this->nome = nome;
+    this->pt_vida = pt_vida;
+    this->pt_ataque = pt_ataque;
+    this->pt_defesa = pt_defesa;
+    this->vivo = true;
+}
+
 
 int Personagem::get_pt_vida(){
     return this->pt_vida;

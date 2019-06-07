@@ -1,6 +1,6 @@
 #include <iostream>
 #include <set>
-#include "heroi.h"
+//#include "heroi.h"
 #include "thanos.h"
 #include "telas.h"
 #include "partida.h"

@@ -12,18 +12,12 @@
     }
 }*/
 
-Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, string nome){
-    this->nome = nome;
-    this->pt_vida = pt_vida;
-    this->pt_ataque = pt_ataque;
-    this->pt_defesa = pt_defesa;
-    this->bonus_ataque = BONUS_ATAQUE; //a variável está definida em constants.h
-    this->vivo = true;
-}
+Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, string nome):
+    Personagem(pt_vida, pt_ataque, pt_defesa, nome),bonus_ataque(BONUS_ATAQUE){}
 
 const int Heroi::realiza_ataque(){
     //TODO
-    double dano_realizado = 1;
+    double dano_realizado = 10.0;
     return dano_realizado;
 }
 
