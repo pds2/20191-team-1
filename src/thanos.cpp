@@ -13,14 +13,15 @@ Thanos::Thanos(){
     this->vivo = true;
 }
 
-void Thanos::diminui_vida(const unsigned int dano_recebido){
+// Metodo se repete em duas classes da mesma forma
+/*void Thanos::diminui_vida(const unsigned int dano_recebido){
     this->pt_vida -= dano_recebido;
     
     // Inserir thow caso valor negativo - Ewerton 
     if (this->pt_vida <=0){
         this->vivo = false;
     }
-}
+}*/
 
 const int Thanos::realiza_ataque(){
     return 1;

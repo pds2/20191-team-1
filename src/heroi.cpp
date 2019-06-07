@@ -3,13 +3,14 @@
 
 ; //todo descobrir pq tá pedindo esse ; aqui!!
 
-void Heroi::diminui_vida(const unsigned int dano_recebido){
+// Metodo se repete em duas classes da mesma forma
+/*void Heroi::diminui_vida(const unsigned int dano_recebido){
     this->pt_vida -= dano_recebido;
 
     if (this->pt_vida <=0){
         this->vivo = false;
     }
-}
+}*/
 
 Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, string nome){
     this->nome = nome;

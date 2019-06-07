@@ -22,7 +22,7 @@ public:
     int get_pt_ataque();
     int get_pt_defesa();
     string get_name();
-    virtual void diminui_vida(const int dano_recebido) = 0;
+    void diminui_vida(const unsigned int dano_recebido);
     virtual const int realiza_ataque() = 0;
 };
 

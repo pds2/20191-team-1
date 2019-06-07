@@ -36,18 +36,18 @@ void Time::recupera_vida_time(){
 void Time::troca_pedra(const int id_destinatario){
 }
 
-set<int> get_herois(){
-	return this->heroi;
+set<int> Time::get_herois(){
+	return this->herois;
 }
 
-bool get_time_completo(){
+bool Time::get_time_completo(){
 	return this->esta_completo;
 }
 
-int get_num_herois_vivos(){
+int Time::get_num_herois_vivos(){
 	return this->herois_vivos;
 }
 
-int get_id_portador_pedra(){
+int Time::get_id_portador_pedra(){
 	return this->portador_pedra;
 }
