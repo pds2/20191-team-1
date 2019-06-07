@@ -16,6 +16,7 @@ private:
 
 public:
 	Time();
+	~Time();
 	void adiciona_heroi(const int id_heroi);
 	void remove_heroi(const int id_heroi);
 	int quantidade_heroi();

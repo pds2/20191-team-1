@@ -1,3 +1,5 @@
+//#include <cstdlib>
+#include <iostream>
 #include "randomizar.h"
 
 int Randomizar::gera_inteiro(int menor, int maior){

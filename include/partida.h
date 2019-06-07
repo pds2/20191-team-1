@@ -1,35 +1,19 @@
-#ifndef PARTIDA_H
-#define PARTIDA_H
+#ifndef INC_20191_TEAM_1_PARTIDA_H
+#define INC_20191_TEAM_1_PARTIDA_H
 
-#include "time.h"
-#include "thanos.h"
-#include "batalha.h"
-#include "telas.h"
-#include "partida.h"
 #include <iostream>
 
 using namespace std;
 
-class Partida {
+class Partida{
+    char dificuldade;
 
-	private:
-		char dificuldade;
-		bool ganhador;
-		double taxa_recuperacao;
-		Time *time;
-		Thanos *thanos;
-		Batalha *batalha;
+public:
+    char get_dificuldade();
+    void set_dificuldade();
 
-
-	public:
-		Partida();
-		void roda_partida();
-		void set_dificuldade(char dificuldade);
-		void set_time();
-		void set_thanos(Thanos *thanos);
-		void set_batalha(Batalha *batalha);
-		double get_taxa_recuperacao();
-		char get_dificuldade();
 };
+
+
 
 #endif
