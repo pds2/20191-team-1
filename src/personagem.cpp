@@ -4,8 +4,6 @@
 //======= COMPLETA ======
 //=======================
 
-using namespace std;
-
 Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string nome){
 	this->nome = nome;
     this->pt_vida = pt_vida;
@@ -27,7 +25,7 @@ int Personagem::get_pt_defesa(){
     return this->pt_defesa;
 }
 
-string Personagem::get_name(){
+std::string Personagem::get_name(){
     return this->nome;
 }
 
