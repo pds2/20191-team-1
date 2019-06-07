@@ -3,12 +3,10 @@
 
 #include <set>
 
-using namespace std;
-
 class Time {
 
 private:
-	set<int> herois;
+	std::set<int> herois;
 	bool esta_completo;
 	int herois_vivos;
 	int portador_pedra;
@@ -28,7 +26,7 @@ public:
     //Sugestao de metodos - Ewerton   
     //Inicio
 
-    set<int> get_herois();
+    std::set<int> get_herois();
 	bool get_time_completo();
 	int get_num_herois_vivos();
 	int get_id_portador_pedra();

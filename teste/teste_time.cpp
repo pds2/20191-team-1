@@ -2,8 +2,6 @@
 #include <iostream>
 #include "time.h"
 
-//using namespace  std;
-
 #define NUM_HEROIS_VIVOS 0
 #define ID_HEROI 0
 #define ADD_HEROI1 0

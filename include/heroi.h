@@ -6,8 +6,6 @@
 //======= COMPLETA ======
 //=======================
 
-using namespace std;
-
 class Heroi : public Personagem {
 
 private:
@@ -18,8 +16,8 @@ private:
     double bonus_ataque;
 
 public:
-    Heroi(int pt_vida, int pt_ataque, int pt_defesa, string nome);
-    Heroi(int pt_vida, int pt_ataque, int pt_defesa);
+    Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome);
+    //Heroi(int pt_vida, int pt_ataque, int pt_defesa);
 
     // polimorfismos
     void diminui_vida(const unsigned int dano_recebido);

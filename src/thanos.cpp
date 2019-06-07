@@ -1,7 +1,7 @@
 #include "personagem.h"
 #include "thanos.h"
 
-Thanos::Thanos(int pt_vida, int pt_ataque, int pt_defesa, string nome):
+Thanos::Thanos(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
     Personagem( pt_vida, pt_ataque, pt_defesa, nome)
 {}
 

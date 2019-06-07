@@ -5,8 +5,6 @@
 #include<map>
 //#include "heroi.h"
 
-using namespace std;
-
 double BONUS_ATAQUE = 0.05;
 
 //todo - descomentar

@@ -3,8 +3,6 @@
 #include <vector>
 #include <iostream>
 
-using namespace std;
-
 Time::Time(){
 	this->esta_completo = false;
 	this->herois_vivos = 0;
@@ -20,7 +18,7 @@ void Time::remove_heroi(int id){
 }
 
 int Time::quantidade_heroi(){
-	return herois.size();
+	return this->herois.size();
 }
 
 void Time::aplica_dano_time(const int id_heroi, const double dano){
@@ -36,7 +34,7 @@ void Time::recupera_vida_time(){
 void Time::troca_pedra(const int id_destinatario){
 }
 
-set<int> Time::get_herois(){
+std::set<int> Time::get_herois(){
 	return this->herois;
 }
 

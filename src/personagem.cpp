@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, string nome){
+Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string nome){
 	this->nome = nome;
     this->pt_vida = pt_vida;
     this->pt_ataque = pt_ataque;

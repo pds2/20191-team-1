@@ -3,11 +3,10 @@
 #include "heroi.h"
 
 TEST_CASE("1 - [Heroi] - Construtor") {
-    //Heroi heroi = Heroi(100, 10, 80);
-    //CHECK(heroi.get_pt_vida, 100);
-    //CHECK(heroi.get_pt_ataque, 11);
-    //CHECK(heroi.get_pt_defesa, 80);
-    std::cout << "DEU ERUIII";
+    Heroi heroi = Heroi(100, 10, 80,"Heroi1");
+    CHECK_EQ(heroi.get_pt_vida(), 100);
+    CHECK_EQ(heroi.get_pt_ataque(), 10);
+    CHECK_EQ(heroi.get_pt_defesa(), 80);
 }
 
 //TEST_CASE("2 - [Heroi] - Getters") {
