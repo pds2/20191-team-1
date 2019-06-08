@@ -12,8 +12,7 @@ SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 TSTSOURCES := $(shell find $(TSTDIR) -type f -name *.$(SRCEXT))
 
-# -g debug, --coverage para cobertura
-CFLAGS := --coverage -g -Wall -O3 -std=c++11
+CFLAGS := -g -Wall -O3 -std=c++11
 INC := -I include/ -I third_party/
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.$(SRCEXT)
@@ -28,18 +27,24 @@ tests: $(OBJECTS)
 	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) $(INC) $(TESTER) $(TSTSOURCES) $^ -o $(BINDIR)/tester
 	$(BINDIR)/tester
+	
+tests-unit: $(OBJECTS)
+	echo $(CC) 
+	echo $(CFLAGS)
+	echo $(INC)
+	echo $(TESTER)
+	echo $(TSTSOURCES)
+	echo $(BINDIR)
+
+valgrind: main
+	valgrind --leak-check=full --track-origins=yes $(BINDIR)/main
 
 all: main
 
 run: main
 	$(BINDIR)/main
 
-coverage:
-	@mkdir -p coverage/
-	@gcov $(SOURCES) -rlpo build/
-	@$(RM) *.gcda *.gcno
-
 clean:
-	$(RM) -r $(OBJDIR)/* $(BINDIR)/* coverage/* *.gcda *.gcno
+	$(RM) -r $(OBJDIR)/* $(BINDIR)/*
 
 .PHONY: clean coverage

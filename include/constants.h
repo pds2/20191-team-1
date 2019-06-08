@@ -1,11 +1,9 @@
 #ifndef INC_20191_TEAM_1_CONSTANTS_H
 #define INC_20191_TEAM_1_CONSTANTS_H
 
-#include<string>
-#include<map>
+#include <string>
+#include <map>
 //#include "heroi.h"
-
-using namespace std;
 
 double BONUS_ATAQUE = 0.05;
 

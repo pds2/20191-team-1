@@ -6,13 +6,13 @@ void Partida::set_dificuldade(){
     //tela_dificuldade();
     do{
         //todo - colocar a tela dificuldade quando estiver pronta
-        cout << "Aqui vem o texto da tela dificuldade. Digite F, M ou D"<<endl;
-        cin >> opcao;
-        cout << "você digitou: " << opcao << endl;
+        std::cout << "Aqui vem o texto da tela dificuldade. Digite F, M ou D"<< std::endl;
+        std::cin >> opcao;
+        std::cout << "você digitou: " << opcao << std::endl;
         opcao = tolower(opcao);
-        cout << "você digitou: " << opcao << endl;
+        std::cout << "você digitou: " << opcao << std::endl;
         if (opcao != 'f' && opcao != 'm' && opcao != 'd')
-            cout << "Por favor, digite uma opção válida" << endl;
+            std::cout << "Por favor, digite uma opção válida" << std::endl;
     }while(opcao != 'f' && opcao != 'm' && opcao != 'd');
 
     this->dificuldade = opcao;

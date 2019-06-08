@@ -1,30 +1,23 @@
 #include "personagem.h"
 #include "thanos.h"
 
-Thanos::Thanos(){
-    //TODO
-    //Ler o arquivo de tabelas.h
-    //Trocar os valores chumbados abaixo
+Thanos::Thanos(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
+    Personagem( pt_vida, pt_ataque, pt_defesa, nome)
+{}
 
-    this->nome = "Thanos";
-    this->pt_vida = 100;
-    this->pt_ataque = 10;
-    this->pt_defesa = 20;
-    this->vivo = true;
-}
-
-void Thanos::diminui_vida(const int dano_recebido){
+// Metodo se repete em duas classes da mesma forma
+/*void Thanos::diminui_vida(const unsigned int dano_recebido){
     this->pt_vida -= dano_recebido;
-
+    
+    // Inserir thow caso valor negativo - Ewerton 
     if (this->pt_vida <=0){
         this->vivo = false;
     }
-}
+}*/
 
 const int Thanos::realiza_ataque(){
     return 1;
 }
-
 
 int Thanos::get_pt_vida(){
     return this->pt_vida;

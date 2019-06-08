@@ -3,26 +3,21 @@
 
 ; //todo descobrir pq tá pedindo esse ; aqui!!
 
-void Heroi::diminui_vida(const int dano_recebido){
+// Metodo se repete em duas classes da mesma forma
+/*void Heroi::diminui_vida(const unsigned int dano_recebido){
     this->pt_vida -= dano_recebido;
 
     if (this->pt_vida <=0){
         this->vivo = false;
     }
-}
+}*/
 
-Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, string nome){
-    this->nome = nome;
-    this->pt_vida = pt_vida;
-    this->pt_ataque = pt_ataque;
-    this->pt_defesa = pt_defesa;
-    this->bonus_ataque = BONUS_ATAQUE; //a variável está definida em constants.h
-    this->vivo = true;
-}
+Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
+    Personagem(pt_vida, pt_ataque, pt_defesa, nome),bonus_ataque(BONUS_ATAQUE){}
 
 const int Heroi::realiza_ataque(){
     //TODO
-    double dano_realizado = 1;
+    double dano_realizado = 10.0;
     return dano_realizado;
 }
 
