@@ -21,7 +21,7 @@ int Equipe::quantidade_heroi(){
 	return this->herois.size();
 }
 
-void Equipe::aplica_dano_Equipe(const int id_heroi, const double dano){
+void Equipe::aplica_dano_equipe(const int id_heroi, const double dano){
 	
 }
 
@@ -38,7 +38,7 @@ std::set<int> Equipe::get_herois(){
 	return this->herois;
 }
 
-bool Equipe::get_Equipe_completo(){
+bool Equipe::get_equipe_completa(){
 	return this->esta_completo;
 }
 

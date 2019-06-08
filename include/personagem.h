@@ -17,13 +17,13 @@ protected:
 
 public:
     Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string nome);
-    ~Personagem();
     int get_pt_vida();
     int get_pt_ataque();
     int get_pt_defesa();
+    bool get_vivo();
     std::string get_name();
-    void diminui_vida(const unsigned int dano_recebido);
-    virtual const int realiza_ataque() = 0;
+    void diminui_vida(const int dano_recebido);
+    //virtual const int realiza_ataque() = 0;
 };
 
 #endif
