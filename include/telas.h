@@ -1,6 +1,6 @@
 #ifndef INC_20191_TEAM_1_TELAS_H
 #define INC_20191_TEAM_1_TELAS_H
-#include "time.h"
+#include "equipe.h"
 #include <iostream>
 #include <algorithm>
 
