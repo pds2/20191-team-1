@@ -62,10 +62,11 @@ void Equipe::monta_equipe(Equipe& equipe){
             std::cout << "Adiciona heroi" << std::endl;
 
             //acha o heroi certo pelo ID
-            std::string aux = MY_DADOS_HEROIS[id]->_nome;
+            std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id);
 
             //passa os parâmetros para a função adiciona
-            this->adiciona_heroi(heroi_selecionado._pt_vida);
+
+
         } else if (opcao == 'R') {
             std::cout << "ID: ";
             std::cin >> id;
@@ -83,12 +84,46 @@ void Equipe::monta_equipe(Equipe& equipe){
     }
 }
 
-void Equipe::adiciona_heroi(const int id_heroi){
-    //recebe as info necessárias para inicializar o objeto
-    //instancia Heroi
-    //adiciona no set
+//void Equipe::adiciona_heroi(const int id_heroi){
 
-}
+//    Heroi heroi_selecionado= Heroi(80,20,5, "Capitã Marvel");
+//
+//    switch (id_heroi){
+//        case 1:
+//            heroi_selecionado = Heroi(80,20,5, "Capitã Marvel");
+//            break;
+//        case 2:
+//            heroi_selecionado = Heroi(70,30,5,"Capitão América");
+//            break;
+//        case 3:
+//            heroi_selecionado = Heroi(90,10,5, "Homem de Ferro");
+//            break;
+//        case 4:
+//            heroi_selecionado = Heroi(90,10,5, "Thor");
+//            break;
+//        case 5:
+//            heroi_selecionado = Heroi(70,30,5, "Homem Aranha");
+//            break;
+//        case 6:
+//            heroi_selecionado = Heroi(90,10,5, "Hulk");
+//            break;
+//        case 7:
+//            heroi_selecionado = Heroi(60,40,5, "Doutor Estranho");
+//            break;
+//        case 8:
+//            heroi_selecionado = Heroi(60,40,5, "Visao");
+//            break;
+//        case 9:
+//            heroi_selecionado = Heroi(90,10,5, "Pantera Negra");
+//            break;
+//        case 10:
+//            heroi_selecionado = Heroi(70,30,5, "Viuva Negra");
+//            break;
+//    }
+
+//    this->equipe_selecionada.insert(heroi_selecionado);
+
+//}
 
 
 

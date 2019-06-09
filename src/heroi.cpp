@@ -16,22 +16,9 @@ double BONUS_ATAQUE = 0.05;
 
 Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
     Personagem( pt_vida, pt_ataque, pt_defesa, nome)
-//    _pt_vida(pt_vida),
-//    _pt_ataque(pt_ataque),
-//    _pt_defesa(pt_defesa),
-//    _nome(nome)
 {
     this->bonus_ataque = BONUS_ATAQUE;
 }
-
-
-
-
-
-
-
-
-
 
 
 const int Heroi::realiza_ataque(){

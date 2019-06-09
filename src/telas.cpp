@@ -92,8 +92,6 @@ void tela_monta_equipe(){
     limpa_tela();
 
     // === HEADER ===========================
-    //todo - fazer um ascii desse header
-    //todo - escrever um texto decente pra isso aqui
     std::cout << "\n ======== MONTE SUA EQUIPE ========" << std::endl;
     std::cout << "Para enfrentar o Thanos, você vai precisar de muita ajuda!" << std::endl;
     std::cout << "Sua equipe pode ter até 5 heróis" << std::endl;

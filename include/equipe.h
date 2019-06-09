@@ -15,8 +15,9 @@ public:
     Equipe();
     std::set<Heroi> equipe_selecionada;
     void monta_equipe(Equipe& equipe);
-    void adiciona_heroi(const int id_heroi);
-	void remove_heroi(const int id_heroi);
+
+//    void adiciona_heroi(const int id_heroi);
+//	void remove_heroi(const int id_heroi);
 
 	//	int quantidade_heroi();
 
