@@ -2,10 +2,15 @@
 // ASCII arts were generated with http://patorjk.com/software/taag/#p=display&f=Graffiti&t=
 // --------------------------------------------------------------------------------------------
 
+#include <map>
 #include "telas.h"
+#include "constants.h"
+#include "heroi.h"
 
-void Telas::tela_inicial(){
-    //Quem chama tela: main()
+
+using namespace std;
+
+void tela_inicial(){
 
     system("clear");
     std::cout << "\n"
@@ -29,7 +34,7 @@ void Telas::tela_inicial(){
 
 }
 
-void Telas::tela_como_jogar(){
+void tela_como_jogar(){
     system("clear");
 
     std::cout<<  "====== COMO JOGAR ====="<< std::endl;
@@ -45,17 +50,15 @@ void Telas::tela_como_jogar(){
     std::cout<< "Aperte 3 - Sair"<< std::endl;
     std::cout<< "\nOpção: ";
     
-    int opcao = 0;
-    
+    int opcao;
     std::cin>>opcao;
     if(opcao == 1){
         tela_inicial();
-
     }else if (opcao == 2){
         std::cout << "Você selecionou 2 - começar" << std::endl;
         tela_dificuldade();
     }else if (opcao == 3){
-        system("exit");
+        exit (EXIT_SUCCESS);
     }else{
         std::cout<< "Opção invalida, digite novamente"<< std::endl;
     }
@@ -63,7 +66,7 @@ void Telas::tela_como_jogar(){
 
 
 
-void Telas::tela_dificuldade() {
+void tela_dificuldade() {
     system("clear");
     std::cout<< "Selecione a dificuldade do jogo"<< std::endl;
     std::cout<< "Digite F para Facil"<< std::endl;
@@ -80,9 +83,56 @@ void Telas::tela_dificuldade() {
 }
 
 
+void tela_monta_equipe(){
+    system("clear");
+
+    //todo- descobrir como fazer pra não dar pau nesse import
+    //todo - mostrar a lista completa de personagens com os ID
+    std::map<int, Heroi> dados_heroi= {
+            {1, Heroi(80,20,5,"Capitã Marvel")},
+            {2, Heroi(70,30,5,"Capitão America")},
+            {3, Heroi(90,10,5,"Homem de Ferro")},
+            {4, Heroi(90,10,5,"Thor")},
+            {5, Heroi(70,30,5,"Homem Aranha")},
+            {6, Heroi(90,10,5,"Hulk")},
+            {7, Heroi(60,40,5,"Doutor Estranho")},
+            {8, Heroi(60,40,5,"Visao")},
+            {9, Heroi(90,10,5,"Pantera Negra")},
+            {10,Heroi(70,30,5,"Viuva Negra")}
+    };
+
+    std::cout << "TELA MONTA EQUIPE - MOSTRA TODOS OS PERSONAGENS" << std::endl;
+
+    for (const auto& iterator : dados_heroi) {
+        const Heroi& heroi = iterator.second;
+        string nome = heroi.get_nome();
+        std::cout <<"ID: " <<iterator.first << " has value " << nome << std::endl;
+    }
 
 
-//void Telas::tela_personagem(){
+    // =========MENU=============
+    std::cout<< "\nMENU"<< std::endl;
+    std::cout<< "Aperte 1 - Voltar à Tela Inicial"<< std::endl;
+    std::cout<< "Aperte 2 - Iniciar o jogo"<< std::endl;
+    std::cout<< "Aperte 3 - Sair"<< std::endl;
+    std::cout<< "\nOpção: ";
+
+    int opcao;
+    std::cin>>opcao;
+    if(opcao == 1){
+        tela_inicial();
+    }else if (opcao == 2){
+        std::cout << "Você selecionou 2 - começar" << std::endl;
+        tela_dificuldade();
+    }else if (opcao == 3){
+        exit (EXIT_SUCCESS);
+    }else{
+        std::cout<< "Opção invalida, digite novamente"<< std::endl;
+    }
+
+}
+
+//void tela_personagem(){
 //    system("clear");
 //    std::cout<< "Descrição dos personagens e seus respectivos IDs"<< std::endl;
 //    std::cout<< "1 - Capitã Marvel"<< std::endl;
@@ -94,30 +144,30 @@ void Telas::tela_dificuldade() {
 //
 //}
 //
-//void Telas::tela_resultado_ataque_jogador(){
+//void tela_resultado_ataque_jogador(){
 //    system("clear");
 //}
 //
-//void Telas::tela_descricao_persoangem(int id){
+//void tela_descricao_persoangem(int id){
 //    system("clear");
 //}
 //
-//void Telas::tela_morte_heroi_sem_pedra(){
+//void tela_morte_heroi_sem_pedra(){
 //    system("clear");
 //}
 //
-//void Telas::tela_batalha(){
+//void tela_batalha(){
 //    system("clear");
 //}
 //
-//void Telas::tela_vitoria_thanos(){
+//void tela_vitoria_thanos(){
 //    system("clear");
 //}
 //
-//void Telas::tela_resultado_ataque_thanos(){
+//void tela_resultado_ataque_thanos(){
 //    system("clear");
 //}
 //
-//void Telas::tela_vitoria_jogador(){
+//void tela_vitoria_jogador(){
 //    system("clear");
 //}

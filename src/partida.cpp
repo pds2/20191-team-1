@@ -1,4 +1,16 @@
 #include "partida.h"
+#include "equipe.h"
+
+Partida::Partida(){
+    this->equipe = Equipe();
+
+}
+
+
+void Partida::roda_partida(){
+    this->equipe.monta_equipe();
+}
+
 
 void Partida::set_dificuldade(){
     system("clear");
