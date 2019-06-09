@@ -72,18 +72,24 @@ void tela_como_jogar(){
 
 void tela_dificuldade() {
     limpa_tela();
-    std::cout<< "Selecione a dificuldade do jogo"<< std::endl;
-    std::cout<< "Digite F para Facil"<< std::endl;
-    std::cout<< "Digite M para Medio"<< std::endl;
-    std::cout<< "Digite D para Dificil"<< std::endl;
-    char opcao;
-    std::cin>>opcao;
-    opcao = toupper(opcao);
-    while(opcao != 'F' && opcao != 'M' && opcao != 'D'){
-        std::cout<< "Opcao invalida, favor digite novamente!"<< std::endl;
-        std::cin>>opcao;
-        opcao = toupper(opcao);
-    }
+
+    std::cout<< "\n"
+                "  _____  _  __ _            _     _           _      \n"
+                " |  __ \\(_)/ _(_)          | |   | |         | |     \n"
+                " | |  | |_| |_ _  ___ _   _| | __| | __ _  __| | ___ \n"
+                " | |  | | |  _| |/ __| | | | |/ _` |/ _` |/ _` |/ _ \\\n"
+                " | |__| | | | | | (__| |_| | | (_| | (_| | (_| |  __/\n"
+                " |_____/|_|_| |_|\\___|\\__,_|_|\\__,_|\\__,_|\\__,_|\\___|\n"
+                "                                                     \n"
+                "                                                     " << std::endl;
+
+
+    std::cout<< "\n\nSELECIONE A DIFICULDADE DO JOGO"<< std::endl;
+
+    std::cout<< " F - Facil. A cada herói morto, recupere 10% dos pontos de vida"<< std::endl;
+    std::cout<< " M - Medio. A cada herói morto, recupere 5% dos pontos de vida"<< std::endl;
+    std::cout<< " D - Dificil. Não recupera pontos de vida!\n"<< std::endl;
+
 }
 
 void tela_monta_equipe(){

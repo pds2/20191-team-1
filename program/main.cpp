@@ -22,7 +22,7 @@ int main() {
         else
             std::cout << "Opção invalida, digite novamente" << std::endl;
     }while(opcao != 2);
-    
+
 
     Partida partida = Partida();
     partida.set_dificuldade();
