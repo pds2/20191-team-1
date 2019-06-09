@@ -9,7 +9,6 @@
 
 
 
-
 //
 //map<int, pair<int, bool>> ataque_thanos = {
 //	{1, make_pair(20, true)},

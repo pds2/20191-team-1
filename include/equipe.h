@@ -6,13 +6,15 @@
 class Equipe {
 
 private:
-	std::set<int> herois;
+
 	bool esta_completo;
 	int herois_vivos;
 	int portador_pedra;
+    void mostra_equipe();
 
 public:
-	void monta_equipe();
+    std::set<int> equipe;
+    void monta_equipe();
     void adiciona_heroi(const int id_heroi);
 	void remove_heroi(const int id_heroi);
 

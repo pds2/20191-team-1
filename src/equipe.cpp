@@ -27,6 +27,15 @@ void Equipe::monta_equipe(){
     }
 
 }
+void Equipe::mostra_equipe(){
+    std::cout << "1 " << "2 " << "3 " << "4 " << "5 "<< std::endl;
+    for(auto it = this->equipe.begin(); it!= this->equipe.end(); it++ ){
+        std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
+    }
+
+}
+
+
 
 //void Equipe::adiciona_heroi(int id){
 //	this->herois.insert(id);

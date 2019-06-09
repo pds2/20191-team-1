@@ -90,7 +90,7 @@ void tela_monta_equipe(){
     //todo - mostrar a lista completa de personagens com os ID
     std::map<int, Heroi> dados_heroi= {
             {1, Heroi(80,20,5,"Capitã Marvel")},
-            {2, Heroi(70,30,5,"Capitão America")},
+            {2, Heroi(70,30,5,"Capitão América")},
             {3, Heroi(90,10,5,"Homem de Ferro")},
             {4, Heroi(90,10,5,"Thor")},
             {5, Heroi(70,30,5,"Homem Aranha")},
@@ -101,21 +101,31 @@ void tela_monta_equipe(){
             {10,Heroi(70,30,5,"Viuva Negra")}
     };
 
-    std::cout << "TELA MONTA EQUIPE - MOSTRA TODOS OS PERSONAGENS" << std::endl;
+    //todo - escrever um texto decente pra isso aqui
+    std::cout << "\n ======== MONTE SUA EQUIPE ========" << std::endl;
+    std::cout << "Para enfrentar o Thanos, você vai precisar de muita ajuda!" << std::endl;
+    std::cout << "Sua equipe pode ter até 5 heróis" << std::endl;
+    std::cout << "\n Cada herói tem vantagens e desvantagens\n"
+                 " Consulte cada um!\n" << std::endl;
 
     for (const auto& iterator : dados_heroi) {
         const Heroi& heroi = iterator.second;
         string nome = heroi.get_nome();
-        std::cout <<"ID: " <<iterator.first << " has value " << nome << std::endl;
+        std::cout <<"ID: " <<iterator.first << " | " << nome << std::endl;
     }
 
+    //====== Tela mostrar equipe ======
+    //fazer um método que plota a equipe que tá pronta
+    std::cout << "\nSua equipe:" << std::endl;
+    std::cout << "Falta implementar um método privado que mostra o vetor equipe" << std::endl;
 
     // =========MENU=============
     std::cout<< "\nMENU"<< std::endl;
-    std::cout<< "Aperte 1 - Voltar à Tela Inicial"<< std::endl;
-    std::cout<< "Aperte 2 - Iniciar o jogo"<< std::endl;
-    std::cout<< "Aperte 3 - Sair"<< std::endl;
-    std::cout<< "\nOpção: ";
+    std::cout<< "Selecione o ID"<< std::endl;
+    std::cout<< "  Digite C para consultar detalhes do herói"<< std::endl;
+    std::cout<< "  Digite S para selecionar o herói para a sua equipe"<< std::endl;
+    std::cout<< "  Digite R para remover o herói para a sua equipe"<< std::endl;
+    std::cout<< "\nID: ";
 
     int opcao;
     std::cin>>opcao;
@@ -131,6 +141,11 @@ void tela_monta_equipe(){
     }
 
 }
+
+
+
+
+
 
 //void tela_personagem(){
 //    system("clear");

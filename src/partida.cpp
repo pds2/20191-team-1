@@ -3,7 +3,6 @@
 
 Partida::Partida(){
     this->equipe = Equipe();
-
 }
 
 
@@ -15,9 +14,9 @@ void Partida::roda_partida(){
 void Partida::set_dificuldade(){
     system("clear");
     char opcao;
-    //tela_dificuldade();
     do{
         //todo - colocar a tela dificuldade quando estiver pronta
+        //tela_dificuldade();
         std::cout << "Aqui vem o texto da tela dificuldade. Digite F, M ou D"<< std::endl;
         std::cin >> opcao;
         std::cout << "você digitou: " << opcao << std::endl;

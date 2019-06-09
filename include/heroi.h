@@ -11,11 +11,11 @@
 class Heroi : public Personagem {
 
 private:
-    std::string nome;
-    int pt_vida;
-    int pt_ataque;
-    int pt_defesa;
-    bool vivo;
+    std::string _nome;
+    int _pt_vida;
+    int _pt_ataque;
+    int _pt_defesa;
+    bool _vivo;
     double bonus_ataque;
 
 
