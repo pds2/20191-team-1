@@ -2,6 +2,7 @@
 #define Equipe_H
 
 #include <set>
+#include "heroi.h"
 
 class Equipe {
 
@@ -11,10 +12,9 @@ private:
 	int portador_pedra;
 
 public:
-    //set de objeto heroi
-    std::set<int> equipe;
-    
-    void monta_equipe();
+    Equipe();
+    std::set<Heroi> equipe_selecionada;
+    void monta_equipe(Equipe& equipe);
     void adiciona_heroi(const int id_heroi);
 	void remove_heroi(const int id_heroi);
 

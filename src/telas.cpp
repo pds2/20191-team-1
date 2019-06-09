@@ -3,14 +3,25 @@
 // --------------------------------------------------------------------------------------------
 
 #include <map>
+#include <iostream>
 #include "telas.h"
-#include "constants.h"
 #include "heroi.h"
+#include "constants.h"
 
+//------------ GLOBALS------------------
+
+
+//------------FUNCTIONS---------------
+
+void limpa_tela() {
+    int clear = system("clear");
+    if(clear != 0){
+        std::cout<<"Algo de errado não está certo!"<<std::endl;
+    }
+}
 
 void tela_inicial(){
-
-    system("clear");
+    limpa_tela();
     std::cout << "\n"
             " _____          _                             _               _____ _                           \n"
             "/__   \\___   __| | ___  ___    ___ ___  _ __ | |_ _ __ __ _  /__   \\ |__   __ _ _ __   ___  ___ \n"
@@ -33,8 +44,7 @@ void tela_inicial(){
 }
 
 void tela_como_jogar(){
-    system("clear");
-
+    limpa_tela();
     std::cout<<  "====== COMO JOGAR ====="<< std::endl;
     std::cout<<  "\n";
     std::cout<< "Seu objetivo é derrotar o poderoso Thanos antes que ele pegue a pedra do poder. "<< std::endl;
@@ -44,7 +54,6 @@ void tela_como_jogar(){
     // =========MENU=============
     std::cout<< "MENU"<< std::endl;
     std::cout<< "Aperte 1 - Voltar à Tela Inicial"<< std::endl;
-    std::cout<< "Aperte 2 - Iniciar o jogo"<< std::endl;
     std::cout<< "Aperte 3 - Sair"<< std::endl;
     std::cout<< "\nOpção: ";
     
@@ -62,10 +71,8 @@ void tela_como_jogar(){
     }
 }
 
-
-
 void tela_dificuldade() {
-    system("clear");
+    limpa_tela();
     std::cout<< "Selecione a dificuldade do jogo"<< std::endl;
     std::cout<< "Digite F para Facil"<< std::endl;
     std::cout<< "Digite M para Medio"<< std::endl;
@@ -80,24 +87,12 @@ void tela_dificuldade() {
     }
 }
 
-void tela_monta_equipe(std::set<int> equipe){
-    system("clear");
+void tela_monta_equipe(){
 
-    //todo- descobrir como fazer pra não dar pau nesse import
-    //todo - mostrar a lista completa de personagens com os ID
-    std::map<int, Heroi> dados_heroi= {
-            {1, Heroi(80,20,5,"Capitã Marvel")},
-            {2, Heroi(70,30,5,"Capitão América")},
-            {3, Heroi(90,10,5,"Homem de Ferro")},
-            {4, Heroi(90,10,5,"Thor")},
-            {5, Heroi(70,30,5,"Homem Aranha")},
-            {6, Heroi(90,10,5,"Hulk")},
-            {7, Heroi(60,40,5,"Doutor Estranho")},
-            {8, Heroi(60,40,5,"Visao")},
-            {9, Heroi(90,10,5,"Pantera Negra")},
-            {10,Heroi(70,30,5,"Viuva Negra")}
-    };
+    limpa_tela();
 
+    // === HEADER ===========================
+    //todo - fazer um ascii desse header
     //todo - escrever um texto decente pra isso aqui
     std::cout << "\n ======== MONTE SUA EQUIPE ========" << std::endl;
     std::cout << "Para enfrentar o Thanos, você vai precisar de muita ajuda!" << std::endl;
@@ -105,42 +100,31 @@ void tela_monta_equipe(std::set<int> equipe){
     std::cout << "\n Cada herói tem vantagens e desvantagens\n"
                  " Consulte cada um!\n" << std::endl;
 
-    for (const auto& iterator : dados_heroi) {
-        const Heroi& heroi = iterator.second;
-        std::string nome = heroi.get_nome();
+    // === LISTA DE PERSONAGENS =============
+    std::map<int, dado_heroi> MY_DADOS_HEROIS = {
+            {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
+            {2,  dado_heroi(70,30,5,"Sem Historia no momento", "Capitão América")},
+            {3,  dado_heroi(90,10,5,"Sem Historia no momento", "Homem de Ferro")},
+            {4,  dado_heroi(90,10,5,"Sem Historia no momento", "Thor")},
+            {5,  dado_heroi(70,30,5,"Sem Historia no momento", "Homem Aranha")},
+            {6,  dado_heroi(90,10,5,"Sem Historia no momento", "Hulk")},
+            {7,  dado_heroi(60,40,5,"Sem Historia no momento", "Doutor Estranho")},
+            {8,  dado_heroi(60,40,5,"Sem Historia no momento", "Visao")},
+            {9,  dado_heroi(90,10,5,"Sem Historia no momento", "Pantera Negra")},
+            {10,  dado_heroi(70,30,5,"Sem Historia no momento", "Viuva Negra")}
+    };
+
+    for (const auto& iterator : MY_DADOS_HEROIS) {
+        const dado_heroi& heroi = iterator.second;
+        std::string nome = heroi._nome;
         std::cout <<"ID: " <<iterator.first << " | " << nome << std::endl;
     }
-
-    //====== Tela mostrar equipe ======
-    //fazer um método que plota a equipe que tá pronta
-    std::cout << "\nSua equipe:" << std::endl;
-    mostra_equipe(equipe);
-
-    // =========MENU=============
-    std::cout<< "\nMENU"<< std::endl;
-    std::cout<< "Selecione o ID"<< std::endl;
-    std::cout<< "  Digite C para consultar detalhes do herói"<< std::endl;
-    std::cout<< "  Digite S para selecionar o herói para a sua equipe"<< std::endl;
-    std::cout<< "  Digite R para remover o herói para a sua equipe"<< std::endl;
-    std::cout<< "\nID: ";
-
-    int opcao;
-    std::cin>>opcao;
-    if(opcao == 1){
-        tela_inicial();
-    }else if (opcao == 2){
-        std::cout << "Você selecionou 2 - começar" << std::endl;
-        tela_dificuldade();
-    }else if (opcao == 3){
-        exit (EXIT_SUCCESS);
-    }else{
-        std::cout<< "Opção invalida, digite novamente"<< std::endl;
-    }
-
 }
 
-void mostra_equipe(std::set<int> equipe) {
+void mostra_equipe(std::set<Heroi> equipe) {
     std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
+
+    //todo - qnd tiver algum elemento dentro, completar aqui em baixo
     for (auto it = equipe.begin(); it != equipe.end(); it++) {
         std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
     }
