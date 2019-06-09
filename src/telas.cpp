@@ -5,7 +5,6 @@
 #include <map>
 #include <iostream>
 #include "telas.h"
-#include "constants.h"
 #include "heroi.h"
 
 void limpa_tela() {
@@ -89,18 +88,18 @@ void tela_monta_equipe(std::set<int> equipe){
 
     //todo- descobrir como fazer pra não dar pau nesse import
     //todo - mostrar a lista completa de personagens com os ID
-    std::map<int, Heroi> dados_heroi= {
-            {1, Heroi(80,20,5,"Capitã Marvel")},
-            {2, Heroi(70,30,5,"Capitão América")},
-            {3, Heroi(90,10,5,"Homem de Ferro")},
-            {4, Heroi(90,10,5,"Thor")},
-            {5, Heroi(70,30,5,"Homem Aranha")},
-            {6, Heroi(90,10,5,"Hulk")},
-            {7, Heroi(60,40,5,"Doutor Estranho")},
-            {8, Heroi(60,40,5,"Visao")},
-            {9, Heroi(90,10,5,"Pantera Negra")},
-            {10,Heroi(70,30,5,"Viuva Negra")}
-    };
+//    std::map<int, Heroi> dados_heroi= {
+//            {1, Heroi(80,20,5,"Capitã Marvel")},
+//            {2, Heroi(70,30,5,"Capitão América")},
+//            {3, Heroi(90,10,5,"Homem de Ferro")},
+//            {4, Heroi(90,10,5,"Thor")},
+//            {5, Heroi(70,30,5,"Homem Aranha")},
+//            {6, Heroi(90,10,5,"Hulk")},
+//            {7, Heroi(60,40,5,"Doutor Estranho")},
+ //            {8, Heroi(60,40,5,"Visao")},
+  //           {9, Heroi(90,10,5,"Pantera Negra")},
+  //          {10,Heroi(70,30,5,"Viuva Negra")}
+  //  };
 
     //todo - escrever um texto decente pra isso aqui
     std::cout << "\n ======== MONTE SUA EQUIPE ========" << std::endl;
@@ -109,11 +108,11 @@ void tela_monta_equipe(std::set<int> equipe){
     std::cout << "\n Cada herói tem vantagens e desvantagens\n"
                  " Consulte cada um!\n" << std::endl;
 
-    for (const auto& iterator : dados_heroi) {
+  /*  for (const auto& iterator : dados_heroi) {
         const Heroi& heroi = iterator.second;
         std::string nome = heroi.get_nome();
         std::cout <<"ID: " <<iterator.first << "  | " << nome << std::endl;
-    }
+    }*/
 
     //====== Tela mostrar equipe ======
     //fazer um método que plota a equipe que tá pronta
