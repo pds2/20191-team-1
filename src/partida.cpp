@@ -1,14 +1,12 @@
 #include "partida.h"
+#include "telas.h"
 
 void Partida::set_dificuldade(){
-    system("clear");
     char opcao;
-    //tela_dificuldade();
+    Telas telas;
+
     try{
-        //todo - colocar a tela dificuldade quando estiver pronta
-        std::cout << "Aqui vem o texto da tela dificuldade. Digite F, M ou D"<< std::endl;
-        std::cin >> opcao;
-        opcao = tolower(opcao);
+        opcao = telas.tela_dificuldade();
         std::cout << "você digitou: " << opcao << std::endl;
         
         if (opcao != 'f' && opcao != 'm' && opcao != 'd')  

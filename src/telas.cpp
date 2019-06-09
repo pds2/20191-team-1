@@ -63,20 +63,19 @@ void Telas::tela_como_jogar(){
 
 
 
-void Telas::tela_dificuldade() {
+char Telas::tela_dificuldade() {
+    int opcao;
+
     system("clear");
-    std::cout<< "Selecione a dificuldade do jogo"<< std::endl;
+
+    std::cout<< "Selecione a dificuldade do jogo:"<< std::endl;
     std::cout<< "Digite F para Facil"<< std::endl;
     std::cout<< "Digite M para Medio"<< std::endl;
     std::cout<< "Digite D para Dificil"<< std::endl;
-    char opcao;
-    std::cin>>opcao;
-    opcao = toupper(opcao);
-    while(opcao != 'F' && opcao != 'M' && opcao != 'D'){
-        std::cout<< "Opcao invalida, favor digite novamente!"<< std::endl;
-        std::cin>>opcao;
-        opcao = toupper(opcao);
-    }
+
+    std::cin >> opcao;
+    opcao = tolower(opcao);
+    return opcao;
 }
 
 
