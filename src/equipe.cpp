@@ -1,10 +1,24 @@
 #include <vector>
+#include <map>
 #include <iostream>
 #include <string>
 #include "equipe.h"
 #include "heroi.h"
 #include "telas.h"
 #include "constants.h"
+
+std::map<int, dado_heroi> MY_DADOS_HEROIS = {
+            {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
+            {2,  dado_heroi(70,30,5,"Sem Historia no momento", "Capitão América")},
+            {3,  dado_heroi(90,10,5,"Sem Historia no momento", "Homem de Ferro")},
+            {4,  dado_heroi(90,10,5,"Sem Historia no momento", "Thor")},
+            {5,  dado_heroi(70,30,5,"Sem Historia no momento", "Homem Aranha")},
+            {6,  dado_heroi(90,10,5,"Sem Historia no momento", "Hulk")},
+            {7,  dado_heroi(60,40,5,"Sem Historia no momento", "Doutor Estranho")},
+            {8,  dado_heroi(60,40,5,"Sem Historia no momento", "Visao")},
+            {9,  dado_heroi(90,10,5,"Sem Historia no momento", "Pantera Negra")},
+            {10,  dado_heroi(70,30,5,"Sem Historia no momento", "Viuva Negra")}
+};
 
 
 Equipe::Equipe(){
@@ -20,7 +34,7 @@ void Equipe::monta_equipe(Equipe& equipe){
     // === MOSTRA EQUIPE ATUAL ==============
     std::cout << "\nSua equipe:" << std::endl;
 
-//    mostra_equipe(equipe);
+     mostra_equipe();
 
     // === MENU ==============================
     std::cout<< "\nMENU"<< std::endl;
@@ -30,24 +44,9 @@ void Equipe::monta_equipe(Equipe& equipe){
     std::cout<< "  Digite R para Remover o herói para a sua equipe"<< std::endl;
     std::cout<< "  Digite F para Finalizar montagem da equipe"<< std::endl;
 
-
-    std::map<int, dado_heroi> MY_DADOS_HEROIS = {
-            {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
-            {2,  dado_heroi(70,30,5,"Sem Historia no momento", "Capitão América")},
-            {3,  dado_heroi(90,10,5,"Sem Historia no momento", "Homem de Ferro")},
-            {4,  dado_heroi(90,10,5,"Sem Historia no momento", "Thor")},
-            {5,  dado_heroi(70,30,5,"Sem Historia no momento", "Homem Aranha")},
-            {6,  dado_heroi(90,10,5,"Sem Historia no momento", "Hulk")},
-            {7,  dado_heroi(60,40,5,"Sem Historia no momento", "Doutor Estranho")},
-            {8,  dado_heroi(60,40,5,"Sem Historia no momento", "Visao")},
-            {9,  dado_heroi(90,10,5,"Sem Historia no momento", "Pantera Negra")},
-            {10,  dado_heroi(70,30,5,"Sem Historia no momento", "Viuva Negra")}
-    };
-
     int id;
     char opcao;
-
-    while(true) {
+    while(equipe_selecionada.size() < 5) {
         std::cout<< "\nOpção: ";
         std::cin>>opcao;
         opcao = toupper(opcao);
@@ -60,66 +59,37 @@ void Equipe::monta_equipe(Equipe& equipe){
             std::cout << "ID: ";
             std::cin >> id;
             std::cout << "Adiciona heroi" << std::endl;
-
-            //acha o heroi certo pelo ID
-            std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id);
-
-            //passa os parâmetros para a função adiciona
-
-
+             this->adiciona_heroi(id);
         } else if (opcao == 'R') {
             std::cout << "ID: ";
             std::cin >> id;
             std::cout << "Remove heroi" << std::endl;
-            //remove_heroi(id);
-        } else if (opcao == 'F') {
-            if (this->esta_completo) {
-                return;
-            } else
-                std::cout << "Oh não, sua equipe ainda não está completa!" << std::endl;
-            //remove_heroi();
-        } else {
-            std::cout << "Opção invalida, digite novamente" << std::endl;
-        }
+        } 
+    }
+
+    mostra_equipe();
+}
+
+void Equipe::adiciona_heroi(const int id_heroi){
+    std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id_heroi);
+    Heroi *heroi = new Heroi(itMap->second._pt_vida, itMap->second._pt_ataque, itMap->second._pt_defesa, itMap->second._nome);
+    this->equipe_selecionada.push_back(*heroi);
+    std::cout<<equipe_selecionada.size()<<std::endl;
+    if(equipe_selecionada.size() == 5){
+        this->esta_completo = true;
     }
 }
 
-//void Equipe::adiciona_heroi(const int id_heroi){
-
-//    Heroi heroi_selecionado= Heroi(80,20,5, "Capitã Marvel");
-//
-//    switch (id_heroi){
-//        case 1:
-//            heroi_selecionado = Heroi(80,20,5, "Capitã Marvel");
-//            break;
-//        case 2:
-//            heroi_selecionado = Heroi(70,30,5,"Capitão América");
-//            break;
-//        case 3:
-//            heroi_selecionado = Heroi(90,10,5, "Homem de Ferro");
-//            break;
-//        case 4:
-//            heroi_selecionado = Heroi(90,10,5, "Thor");
-//            break;
-//        case 5:
-//            heroi_selecionado = Heroi(70,30,5, "Homem Aranha");
-//            break;
-//        case 6:
-//            heroi_selecionado = Heroi(90,10,5, "Hulk");
-//            break;
-//        case 7:
-//            heroi_selecionado = Heroi(60,40,5, "Doutor Estranho");
-//            break;
-//        case 8:
-//            heroi_selecionado = Heroi(60,40,5, "Visao");
-//            break;
-//        case 9:
-//            heroi_selecionado = Heroi(90,10,5, "Pantera Negra");
-//            break;
-//        case 10:
-//            heroi_selecionado = Heroi(70,30,5, "Viuva Negra");
-//            break;
-//    }
+void Equipe::mostra_equipe() {
+    system("clear");
+    std::cout<<"Seus Herois escolhidos são: "<<std::endl;
+    for(int i = 0; i < equipe_selecionada.size(); i++){
+        std::cout<<"Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;
+        std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
+        std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
+        std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
+    }
+}
 
 //    this->equipe_selecionada.insert(heroi_selecionado);
 
