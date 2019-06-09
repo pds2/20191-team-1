@@ -13,6 +13,9 @@ void tela_como_jogar();
 void tela_dificuldade();
 void tela_monta_equipe();
 void mostra_equipe(std::set<Heroi> equipe);
+void tela_vitoria_jogador();
+void tela_vitoria_thanos();
+
 
 //    void tela_personagem();
 //    void tela_resultado_ataque_jogador();
@@ -21,7 +24,6 @@ void mostra_equipe(std::set<Heroi> equipe);
 //    void tela_batalha();
 //    void tela_vitoria_thanos();
 //    void tela_resultado_ataque_thanos();
-//    void tela_vitoria_jogador();
 
 
 #endif //INC_20191_TEAM_1_TELAS_H
