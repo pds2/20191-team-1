@@ -8,8 +8,6 @@
 #include "heroi.h"
 
 
-using namespace std;
-
 void tela_inicial(){
 
     system("clear");
@@ -109,14 +107,14 @@ void tela_monta_equipe(std::set<int> equipe){
 
     for (const auto& iterator : dados_heroi) {
         const Heroi& heroi = iterator.second;
-        string nome = heroi.get_nome();
+        std::string nome = heroi.get_nome();
         std::cout <<"ID: " <<iterator.first << " | " << nome << std::endl;
     }
 
     //====== Tela mostrar equipe ======
     //fazer um método que plota a equipe que tá pronta
     std::cout << "\nSua equipe:" << std::endl;
-    std::cout << "Falta implementar um método privado que mostra o vetor equipe" << std::endl;
+    mostra_equipe(equipe);
 
     // =========MENU=============
     std::cout<< "\nMENU"<< std::endl;
@@ -141,9 +139,12 @@ void tela_monta_equipe(std::set<int> equipe){
 
 }
 
-
-
-
+void mostra_equipe(std::set<int> equipe) {
+    std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
+    for (auto it = equipe.begin(); it != equipe.end(); it++) {
+        std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
+    }
+}
 
 
 //void tela_personagem(){

@@ -12,6 +12,8 @@ void tela_inicial();
 void tela_como_jogar();
 void tela_dificuldade();
 void tela_monta_equipe(std::set<int> equipe);
+void mostra_equipe(std::set<int> equipe);
+
 //    void tela_personagem();
 //    void tela_resultado_ataque_jogador();
 //    void tela_descricao_persoangem(int id);
