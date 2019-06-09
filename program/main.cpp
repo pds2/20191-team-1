@@ -11,7 +11,7 @@ int main() {
 
     int opcao;
     do
-    {
+    {   
         std::cin>>opcao;
         if (opcao == 1)
             tela_como_jogar();
