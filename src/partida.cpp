@@ -1,7 +1,12 @@
 #include "partida.h"
+//#include "thanos.h"
+
+//Partida::Partida(){
+////    this->thanos = Thanos(200, 10, 5, "Thanos");
+//}
+
 
 void Partida::set_dificuldade(){
-    system("clear");
     char opcao;
     //tela_dificuldade();
     do{

@@ -21,14 +21,7 @@ double BONUS_ATAQUE = 0.05;
 //        {10,Heroi(70,30,5,"Viuva Negra")}
 //};
 //
-//map<int, pair<int, bool>> ataque_thanos = {
-//	{1, make_pair(20, true)},
-//	{2, make_pair(40, false)},
-//	{3, make_pair(10, true)},
-//	{4, make_pair(05, true)},
-//	{5, make_pair(05, false)},
-//	{6, make_pair(10, false)}
-//};
+
 
 
 //map<int, Cenario>dados_cenarios = {
