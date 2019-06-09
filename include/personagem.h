@@ -1,28 +1,30 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
 
-#include <string.h>
-using namespace std;
+#include <string>
+
+//=======================
+//======= COMPLETA ======
+//=======================
 
 class Personagem {
 
 protected:
-    
+    std::string nome;
     int pt_vida;
     int pt_ataque;
     int pt_defesa;
     bool vivo;
-    //std::string nome;
 
 public:
-    Personagem();
-
+    Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string nome);
+//    ~Personagem();
     int get_pt_vida();
     int get_pt_ataque();
     int get_pt_defesa();
-   // string get_name();
-    void diminui_vida(const int dano_recebido);
-    void realiza_ataque(const int ataque_recebido);
+    std::string get_name();
+    void diminui_vida(const unsigned int dano_recebido);
+    virtual const int realiza_ataque() = 0;
 };
 
 #endif

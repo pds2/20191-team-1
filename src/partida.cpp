@@ -1,45 +1,38 @@
 #include "partida.h"
-#include <string>
-Partida::Partida()
-{
-	this->ganhador = false;
-	this-> taxa_recuperacao = 0;
-	this->time = nullptr;
-	this->thanos = nullptr;
-	this->batalha = nullptr;
+#include "equipe.h"
+
+Partida::Partida(){
+    this->equipe = Equipe();
 }
 
 
-void Partida::roda_partida()
-{
-	//TODO: gerenciar a partida
+void Partida::roda_partida(){
+    this->equipe.monta_equipe(this->equipe);
 }
 
-double Partida::get_taxa_recuperacao() {
-	return this->taxa_recuperacao;
+
+void Partida::set_dificuldade(){
+    char opcao;
+    do{
+        //todo - colocar a tela dificuldade quando estiver pronta
+        //tela_dificuldade();
+        std::cout<< "Selecione a dificuldade do jogo: "<< std::endl;
+        std::cout<< "Digite F para Facil"<< std::endl;
+        std::cout<< "Digite M para Medio"<< std::endl;
+        std::cout<< "Digite D para Dificil"<< std::endl;
+        std::cin >> opcao;
+        std::cout << "você digitou: " << opcao << std::endl;
+        opcao = tolower(opcao);
+        std::cout << "você digitou: " << opcao << std::endl;
+        if (opcao != 'f' && opcao != 'm' && opcao != 'd')
+            std::cout << "Por favor, digite uma opção válida" << std::endl;
+    }while(opcao != 'f' && opcao != 'm' && opcao != 'd');
+
+    this->dificuldade = opcao;
 }
 
-char Partida::get_dificuldade() {
-	return this->dificuldade;
+
+char Partida::get_dificuldade(){
+    return this->dificuldade;
 }
 
-void Partida::set_dificuldade(char dificuldade){
-	this->dificuldade = dificuldade;
-	if(dificuldade == 'F') {
-		this->taxa_recuperacao = 0.5;
-	} else if(dificuldade == 'M') {
-		this->taxa_recuperacao = 0.25;
-	}
-}
-
-void Partida::set_time(Time* time) {
- 	this->time = time;
-}
-
-void Partida::set_batalha(Batalha* batalha) {
-	this->batalha = batalha;
-}
-
-void Partida::set_thanos(Thanos* thanos){
-	this->thanos = thanos;
-}
