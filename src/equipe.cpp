@@ -21,7 +21,7 @@ void Equipe::monta_equipe(){
             //else,
                 //mostra mensagem de que a equipe não está completa
 
-    tela_monta_equipe(this);
+    tela_monta_equipe(this->equipe);
     while(true){
 
     }

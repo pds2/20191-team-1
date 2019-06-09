@@ -82,7 +82,7 @@ void tela_dificuldade() {
     }
 }
 
-void tela_monta_equipe(Equipe& equipe){
+void tela_monta_equipe(std::set<int> equipe){
     system("clear");
 
     //todo- descobrir como fazer pra não dar pau nesse import
