@@ -12,7 +12,6 @@ Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string no
     this->vivo = true;
 }
 
-
 int Personagem::get_pt_vida(){
     return this->pt_vida;
 }

@@ -2,12 +2,26 @@
 // ASCII arts were generated with http://patorjk.com/software/taag/#p=display&f=Graffiti&t=
 // --------------------------------------------------------------------------------------------
 
+#include <map>
+#include <iostream>
 #include "telas.h"
+#include "heroi.h"
+#include "constants.h"
 
-void Telas::tela_inicial(){
-    //Quem chama tela: main()
+//------------ GLOBALS------------------
 
-    system("clear");
+
+//------------FUNCTIONS---------------
+
+void limpa_tela() {
+    int clear = system("clear");
+    if(clear != 0){
+        std::cout<<"Algo de errado não está certo!"<<std::endl;
+    }
+}
+
+void tela_inicial(){
+    limpa_tela();
     std::cout << "\n"
             " _____          _                             _               _____ _                           \n"
             "/__   \\___   __| | ___  ___    ___ ___  _ __ | |_ _ __ __ _  /__   \\ |__   __ _ _ __   ___  ___ \n"
@@ -29,9 +43,8 @@ void Telas::tela_inicial(){
 
 }
 
-void Telas::tela_como_jogar(){
-    system("clear");
-
+void tela_como_jogar(){
+    limpa_tela();
     std::cout<<  "====== COMO JOGAR ====="<< std::endl;
     std::cout<<  "\n";
     std::cout<< "Seu objetivo é derrotar o poderoso Thanos antes que ele pegue a pedra do poder. "<< std::endl;
@@ -41,30 +54,25 @@ void Telas::tela_como_jogar(){
     // =========MENU=============
     std::cout<< "MENU"<< std::endl;
     std::cout<< "Aperte 1 - Voltar à Tela Inicial"<< std::endl;
-    std::cout<< "Aperte 2 - Iniciar o jogo"<< std::endl;
     std::cout<< "Aperte 3 - Sair"<< std::endl;
     std::cout<< "\nOpção: ";
     
-    int opcao = 0;
-    
+    int opcao;
     std::cin>>opcao;
     if(opcao == 1){
         tela_inicial();
-
     }else if (opcao == 2){
         std::cout << "Você selecionou 2 - começar" << std::endl;
         tela_dificuldade();
     }else if (opcao == 3){
-        system("exit");
+        exit (EXIT_SUCCESS);
     }else{
         std::cout<< "Opção invalida, digite novamente"<< std::endl;
     }
 }
 
-
-
-void Telas::tela_dificuldade() {
-    system("clear");
+void tela_dificuldade() {
+    limpa_tela();
     std::cout<< "Selecione a dificuldade do jogo"<< std::endl;
     std::cout<< "Digite F para Facil"<< std::endl;
     std::cout<< "Digite M para Medio"<< std::endl;
@@ -79,10 +87,49 @@ void Telas::tela_dificuldade() {
     }
 }
 
+void tela_monta_equipe(){
+
+    limpa_tela();
+
+    // === HEADER ===========================
+    std::cout << "\n ======== MONTE SUA EQUIPE ========" << std::endl;
+    std::cout << "Para enfrentar o Thanos, você vai precisar de muita ajuda!" << std::endl;
+    std::cout << "Sua equipe pode ter até 5 heróis" << std::endl;
+    std::cout << "\n Cada herói tem vantagens e desvantagens\n"
+                 " Consulte cada um!\n" << std::endl;
+
+    // === LISTA DE PERSONAGENS =============
+    std::map<int, dado_heroi> MY_DADOS_HEROIS = {
+            {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
+            {2,  dado_heroi(70,30,5,"Sem Historia no momento", "Capitão América")},
+            {3,  dado_heroi(90,10,5,"Sem Historia no momento", "Homem de Ferro")},
+            {4,  dado_heroi(90,10,5,"Sem Historia no momento", "Thor")},
+            {5,  dado_heroi(70,30,5,"Sem Historia no momento", "Homem Aranha")},
+            {6,  dado_heroi(90,10,5,"Sem Historia no momento", "Hulk")},
+            {7,  dado_heroi(60,40,5,"Sem Historia no momento", "Doutor Estranho")},
+            {8,  dado_heroi(60,40,5,"Sem Historia no momento", "Visao")},
+            {9,  dado_heroi(90,10,5,"Sem Historia no momento", "Pantera Negra")},
+            {10,  dado_heroi(70,30,5,"Sem Historia no momento", "Viuva Negra")}
+    };
+
+    for (const auto& iterator : MY_DADOS_HEROIS) {
+        const dado_heroi& heroi = iterator.second;
+        std::string nome = heroi._nome;
+        std::cout <<"ID: " <<iterator.first << " | " << nome << std::endl;
+    }
+}
+
+void mostra_equipe(std::set<Heroi> equipe) {
+    std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
+
+    //todo - qnd tiver algum elemento dentro, completar aqui em baixo
+    for (auto it = equipe.begin(); it != equipe.end(); it++) {
+        std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
+    }
+}
 
 
-
-//void Telas::tela_personagem(){
+//void tela_personagem(){
 //    system("clear");
 //    std::cout<< "Descrição dos personagens e seus respectivos IDs"<< std::endl;
 //    std::cout<< "1 - Capitã Marvel"<< std::endl;
@@ -94,30 +141,30 @@ void Telas::tela_dificuldade() {
 //
 //}
 //
-//void Telas::tela_resultado_ataque_jogador(){
+//void tela_resultado_ataque_jogador(){
 //    system("clear");
 //}
 //
-//void Telas::tela_descricao_persoangem(int id){
+//void tela_descricao_persoangem(int id){
 //    system("clear");
 //}
 //
-//void Telas::tela_morte_heroi_sem_pedra(){
+//void tela_morte_heroi_sem_pedra(){
 //    system("clear");
 //}
 //
-//void Telas::tela_batalha(){
+//void tela_batalha(){
 //    system("clear");
 //}
 //
-//void Telas::tela_vitoria_thanos(){
+//void tela_vitoria_thanos(){
 //    system("clear");
 //}
 //
-//void Telas::tela_resultado_ataque_thanos(){
+//void tela_resultado_ataque_thanos(){
 //    system("clear");
 //}
 //
-//void Telas::tela_vitoria_jogador(){
+//void tela_vitoria_jogador(){
 //    system("clear");
 //}

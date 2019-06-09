@@ -3,23 +3,21 @@
 
 #include <string>
 #include <map>
-//#include "heroi.h"
 
-double BONUS_ATAQUE = 0.05;
+struct dado_heroi {
+ 	std::string _historia;
+ 	std::string _nome;
+    int _pt_vida;
+    int _pt_ataque;
+    int _pt_defesa;
+    dado_heroi(int _pt_vida, int _pt_ataque, int _pt_defesa, std::string _historia, std::string _nome) :
+              _historia(_historia), _nome(_nome), _pt_vida(_pt_vida), _pt_ataque(_pt_ataque), _pt_defesa(_pt_defesa) {}
+ };
 
-//todo - descomentar
-//map<int, Heroi> dados_heroi= {
-//        {1, Heroi(80,20,5,"Capitã Marvel")},
-//        {2, Heroi(70,30,5,"Capitão America")},
-//        {3, Heroi(90,10,5,"Homem de Ferro")},
-//        {4, Heroi(90,10,5,"Thor")},
-//        {5, Heroi(70,30,5,"Homem Aranha")},
-//        {6, Heroi(90,10,5,"Hulk")},
-//        {7, Heroi(60,40,5,"Doutor Estranho")},
-//        {8, Heroi(60,40,5,"Visao")},
-//        {9, Heroi(90,10,5,"Pantera Negra")},
-//        {10,Heroi(70,30,5,"Viuva Negra")}
-//};
+
+//
+//
+
 //
 
 

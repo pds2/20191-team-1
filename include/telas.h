@@ -1,16 +1,19 @@
 #ifndef INC_20191_TEAM_1_TELAS_H
 #define INC_20191_TEAM_1_TELAS_H
-#include "time.h"
+
 #include <iostream>
 #include <algorithm>
+#include <map>
+#include <set>
+#include "heroi.h"
 
 
-class Telas {
+void tela_inicial();
+void tela_como_jogar();
+void tela_dificuldade();
+void tela_monta_equipe();
+void mostra_equipe(std::set<Heroi> equipe);
 
-public:
-    void tela_inicial();
-    void tela_como_jogar();
-    void tela_dificuldade();
 //    void tela_personagem();
 //    void tela_resultado_ataque_jogador();
 //    void tela_descricao_persoangem(int id);
@@ -20,5 +23,5 @@ public:
 //    void tela_resultado_ataque_thanos();
 //    void tela_vitoria_jogador();
 
-};
+
 #endif //INC_20191_TEAM_1_TELAS_H

@@ -1,17 +1,25 @@
 #include "partida.h"
-//#include "thanos.h"
+#include "equipe.h"
 
-//Partida::Partida(){
-////    this->thanos = Thanos(200, 10, 5, "Thanos");
-//}
+Partida::Partida(){
+    this->equipe = Equipe();
+}
+
+
+void Partida::roda_partida(){
+    this->equipe.monta_equipe(this->equipe);
+}
 
 
 void Partida::set_dificuldade(){
     char opcao;
-    //tela_dificuldade();
     do{
         //todo - colocar a tela dificuldade quando estiver pronta
-        std::cout << "Aqui vem o texto da tela dificuldade. Digite F, M ou D"<< std::endl;
+        //tela_dificuldade();
+        std::cout<< "Selecione a dificuldade do jogo: "<< std::endl;
+        std::cout<< "Digite F para Facil"<< std::endl;
+        std::cout<< "Digite M para Medio"<< std::endl;
+        std::cout<< "Digite D para Dificil"<< std::endl;
         std::cin >> opcao;
         std::cout << "você digitou: " << opcao << std::endl;
         opcao = tolower(opcao);
