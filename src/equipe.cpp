@@ -43,7 +43,9 @@ void Equipe::monta_equipe(Equipe& equipe){
             std::cout << "Adiciona heroi" << std::endl;
             this->adiciona_heroi(id);
         } else if (opcao == 'R') {
-            std::cout << "ID: ";
+            limpa_tela();
+            mostra_equipe();
+            std::cout << "Digite o Slot do heroi que deseja remover do seu time";
             std::cin >> id;
             std::cout << "Remove heroi" << std::endl;
             this->remove_heroi(id);
@@ -83,6 +85,7 @@ int Equipe::realiza_ataque(){
     bool aguardando_escolha = true;
     char opcao;
     int id;
+    std::cin >> opcao;
     opcao = toupper(opcao);
     while(aguardando_escolha){
         if (opcao == 'A') {
@@ -102,6 +105,7 @@ int Equipe::realiza_ataque(){
             opcao = toupper(opcao);
         }
     }
+    return 0;
 }
 
 int Equipe::sofre_ataque(int dano){

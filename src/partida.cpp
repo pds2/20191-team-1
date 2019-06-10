@@ -40,7 +40,9 @@ void Partida::roda_partida() {
 
 void Partida::turno_jogador() {
     int dano = equipe.realiza_ataque();
-    thanos->sofre_ataque(dano);
+    if(dano > 0){
+        thanos->sofre_ataque(dano);
+    }
     if(thanos->get_pt_vida() <= 0) {
         tela_vitoria_jogador();
         set_esta_ativo(false);
