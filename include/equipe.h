@@ -21,6 +21,7 @@ public:
 	void sofre_ataque(int dano, int id_heroi);
 	int realiza_ataque();
 	void set_portador_pedra(const int id_heroi);
+	bool portador_pedra_esta_vivo();
 
 };
 

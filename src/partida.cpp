@@ -1,4 +1,5 @@
 #include "partida.h"
+#include "telas.h"
 
 Partida::Partida(){
     this->turno = true;
@@ -26,6 +27,7 @@ void Partida::set_esta_ativo(bool esta_ativo){
 
 void Partida::roda_partida() {
     this->equipe.monta_equipe(this->equipe);
+
     while(get_esta_ativo() == true) {
         if(get_turno() == true){
             turno_jogador();
@@ -39,12 +41,20 @@ void Partida::roda_partida() {
 void Partida::turno_jogador() {
     int dano = equipe.realiza_ataque();
     thanos->sofre_ataque(dano);
+    if(thanos->get_pt_vida() <= 0) {
+        tela_vitoria_jogador();
+        set_esta_ativo(false);
+    }
 }
 
 void Partida::turno_thanos() {
     int dano = thanos->realiza_ataque();
     int target = gera_inteiro(1, 5);
-    //equipe.sofre_ataque(target, dano);
+    equipe.sofre_ataque(target, dano);
+    if(equipe.portador_pedra_esta_vivo() == false){
+        tela_vitoria_thanos();
+        set_esta_ativo(false);
+    }
 }
 
 char Partida::get_dificuldade() {
