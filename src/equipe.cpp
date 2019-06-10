@@ -29,32 +29,15 @@ Equipe::Equipe(){
 
 void Equipe::monta_equipe(Equipe& equipe){
 
-    tela_monta_equipe();
-
-    // === MOSTRA EQUIPE ATUAL ==============
-    std::cout << "\nSua equipe:" << std::endl;
-
-     mostra_equipe();
-
-    // === MENU ==============================
-    std::cout<< "\nMENU"<< std::endl;
-    std::cout<< "Selecione a Opção"<< std::endl;
-    std::cout<< "  Digite C para Consultar detalhes do herói"<< std::endl;
-    std::cout<< "  Digite S para Selecionar o herói para a sua equipe"<< std::endl;
-    std::cout<< "  Digite R para Remover o herói para a sua equipe"<< std::endl;
-    std::cout<< "  Digite F para Finalizar montagem da equipe"<< std::endl;
-
     int id;
     char opcao;
     while(equipe_selecionada.size() < 5) {
+        tela_monta_equipe();
+        mostra_equipe();
         std::cout<< "\nOpção: ";
         std::cin>>opcao;
         opcao = toupper(opcao);
-        if (opcao == 'C') {
-            std::cout << "ID: ";
-            std::cin >> id;
-            std::cout << "Consulta heroi" << std::endl;
-        } else if (opcao == 'S') {
+        if (opcao == 'S') {
             std::cout << "ID: ";
             std::cin >> id;
             std::cout << "Adiciona heroi" << std::endl;
@@ -65,8 +48,6 @@ void Equipe::monta_equipe(Equipe& equipe){
             std::cout << "Remove heroi" << std::endl;
         } 
     }
-
-    mostra_equipe();
 }
 
 void Equipe::adiciona_heroi(const int id_heroi){
@@ -80,8 +61,7 @@ void Equipe::adiciona_heroi(const int id_heroi){
 }
 
 void Equipe::mostra_equipe() {
-    system("clear");
-    std::cout<<"Seus Herois escolhidos são: "<<std::endl;
+     std::cout<<"Seus Herois escolhidos são: "<<std::endl;
     for(int i = 0; i < equipe_selecionada.size(); i++){
         if(equipe_selecionada[i].get_vivo() == true){
             std::cout<<"Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;

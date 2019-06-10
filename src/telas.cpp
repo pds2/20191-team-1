@@ -127,6 +127,15 @@ void tela_monta_equipe(){
         std::string nome = heroi._nome;
         std::cout <<"ID: " <<iterator.first << " | " << nome << std::endl;
     }
+
+    // === MENU ==============================
+    std::cout<< "\nMENU"<< std::endl;
+    std::cout<< "Selecione a Opção"<< std::endl;
+    std::cout<< "  Digite C para Consultar detalhes do herói"<< std::endl;
+    std::cout<< "  Digite S para Selecionar o herói para a sua equipe"<< std::endl;
+    std::cout<< "  Digite R para Remover o herói para a sua equipe"<< std::endl;
+    std::cout<< "  Digite F para Finalizar montagem da equipe"<< std::endl;
+
 }
 
 void mostra_equipe(std::set<Heroi> equipe) {
