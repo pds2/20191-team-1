@@ -42,32 +42,36 @@ void tela_inicial(){
 
 }
 
-void tela_como_jogar(){
+void tela_como_jogar() {
     limpa_tela();
-    std::cout<<  "====== COMO JOGAR ====="<< std::endl;
-    std::cout<<  "\n";
-    std::cout<< "Seu objetivo é derrotar o poderoso Thanos antes que ele pegue a pedra do poder. "<< std::endl;
-    std::cout<< "Com o controle de 5 grandes herois, você poderar atacar e alterar a posse da  pedra. "<< std::endl;
-    std::cout<< "Planeje suas açoes e salve a humanidade! Aperte qualquer tecla para continuar"<< std::endl;
+    std::cout << "\n"
+                 "   _____                          _                        \n"
+                 "  / ____|                        (_)                       \n"
+                 " | |     ___  _ __ ___   ___      _  ___   __ _  __ _ _ __ \n"
+                 " | |    / _ \\| '_ ` _ \\ / _ \\    | |/ _ \\ / _` |/ _` | '__|\n"
+                 " | |___| (_) | | | | | | (_) |   | | (_) | (_| | (_| | |   \n"
+                 "  \\_____\\___/|_| |_| |_|\\___/    | |\\___/ \\__, |\\__,_|_|   \n"
+                 "                                _/ |       __/ |           \n"
+                 "                               |__/       |___/            " << std::endl;
+    std::cout << "\n";
+    std::cout
+            << " Seu objetivo é derrotar o poderoso Thanos antes que ele pegue a pedra do poder, que está escondida com algum dos nossos heróis. "
+            << std::endl;
+    std::cout
+            << " Você enfrentará Thanos em uma batalha de turnos. Se o herói que esta com a pedra morrer, Thanos vence o jogo "
+            << std::endl;
+    std::cout << " Derrote Thanos antes que isso aconteça! " << std::endl;
+    std::cout << "  " << std::endl;
+    std::cout << " No seu turno, você deverá escolher:" << std::endl;
+    std::cout << "     1 - Qual herói você quer usar" << std::endl;
+    std::cout << "     2 - Se você deseja atacar ou passar a pedra pra outro herói" << std::endl;
+    std::cout << "\nPlaneje suas açoes e salve a galáxia!" << std::endl;
 
     // =========MENU=============
-    std::cout<< "MENU"<< std::endl;
-    std::cout<< "Aperte 1 - Voltar à Tela Inicial"<< std::endl;
-    std::cout<< "Aperte 3 - Sair"<< std::endl;
-    std::cout<< "\nOpção: ";
-    
-    int opcao;
-    std::cin>>opcao;
-    if(opcao == 1){
-        tela_inicial();
-    }else if (opcao == 2){
-        std::cout << "Você selecionou 2 - começar" << std::endl;
-        tela_dificuldade();
-    }else if (opcao == 3){
-        exit (EXIT_SUCCESS);
-    }else{
-        std::cout<< "Opção invalida, digite novamente"<< std::endl;
-    }
+    std::cout << "\nMENU" << std::endl;
+    std::cout << "Aperte 1 - Voltar à Tela Inicial" << std::endl;
+    std::cout << "Aperte 2 - Sair" << std::endl;
+    std::cout << "\nOpção: ";
 }
 
 void tela_dificuldade() {
@@ -97,11 +101,18 @@ void tela_monta_equipe(){
     limpa_tela();
 
     // === HEADER ===========================
-    std::cout << "\n ======== MONTE SUA EQUIPE ========" << std::endl;
-    std::cout << "Para enfrentar o Thanos, você vai precisar de muita ajuda!" << std::endl;
-    std::cout << "Sua equipe pode ter até 5 heróis" << std::endl;
-    std::cout << "\n Cada herói tem vantagens e desvantagens\n"
-                 " Consulte cada um!\n" << std::endl;
+    std::cout << "\n \n"
+                 "  __  __             _                                            _            \n"
+                 " |  \\/  |           | |                                          (_)           \n"
+                 " | \\  / | ___  _ __ | |_ ___   ___ _   _  __ _    ___  __ _ _   _ _ _ __   ___ \n"
+                 " | |\\/| |/ _ \\| '_ \\| __/ _ \\ / __| | | |/ _` |  / _ \\/ _` | | | | | '_ \\ / _ \\\n"
+                 " | |  | | (_) | | | | ||  __/ \\__ \\ |_| | (_| | |  __/ (_| | |_| | | |_) |  __/\n"
+                 " |_|  |_|\\___/|_| |_|\\__\\___| |___/\\__,_|\\__,_|  \\___|\\__, |\\__,_|_| .__/ \\___|\n"
+                 "                                                         | |       | |         \n"
+                 "                                                         |_|       |_|         " << std::endl;
+    std::cout << "\n Para enfrentar o Thanos, você vai precisar de muita ajuda!" << std::endl;
+    std::cout << " Sua equipe pode ter até 5 heróis. Consulte as vantagens e desvantagens e seja sábio nas escolhas!\n" << std::endl;
+
 
     // === LISTA DE PERSONAGENS =============
     std::map<int, dado_heroi> MY_DADOS_HEROIS = {
