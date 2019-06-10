@@ -52,23 +52,19 @@ char Partida::get_dificuldade() {
 }
 
 void Partida::set_dificuldade() {
+    bool aguardando_opcao_valida = true;
     char opcao;
-    do{
-        //todo - colocar a tela dificuldade quando estiver pronta
-        //tela_dificuldade();
-        std::cout<< "Selecione a dificuldade do jogo: "<< std::endl;
-        std::cout<< "Digite F para Facil"<< std::endl;
-        std::cout<< "Digite M para Medio"<< std::endl;
-        std::cout<< "Digite D para Dificil"<< std::endl;
-        std::cin >> opcao;
-        std::cout << "você digitou: " << opcao << std::endl;
-        opcao = tolower(opcao);
-        std::cout << "você digitou: " << opcao << std::endl;
-        if (opcao != 'f' && opcao != 'm' && opcao != 'd')
-            std::cout << "Por favor, digite uma opção válida" << std::endl;
-    }while(opcao != 'f' && opcao != 'm' && opcao != 'd');
-
-    this->dificuldade = opcao;
+    tela_dificuldade();
+    while(aguardando_opcao_valida == true){
+        std::cin>>opcao;
+        opcao = toupper(opcao);
+        if(opcao != 'F' && opcao != 'M' && opcao != 'D'){
+            std::cout<<"Opção invalida, favor digitar uma opção valida!"<<std::endl;
+        }else {
+            aguardando_opcao_valida = false;
+            this->dificuldade = opcao;
+        }
+    }
 }
 
 

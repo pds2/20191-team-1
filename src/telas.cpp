@@ -124,15 +124,6 @@ void tela_monta_equipe(){
     }
 }
 
-void mostra_equipe(std::set<Heroi> equipe) {
-    std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
-
-    //todo - qnd tiver algum elemento dentro, completar aqui em baixo
-    for (auto it = equipe.begin(); it != equipe.end(); it++) {
-        std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
-    }
-}
-
 void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::string nome_ataque){
     limpa_tela();
 

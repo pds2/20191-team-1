@@ -2,6 +2,7 @@
 #define INC_20191_TEAM_1_PARTIDA_H
 
 #include <iostream>
+#include "telas.h"
 #include "equipe.h"
 #include "thanos.h"
 #include "randomize.h"
