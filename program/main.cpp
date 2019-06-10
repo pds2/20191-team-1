@@ -7,7 +7,7 @@
 
 int main() {
 
-    tela_monta_equipe();
+    tela_como_jogar();
 
 //    tela_inicial();
 //
