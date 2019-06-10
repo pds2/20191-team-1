@@ -10,8 +10,7 @@ int main() {
     tela_inicial();
 
     int opcao;
-    do
-    {
+    do {
         std::cin>>opcao;
         if (opcao == 1)
             tela_como_jogar();
@@ -21,8 +20,7 @@ int main() {
             exit (EXIT_SUCCESS);
         else
             std::cout << "Opção invalida, digite novamente" << std::endl;
-    }while(opcao != 2);
-
+    } while(opcao != 2);
 
     Partida partida = Partida();
     partida.set_dificuldade();

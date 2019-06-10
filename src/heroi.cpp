@@ -27,10 +27,6 @@ const int Heroi::realiza_ataque(){
     return dano_realizado;
 }
 
-int Heroi::get_ataque_com_bonus() {
-    return this->pt_ataque * (1 + this->bonus_ataque);
-}
-
 std::string Heroi::get_nome() const{
     return this->nome;
 }

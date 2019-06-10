@@ -84,56 +84,42 @@ void Equipe::mostra_equipe() {
     system("clear");
     std::cout<<"Seus Herois escolhidos são: "<<std::endl;
     for(int i = 0; i < equipe_selecionada.size(); i++){
-        std::cout<<"Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;
-        std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
-        std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
-        std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
+        if(equipe_selecionada[i].get_vivo() == true){
+            std::cout<<"Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;
+            std::cout<<"id: "<< i+1 << std::endl;
+            std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
+            std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
+            std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
+        }
     }
 }
 
-//    this->equipe_selecionada.insert(heroi_selecionado);
-
-//}
-
-
-
-//void Equipe::adiciona_heroi(int id){
-//	this->herois.insert(id);
-//}
-//
-//void Equipe::remove_heroi(int id){
-//	this->herois.erase(id);
-//}
-//
-//int Equipe::quantidade_heroi(){
-//	return this->herois.size();
-//}
-//
-//void Equipe::aplica_dano_Equipe(const int id_heroi, const double dano){
-//
-//}
-//
-//void Equipe::aplica_bonus_ataque(){
-//}
-//
-//void Equipe::recupera_vida_Equipe(){
-//}
-//
-//void Equipe::troca_pedra(const int id_destinatario){
-//}
-//
-//std::set<int> Equipe::get_herois(){
-//	return this->herois;
-//}
-//
-//bool Equipe::get_Equipe_completo(){
-//	return this->esta_completo;
-//}
-//
-//int Equipe::get_num_herois_vivos(){
-//	return this->herois_vivos;
-//}
-//
-//int Equipe::get_id_portador_pedra(){
-//	return this->portador_pedra;
-//}
+int Equipe::realiza_ataque(){
+    mostra_equipe();
+    std::cout<< "\nMENU"<< std::endl;
+    std::cout<< "Selecione a Opção"<< std::endl;
+    std::cout<< "  Digite A  para escolher um herói para atacar"<< std::endl;
+    std::cout<< "  Digite M  para mover a pera para outro herói"<< std::endl;
+    bool aguardando_escolha = true;
+    char opcao;
+    int id;
+    opcao = toupper(opcao);
+    while(aguardando_escolha){
+        if (opcao == 'A') {
+            std::cout << "ID do heroi atacante: ";
+            std::cin >> id;
+            aguardando_escolha = false;
+            //return equipe_selecionada[id].realiza_ataque();
+        } else if (opcao == 'S') {
+            std::cout << "ID: ";
+            std::cin >> id;
+            aguardando_escolha = false;
+            //set_portador_pedra(id);
+            return -1;
+        } else {
+            std::cout << "Opção Invalida, Por favor digite novamente! ";
+            std::cin >> opcao;
+            opcao = toupper(opcao);
+        }
+    }
+}
