@@ -108,12 +108,12 @@ int Equipe::realiza_ataque(){
             std::cout << "ID do heroi atacante: ";
             std::cin >> id;
             aguardando_escolha = false;
-            //return equipe_selecionada[id].realiza_ataque();
+            return equipe_selecionada[id].realiza_ataque();
         } else if (opcao == 'S') {
             std::cout << "ID: ";
             std::cin >> id;
             aguardando_escolha = false;
-            //set_portador_pedra(id);
+            set_portador_pedra(id);
             return -1;
         } else {
             std::cout << "Opção Invalida, Por favor digite novamente! ";
@@ -121,4 +121,16 @@ int Equipe::realiza_ataque(){
             opcao = toupper(opcao);
         }
     }
+}
+
+void Equipe::sofre_ataque(int dano, int id_heroi){
+    equipe_selecionada[id_heroi].diminui_vida(dano);
+}
+
+void Equipe::set_portador_pedra(const int id_heroi){
+    this->portador_pedra = id_heroi;
+}
+
+bool Equipe::portador_pedra_esta_vivo(){
+
 }
