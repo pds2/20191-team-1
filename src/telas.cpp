@@ -61,6 +61,7 @@ void tela_como_jogar() {
     // =========MENU=============
     std::cout << "\nMENU" << std::endl;
     std::cout << "Aperte A - Avançar para o jogo" << std::endl;
+    std::cout << "Aperte S - Voltar para a Tela Inicial" << std::endl;
     std::cout << "Aperte Q - Para sair" << std::endl;
     std::cout << "\nOpção: ";
 }
@@ -84,7 +85,7 @@ void tela_dificuldade() {
     std::cout<< " F - Facil. A cada herói morto, recupere 10% dos pontos de vida"<< std::endl;
     std::cout<< " M - Medio. A cada herói morto, recupere 5% dos pontos de vida"<< std::endl;
     std::cout<< " D - Dificil. Não recupera pontos de vida!\n"<< std::endl;
-
+    std::cout << "\nOpção: ";
 }
 
 void tela_monta_equipe(){

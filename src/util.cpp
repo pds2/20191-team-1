@@ -11,7 +11,10 @@ void inicio_jogo() {
 		opcao = toupper(opcao);
 		if (opcao == 'C') {
             tela_como_jogar();
-		} else if (opcao == 'A') {
+		} else if (opcao == 'S'){
+		    tela_inicial();
+//            aguardando_opcao_valida = false;
+		}else if (opcao == 'A') {
 			std::cout << "Carregando seu jogo..." << std::endl;
 			aguardando_opcao_valida = false;
 		} else if (opcao == 'Q') {
