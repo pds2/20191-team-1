@@ -189,7 +189,6 @@ void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::stri
 
 }
 
-
 void tela_vitoria_jogador(){
     limpa_tela();
 
@@ -232,6 +231,46 @@ void tela_vitoria_thanos(){
 
 }
 
+void tela_morte_heroi_sem_pedra(std::string nome_heroi){
+    limpa_tela();
+
+    std::cout << "                                    @@@@@@@@                                   \n"
+                 "                                 @@@,,,,,,,@@                                  \n"
+                 "                                @@/@,,,,,,,,@                                  \n"
+                 "                                @&/@,,@,,,,,@                                  \n"
+                 "                                ,@/@,,,,,,,,@@                                 \n"
+                 "                                ,@/@,,,,,%@@@@@@@@@@@@@&@@@@@@@                \n"
+                 "               @@@@@@@@@@&(,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,@                \n"
+                 "             @@%,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,@&@@@,,,,,,,@                \n"
+                 "             @@,,,,,,,,,,,,,,,,,,,,,,,,@,(,,,,,,,,,,,,,,,,,,,,@                \n"
+                 "             #@&,,,,,,,,,,,,,,,,,,,,,,,,,,,,*.,,,,,,,,,,@@,,,,@                \n"
+                 "             .@@,,,,,,,,,,,*,,,,,,,,,,,,,,,.,,,,,,,,,,,,,,,,,,@                \n"
+                 "              @/@,,,,,,,,.,,,,,,,/@@@@@*,,,,,,@(%@@@@@&&%%%@@@                 \n"
+                 "              @@@@@@@@@@@@@@@@@&@@/@,,,,,,,,,,@@@@@@@@@@@@                     \n"
+                 "                                .&/@,,,,,,,,,,@@                               \n"
+                 "                                 @/@,,,,,,,,,,&@(                              \n"
+                 "                                 @/(,,,,,@,,,,,@@                              \n"
+                 "                                 &//*,,,,@,,,,,@@                              \n"
+                 "                                 @//@,,,,*,,,,,@@                              \n"
+                 "                                 /@/@,,,,,,,,,,,@                              \n"
+                 "                                  @/@,,,,,,,#,,,@@                             \n"
+                 "                                  @/@,,,,,,,.,,,@@                             \n"
+                 "                                  @/&,,,,,,,,,,,%&                             \n"
+                 "                           @@     @//&,,,,,,,,,,,@                             \n"
+                 "                          @,@    @@@/@,,,*@,,,@@,@@  @@@     @@@               \n"
+                 "                   @@@   @,,,@@@,,,(/@,@,,,@,@,,&@@@/,,@( @@,,@%               \n"
+                 "                    @@@@@(,,,*,,,,,,@@,,,,,,@(,,,,*,,,,@@(,,,@@                \n"
+                 "                     @%,@,,,,,,,,,,,,,,,,@*,,,,,,,,,,,,,,,,,/@                 \n"
+                 "                                                                             " << std::endl;
+
+    std::cout << "                Oh não! " << nome_heroi << " morreu em batalha!\n" << std::endl;
+
+}
+
+
+
+
+
 
 
 //void tela_personagem(){
@@ -245,24 +284,3 @@ void tela_vitoria_thanos(){
 //    std::cout<< "Digite o numero do ID + D para ver a destrição do personagem"<< std::endl;
 //
 //}
-//
-//void tela_resultado_ataque_jogador(){
-//    system("clear");
-//}
-//
-//void tela_descricao_persoangem(int id){
-//    system("clear");
-//}
-//
-//void tela_morte_heroi_sem_pedra(){
-//    system("clear");
-//}
-//
-//void tela_batalha(){
-//    system("clear");
-//}
-//
-//void tela_vitoria_thanos(){
-//    system("clear");
-//}
-//
