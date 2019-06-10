@@ -3,6 +3,7 @@
 // --------------------------------------------------------------------------------------------
 #include <map>
 #include <iostream>
+#include "util.h"
 #include "telas.h"
 #include "heroi.h"
 #include "constants.h"
@@ -11,13 +12,6 @@
 
 
 //------------FUNCTIONS---------------
-
-void limpa_tela() {
-    int clear = system("clear");
-    if(clear != 0){
-        std::cout<<"Algo de errado não está certo!"<<std::endl;
-    }
-}
 
 void tela_inicial(){
     limpa_tela();

@@ -42,7 +42,7 @@ void Partida::turno_jogador() {
     int dano = equipe.realiza_ataque();
     thanos->sofre_ataque(dano);
     if(thanos->get_pt_vida() <= 0) {
-        telas.tela_vitoria_jogador();
+        tela_vitoria_jogador();
         set_esta_ativo(false);
     }
 }
@@ -52,7 +52,7 @@ void Partida::turno_thanos() {
     int target = gera_inteiro(1, 5);
     equipe.sofre_ataque(target, dano);
     if(equipe.portador_pedra_esta_vivo() == false){
-        telas.tela_vitoria_thanos();
+        tela_vitoria_thanos();
         set_esta_ativo(false);
     }
 }
