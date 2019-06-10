@@ -5,15 +5,16 @@ void inicio_jogo() {
 	tela_inicial();
 	bool aguardando_opcao_valida = true;
 	while(aguardando_opcao_valida) {
-		int opcao;
-		std::cout<<"Sua escolha: ";
+		char opcao;
+		std::cout<<"Opção: ";
 		std::cin>>opcao;
-		if (opcao == 2) {
+		opcao = toupper(opcao);
+		if (opcao == 'C') {
             tela_como_jogar();
-		} else if (opcao == 1) {
+		} else if (opcao == 'A') {
 			std::cout << "Carregando seu jogo..." << std::endl;
 			aguardando_opcao_valida = false;
-		} else if (opcao == 3) {
+		} else if (opcao == 'Q') {
 			aguardando_opcao_valida = false;
             exit (EXIT_SUCCESS);
 		} else{
