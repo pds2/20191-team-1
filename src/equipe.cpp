@@ -6,6 +6,7 @@
 #include "heroi.h"
 #include "telas.h"
 #include "constants.h"
+#include "util.h"
 
 std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
@@ -28,7 +29,6 @@ Equipe::Equipe(){
 }
 
 void Equipe::monta_equipe(Equipe& equipe){
-
     int id;
     char opcao;
     while(equipe_selecionada.size() < 5) {
@@ -41,11 +41,12 @@ void Equipe::monta_equipe(Equipe& equipe){
             std::cout << "ID: ";
             std::cin >> id;
             std::cout << "Adiciona heroi" << std::endl;
-             this->adiciona_heroi(id);
+            this->adiciona_heroi(id);
         } else if (opcao == 'R') {
             std::cout << "ID: ";
             std::cin >> id;
             std::cout << "Remove heroi" << std::endl;
+            this->remove_heroi(id);
         } 
     }
 }
@@ -61,11 +62,10 @@ void Equipe::adiciona_heroi(const int id_heroi){
 }
 
 void Equipe::mostra_equipe() {
-     std::cout<<"Seus Herois escolhidos são: "<<std::endl;
+     std::cout<<"====== Seus Herois Ativos ======= : "<<std::endl;
     for(int i = 0; i < equipe_selecionada.size(); i++){
         if(equipe_selecionada[i].get_vivo() == true){
-            std::cout<<"Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;
-            std::cout<<"id: "<< i+1 << std::endl;
+            std::cout<<"Slot: "<< i+1<<" Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;
             std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
             std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
             std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
@@ -74,6 +74,7 @@ void Equipe::mostra_equipe() {
 }
 
 int Equipe::realiza_ataque(){
+    limpa_tela();
     mostra_equipe();
     std::cout<< "\nMENU"<< std::endl;
     std::cout<< "Selecione a Opção"<< std::endl;
@@ -103,14 +104,27 @@ int Equipe::realiza_ataque(){
     }
 }
 
-void Equipe::sofre_ataque(int dano, int id_heroi){
-    equipe_selecionada[id_heroi].diminui_vida(dano);
+int Equipe::sofre_ataque(int dano){
+    int alvo; 
+    do{
+        alvo = gera_inteiro(1,5);
+    }while (equipe_selecionada[alvo].get_vivo());
+    equipe_selecionada[alvo].diminui_vida(dano);
+    return alvo;
 }
 
 void Equipe::set_portador_pedra(const int id_heroi){
     this->portador_pedra = id_heroi;
 }
 
+std::string Equipe::get_nome_heroi(const int id_heroi){
+    return equipe_selecionada[id_heroi].get_nome();
+}
+
 bool Equipe::portador_pedra_esta_vivo(){
     return equipe_selecionada[portador_pedra].get_vivo();
+}
+
+void Equipe::remove_heroi(const int id_heroi){
+      equipe_selecionada.erase (equipe_selecionada.begin()+id_heroi);
 }

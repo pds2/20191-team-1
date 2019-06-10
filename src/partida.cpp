@@ -49,8 +49,8 @@ void Partida::turno_jogador() {
 
 void Partida::turno_thanos() {
     int dano = thanos->realiza_ataque();
-    int target = gera_inteiro(1, 5);
-    equipe.sofre_ataque(target, dano);
+    int target = equipe.sofre_ataque(dano);
+    tela_resultado_ataque_thanos(equipe.get_nome_heroi(target), dano, "Soco");
     if(equipe.portador_pedra_esta_vivo() == false){
         tela_vitoria_thanos();
         set_esta_ativo(false);
