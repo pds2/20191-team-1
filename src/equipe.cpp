@@ -63,7 +63,7 @@ void Equipe::adiciona_heroi(const int id_heroi){
 
 void Equipe::mostra_equipe() {
      std::cout<<"====== Seus Herois Ativos ======= : "<<std::endl;
-    for(int i = 0; i < equipe_selecionada.size(); i++){
+    for(unsigned int i = 0; i < equipe_selecionada.size(); i++){
         if(equipe_selecionada[i].get_vivo() == true){
             std::cout<<"Slot: "<< i+1<<" Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;
             std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();

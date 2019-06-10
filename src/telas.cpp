@@ -200,7 +200,7 @@ void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::stri
                  "                                             +s`                                                    " << std::endl;
 
     std::cout << "\n Thanos atacou "<< heroi<< " com " << nome_ataque << " causando " << dano_causado<< " de dano! \n"<<std::endl;
-
+    pause();
 }
 
 void tela_vitoria_jogador(){

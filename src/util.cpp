@@ -28,3 +28,9 @@ void limpa_tela() {
         std::cout<<"Algo de errado não está certo!"<<std::endl;
     }
 }
+
+void pause() {
+  std::cout << std::endl << "Digite 1 para continuar...";
+  int aux;
+  std::cin>>aux;
+}

@@ -8,5 +8,6 @@
 
 void inicio_jogo();
 void limpa_tela();
+void pause() ;
 
 #endif //INC_20191_TEAM_1_CONSTANTS_H
