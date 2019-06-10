@@ -2,29 +2,21 @@
 #include "heroi.h"
 #include "constants.h"
 
-
-double BONUS_ATAQUE = 0.05;
-
-// Metodo se repete em duas classes da mesma forma
-/*void Heroi::diminui_vida(const unsigned int dano_recebido){
-    this->pt_vida -= dano_recebido;
-
-    if (this->pt_vida <=0){
-        this->vivo = false;
-    }
-}*/
-
 Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
-    Personagem( pt_vida, pt_ataque, pt_defesa, nome)
-{
-    this->bonus_ataque = BONUS_ATAQUE;
+    Personagem( pt_vida, pt_ataque, pt_defesa, nome){}
+
+
+const int Heroi::realiza_ataque() {
+    int dado = gera_inteiro(1, 6);
+    int dano = get_pt_ataque();
+    return dado*dano;
 }
 
-
-const int Heroi::realiza_ataque(){
-    //TODO
-    double dano_realizado = 10.0;
-    return dano_realizado;
+void Heroi::diminui_vida(const unsigned int dano_recebido) {
+    pt_vida = get_pt_vida() - dano_recebido;
+    if(pt_vida <= 0) {
+        _vivo = false;  
+    }
 }
 
 std::string Heroi::get_nome() const{
@@ -45,4 +37,4 @@ int Heroi::get_pt_ataque() const{
 
 int Heroi::get_pt_defesa() const{
     return this->pt_defesa;
-}
+}    

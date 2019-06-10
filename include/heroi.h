@@ -2,6 +2,7 @@
 #define HEROI_H
 
 #include <string>
+#include "randomize.h"
 #include "personagem.h"
 
 class Heroi : public Personagem {

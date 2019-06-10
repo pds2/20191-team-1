@@ -54,7 +54,6 @@ void Equipe::monta_equipe(Equipe& equipe){
             std::cout << "ID: ";
             std::cin >> id;
             std::cout << "Consulta heroi" << std::endl;
-            // tela_consulta(id);
         } else if (opcao == 'S') {
             std::cout << "ID: ";
             std::cin >> id;

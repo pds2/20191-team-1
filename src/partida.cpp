@@ -65,6 +65,7 @@ void Partida::set_dificuldade() {
             this->dificuldade = opcao;
         }
     }
+    std::cout<<"Você escolheu a dificuldade: "<<this->dificuldade<<std::endl;
 }
 
 
