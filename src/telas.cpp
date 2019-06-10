@@ -133,6 +133,63 @@ void mostra_equipe(std::set<Heroi> equipe) {
     }
 }
 
+void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::string nome_ataque){
+    limpa_tela();
+
+    std::cout << "\n"
+                 "                                                          .y                                         \n"
+                 "                                                        +mN-                                        \n"
+                 "                              -y:                     .hh`oy                                        \n"
+                 "                              `Myds-                 /m+  .N`                                       \n"
+                 "                               d+ :yd+`            `yd.    d+                                       \n"
+                 "                               sh   `+dh/`        :ms      +d                          .            \n"
+                 "                               /N`     -sms-    `sm:       `N.                   `:+syN/            \n"
+                 "                               .M/        /hmo.-mh`         hs             `-+syyo/. hs             \n"
+                 "                                my          .omN/           :N        ./ohhyo:`     yh              \n"
+                 "                                hN             ``-:-.        N/ .:oydds+-`         om`              \n"
+                 "                                +M-          .oo+:.-:++/`    sNmhs/.              /N-               \n"
+                 "                                -Ms         os.        .+o+. `.                  :N/                \n"
+                 "                                `Nm      `+y:      -      `:+++-                .No                 \n"
+                 "          -dmsssssssssyyyyyyyyhhhhh`   -sy:        s.         `/h.             `mh                  \n"
+                 "           `om+`                     :hy-      :++..m`+s/       :d+++/:.      `dm`                  \n"
+                 "             .hNo`                 /ds.          `+yNmo         :d+//:.:+/    hN.                   \n"
+                 "               :mNs`             :ds.              .My          ho:`     -s  oMNyo/-`               \n"
+                 "   oyhyyyyysssoosNMMy////::::---hy.               `dMo         -s         s.  `.:+sydmdyo/-`        \n"
+                 "     `````..-----::::///+++++oMM/                 hMMd         o-         //          `-:+syhhs+:.  \n"
+                 "                             .M+                 -MMMM/        h`         s.                  `:hms.\n"
+                 "                             -M.                 +MMMMdo`      ms++++++oso.                 -oo+.   \n"
+                 ":+oyyyssssssssoooooooo+/:.    m-                 oMMm. .oo/:::/s        `/o             `/oo/`      \n"
+                 "-/:::---------------.`        :h                 dMM/     `...`           o.         .+oo-          \n"
+                 "  `.-----::::::-----..`      . ss              `yMMM/                     +-      :oo/`             \n"
+                 "                             o+ //           -oNMMMMNo:-....```          `y   .+so:                 \n"
+                 "                             `N         `-+yhy++MMMMNo/://///+++++++++o+os.  .hMs`                  \n"
+                 "                              N`        --`   -hdMMM/                  :o      .yNs`                \n"
+                 "                             `N`             -/ :MMM:                   s`       `oNs`              \n"
+                 "                             /N                `dyMMd-`                 y          `+ms.            \n"
+                 "                             ds               `h: NMy+/++////////-`   `o-             /ds.          \n"
+                 "                            /M.               o.  ds            `.:+sy+`                :hs.        \n"
+                 "  `:/+++ooooossssssssoooo+/:+M:                   hs                 h                    -ys.      \n"
+                 "  :o++//::::::------::::mMd//+ds-                  /my+:.           -y  `....------:::://///oNs.    \n"
+                 "                       oMm`    -oyys:`            `+h/`-omh++++`   .d`  oMNdhhhysssoo++///::--.`    \n"
+                 "                      -Mm.         ./osso:.     `-:`     /o/- `   /y.   `Mm                         \n"
+                 "                     `mN.               `-/ooooooosssso+////+//+++-      hM-                        \n"
+                 "                     hN-            `-+sd+                `              :Mo                        \n"
+                 "                    +N:        `:+ymMNhsmN`              sMd+`            Nd                        \n"
+                 "                   -N:    .:ohmNds+:`   :Mo            .dN/:yNh/`         oM`                       \n"
+                 "                  `m/./shmhs+:`          yN`          /Nh.    :ymy:       .M/                       \n"
+                 "                  ymhs+:`                .Ny        `yN+         :yms-     dh                       \n"
+                 "                  `                       +M.      .md.             :ydo.  /M`                      \n"
+                 "                                           mh     +No                  :yh+.N:                      \n"
+                 "                                           :M-  `yd-                      :yNy                      \n"
+                 "                                            yd -mo                           -                      \n"
+                 "                                            `Nyd-                                                   \n"
+                 "                                             +s`                                                    " << std::endl;
+
+    std::cout << "\n Thanos atacou "<< heroi<< " com " << nome_ataque << " causando " << dano_causado<< " de dano! \n"<<std::endl;
+
+}
+
+
 void tela_vitoria_jogador(){
     limpa_tela();
 
