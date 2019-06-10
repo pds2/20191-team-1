@@ -27,7 +27,6 @@ void Partida::set_esta_ativo(bool esta_ativo){
 
 void Partida::roda_partida() {
     this->equipe.monta_equipe(this->equipe);
-
     while(get_esta_ativo() == true) {
         if(get_turno() == true){
             turno_jogador();

@@ -15,8 +15,8 @@ const int Heroi::realiza_ataque() {
 
 void Heroi::diminui_vida(const unsigned int dano_recebido) {
     pt_vida = get_pt_vida() - dano_recebido;
-    if(pt_vida < 0) {
-        _vivo = false;  
+    if(pt_vida <= 0) {
+        this->vivo = false;  
     }
 }
 

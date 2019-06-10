@@ -11,9 +11,9 @@ Thanos::Thanos(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
 const int Thanos::realiza_ataque(){
 
     std::map<int, std::pair<int, std::string>> ataque_thanos = {
-            {1, std::make_pair(05, "Soco de raspão")},
-            {2, std::make_pair(10, "Soco na cara")},
-            {3, std::make_pair(20, "Super luva do poder")},
+            {1, std::make_pair(80, "Soco de raspão")},
+            {2, std::make_pair(80, "Soco na cara")},
+            {3, std::make_pair(80, "Super luva do poder")},
     };
 
     //1 - decidir qual ataque

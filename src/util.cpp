@@ -1,7 +1,6 @@
 #include "util.h"
 
 void inicio_jogo() {
-
 	tela_inicial();
 	bool aguardando_opcao_valida = true;
 	while(aguardando_opcao_valida) {
