@@ -53,6 +53,9 @@ void Partida::turno_thanos() {
     int dano = thanos->realiza_ataque();
     int target = equipe.sofre_ataque(dano);
     tela_resultado_ataque_thanos(equipe.get_nome_heroi(target), dano, "Soco");
+    if(equipe.get_status_heroi(target) == false){
+        tela_morte_heroi_sem_pedra(equipe.get_nome_heroi(target));
+    }
     if(equipe.portador_pedra_esta_vivo() == false){
         tela_vitoria_thanos();
         set_esta_ativo(false);

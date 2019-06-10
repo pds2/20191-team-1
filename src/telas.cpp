@@ -276,24 +276,6 @@ void tela_morte_heroi_sem_pedra(std::string nome_heroi){
                  "                                                                             " << std::endl;
 
     std::cout << "                Oh não! " << nome_heroi << " morreu em batalha!\n" << std::endl;
-
+    pause();
 }
 
-
-
-
-
-
-
-
-//void tela_personagem(){
-//    system("clear");
-//    std::cout<< "Descrição dos personagens e seus respectivos IDs"<< std::endl;
-//    std::cout<< "1 - Capitã Marvel"<< std::endl;
-//    std::cout<< "2 - Thor"<< std::endl;
-//    std::cout<< "3 - Loki"<< std::endl;
-//    std::cout<< "Digite o numero do ID + A para adicionar na sua party"<< std::endl;
-//    std::cout<< "Digite o numero do ID + R para remover da sua party"<< std::endl;
-//    std::cout<< "Digite o numero do ID + D para ver a destrição do personagem"<< std::endl;
-//
-//}

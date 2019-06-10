@@ -24,6 +24,8 @@ public:
 	void set_portador_pedra(const int id_heroi);
 	bool portador_pedra_esta_vivo();
 	std::string get_nome_heroi(const int id_heroi);
+	bool get_status_heroi(const int id_heroi);
+
 
 };
 

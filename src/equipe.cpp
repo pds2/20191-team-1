@@ -51,6 +51,7 @@ void Equipe::monta_equipe(Equipe& equipe){
             this->remove_heroi(id);
         } 
     }
+    this->portador_pedra = gera_inteiro(0,4);
 }
 
 void Equipe::adiciona_heroi(const int id_heroi){
@@ -111,8 +112,8 @@ int Equipe::realiza_ataque(){
 int Equipe::sofre_ataque(int dano){
     int alvo; 
     do{
-        alvo = gera_inteiro(1,5);
-    }while (equipe_selecionada[alvo].get_vivo());
+        alvo = gera_inteiro(0,4);
+    }while (equipe_selecionada[alvo].get_vivo() == false);
     equipe_selecionada[alvo].diminui_vida(dano);
     return alvo;
 }
@@ -130,5 +131,9 @@ bool Equipe::portador_pedra_esta_vivo(){
 }
 
 void Equipe::remove_heroi(const int id_heroi){
-      equipe_selecionada.erase (equipe_selecionada.begin()+id_heroi);
+      equipe_selecionada.erase(equipe_selecionada.begin()+id_heroi);
+}
+
+bool Equipe::get_status_heroi(const int id_heroi){
+    return equipe_selecionada[id_heroi].get_vivo();
 }

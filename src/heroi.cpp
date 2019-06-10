@@ -1,5 +1,6 @@
 #include <string>
 #include "heroi.h"
+#include "telas.h"
 #include "constants.h"
 
 Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
@@ -14,7 +15,7 @@ const int Heroi::realiza_ataque() {
 
 void Heroi::diminui_vida(const unsigned int dano_recebido) {
     pt_vida = get_pt_vida() - dano_recebido;
-    if(pt_vida <= 0) {
+    if(pt_vida < 0) {
         _vivo = false;  
     }
 }

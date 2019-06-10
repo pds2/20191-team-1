@@ -15,7 +15,6 @@ private:
     bool _vivo;
     double bonus_ataque;
 
-
 public:
     Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome);
     void diminui_vida(const unsigned int dano_recebido);
