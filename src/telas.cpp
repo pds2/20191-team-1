@@ -29,8 +29,8 @@ void tela_inicial(){
              << std::endl;
 
     std::cout<< "MENU"<< std::endl;
-    std::cout<< "Aperte 1 - Como jogar"<< std::endl;
-    std::cout<< "Aperte 2 - Iniciar o jogo"<< std::endl;
+    std::cout<< "Aperte 1 - Iniciar o jogo"<< std::endl;
+    std::cout<< "Aperte 2 - Como jogar"<< std::endl;
     std::cout<< "Aperte 3 - Sair"<< std::endl;
     std::cout<< "\nOpção: ";
 
@@ -63,8 +63,8 @@ void tela_como_jogar() {
 
     // =========MENU=============
     std::cout << "\nMENU" << std::endl;
-    std::cout << "Aperte 1 - Voltar à Tela Inicial" << std::endl;
-    std::cout << "Aperte 2 - Sair" << std::endl;
+    std::cout << "Aperte 1 - Iniciar Jogo" << std::endl;
+    std::cout << "Aperte 3 - Sair" << std::endl;
     std::cout << "\nOpção: ";
 }
 

@@ -1,16 +1,16 @@
 #include "util.h"
 
 void inicio_jogo() {
+
 	tela_inicial();
 	bool aguardando_opcao_valida = true;
 	while(aguardando_opcao_valida) {
 		int opcao;
 		std::cout<<"Sua escolha: ";
 		std::cin>>opcao;
-		if (opcao == 1) {
+		if (opcao == 2) {
             tela_como_jogar();
-            aguardando_opcao_valida = false;
-		} else if (opcao == 2) {
+		} else if (opcao == 1) {
 			std::cout << "Carregando seu jogo..." << std::endl;
 			aguardando_opcao_valida = false;
 		} else if (opcao == 3) {

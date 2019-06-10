@@ -132,5 +132,5 @@ void Equipe::set_portador_pedra(const int id_heroi){
 }
 
 bool Equipe::portador_pedra_esta_vivo(){
-
+    return equipe_selecionada[portador_pedra].get_vivo();
 }
