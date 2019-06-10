@@ -238,7 +238,7 @@ void tela_vitoria_thanos(){
                  "                                                                                                                                                                                                 \n"
                  "                                                                                                                                                                                                 \n"
                  "                                                                                                                                                                                                 " << std::endl;
-    std::cout << "Você não foi capaz de enganar Thanos... e perdeu todos os seus heróis na batalha." << std::endl;
+    std::cout << "Você não foi capaz de enganar Thanos... e perdeu a última pedra do infinito." << std::endl;
     std::cout << "Que tal tentar novamente?\n\n" << std::endl;
 
 }
