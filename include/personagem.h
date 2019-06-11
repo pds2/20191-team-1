@@ -1,5 +1,6 @@
 #ifndef PERSONAGEM_H
 #define PERSONAGEM_H
+
 #include <string>
 
 //=======================
@@ -17,7 +18,7 @@ protected:
 
 public:
     Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string nome);
-    ~Personagem();
+//    ~Personagem();
     int get_pt_vida();
     int get_pt_ataque();
     int get_pt_defesa();
