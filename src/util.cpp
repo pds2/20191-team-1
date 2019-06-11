@@ -8,20 +8,29 @@ void inicio_jogo() {
 		std::cout<<"Opção: ";
 		std::cin>>opcao;
 		opcao = toupper(opcao);
-		if (opcao == 'C') {
-            tela_como_jogar();
-		} else if (opcao == 'S'){
-		    tela_inicial();
-//            aguardando_opcao_valida = false;
-		}else if (opcao == 'A') {
-			std::cout << "Carregando seu jogo..." << std::endl;
-			aguardando_opcao_valida = false;
-		} else if (opcao == 'Q') {
-			aguardando_opcao_valida = false;
-            exit (EXIT_SUCCESS);
-		} else{
-			std::cout<<std::endl<<"Desculpe, esta opção é invalida!"<<std::endl;
+		
+		try
+		{
+			if (opcao == 'C') {
+				tela_como_jogar();
+			} else if (opcao == 'S'){
+				tela_inicial();
+	//            aguardando_opcao_valida = false;
+			}else if (opcao == 'A') {
+				std::cout << "Carregando seu jogo..." << std::endl;
+				aguardando_opcao_valida = false;
+			} else if (opcao == 'Q') {
+				aguardando_opcao_valida = false;
+				exit (EXIT_SUCCESS);
+			} else{
+				throw std::invalid_argument("Opção Inválida");
+			}
+			
+		}catch(const std::invalid_argument& e){
+            std::cout<<std::endl<<"Desculpe, esta opção é invalida!"<<std::endl;
+            inicio_jogo();
 		}
+		
 	}
 }
 
