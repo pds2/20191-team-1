@@ -3,16 +3,21 @@
 
 using namespace  std;
 
-TEST_CASE("1 - [Heroi] - Construtor") {
+Partida partida;
+
+TEST_CASE("1 - [Partida] - Construtor") {
+
+    CHECK_EQ(partida.get_turno(), true);
+    CHECK_EQ(partida.get_esta_ativo(), true);
 }
 
-TEST_CASE("2 - [Heroi] - Getters") {
-}
+TEST_CASE("2 - [Partida] - Setters and Getters") {
+    partida.set_turno(false);
+    CHECK_EQ(partida.get_turno(), false);
 
-TEST_CASE("3 - [Heroi] - Setters") {
-}
+    partida.set_esta_ativo(true);
+    CHECK_EQ(partida.get_esta_ativo(), true);
 
-TEST_CASE("4 - [Heroi] - Roda partida") {
 }
 
 //Partida::Partida();
