@@ -37,6 +37,9 @@ void Equipe::monta_equipe(Equipe& equipe){
         std::cout<< "\nOpção: ";
         std::cin>>opcao;
         opcao = toupper(opcao);
+        
+        try{
+        
         if (opcao == 'S') {
             std::cout << "ID: ";
             std::cin >> id;
@@ -49,6 +52,13 @@ void Equipe::monta_equipe(Equipe& equipe){
             std::cin >> id;
             std::cout << "Remove heroi" << std::endl;
             this->remove_heroi(id);
+        }else{
+            throw std::invalid_argument("Opção Inválida");
+        }
+
+        }catch(const std::invalid_argument& e){
+            std::cout<<"Opção invalida, favor digitar uma opção valida!"<<std::endl;
+            std::cin>>opcao;
         } 
     }
     this->portador_pedra = gera_inteiro(0,4);
@@ -92,20 +102,26 @@ int Equipe::realiza_ataque(){
     int id;
     std::cin >> opcao;
     opcao = toupper(opcao);
+
     while(aguardando_escolha){
-        if (opcao == 'A') {
-            std::cout << "ID do heroi atacante: ";
-            std::cin >> id;
-            aguardando_escolha = false;
-            return equipe_selecionada[id].realiza_ataque();
-        } else if (opcao == 'S') {
-            std::cout << "ID: ";
-            std::cin >> id;
-            aguardando_escolha = false;
-            set_portador_pedra(id);
-            return -1;
-        } else {
-            std::cout << "Opção Invalida, Por favor digite novamente! ";
+        try{
+            if (opcao == 'A') {
+                std::cout << "ID do heroi atacante: ";
+                std::cin >> id;
+                aguardando_escolha = false;
+                return equipe_selecionada[id].realiza_ataque();
+            } else if (opcao == 'S') {
+                std::cout << "ID: ";
+                std::cin >> id;
+                aguardando_escolha = false;
+                set_portador_pedra(id);
+                return -1;
+            } else {
+                throw std::invalid_argument("Opção Inválida");
+            }
+
+        }catch(const std::invalid_argument& e){
+            std::cout<<"Opção invalida, favor digitar uma opção valida!"<<std::endl;
             std::cin >> opcao;
             opcao = toupper(opcao);
         }
