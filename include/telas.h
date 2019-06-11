@@ -10,7 +10,7 @@
 
 void tela_inicial();
 void tela_como_jogar();
-char tela_dificuldade();
+void tela_dificuldade();
 void tela_monta_equipe();
 void mostra_equipe(std::set<Heroi> equipe);
 void tela_vitoria_jogador();

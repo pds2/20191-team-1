@@ -1,23 +1,6 @@
 #include "partida.h"
 #include "telas.h"
 
-
-void Partida::set_dificuldade(){
-    char opcao;
-    Telas telas;
-
-    try{
-        opcao = telas.tela_dificuldade();
-        std::cout << "você digitou: " << opcao << std::endl;
-        
-        if (opcao != 'f' && opcao != 'm' && opcao != 'd')  
-            throw std::invalid_argument("Opção Inválida");
-        
-    }catch(const std::invalid_argument& e){
-        std::cout << "Por favor, digite uma opção válida" << std::endl; //Não ta aparecendo esse cout por causa do system("clear")
-        Partida::set_dificuldade();
-    }
-
 Partida::Partida(){
     this->turno = true;
     this->esta_ativo = true;
@@ -82,20 +65,23 @@ char Partida::get_dificuldade() {
 }
 
 void Partida::set_dificuldade() {
-    bool aguardando_opcao_valida = true;
     char opcao;
+
     tela_dificuldade();
-    while(aguardando_opcao_valida == true){
+
+    try{
         std::cin>>opcao;
         opcao = toupper(opcao);
+        std::cout << "você digitou: " << opcao << std::endl;
+
         if(opcao != 'F' && opcao != 'M' && opcao != 'D'){
             std::cout<<"Opção invalida, favor digitar uma opção valida!"<<std::endl;
-        }else {
-            aguardando_opcao_valida = false;
-            this->dificuldade = opcao;
+            throw std::invalid_argument("Opção Inválida");
         }
+    }catch(const std::invalid_argument& e){
+        Partida::set_dificuldade();
     }
+
+    this->dificuldade = opcao;
     std::cout<<"Você escolheu a dificuldade: "<<this->dificuldade<<std::endl;
 }
-
-
