@@ -1,32 +1,56 @@
 #include "doctest.h"
-#include <iostream>
+#include <cmath>
 #include "heroi.h"
 
-TEST_CASE("1 - [Heroi] - Construtor") {
-   /* Heroi heroi = Heroi(100, 10, 80,"Heroi1");
-    CHECK_EQ(heroi.get_pt_vida(), 100);
-    CHECK_EQ(heroi.get_pt_ataque(), 10);
-    CHECK_EQ(heroi.get_pt_defesa(), 80);*/
-    std::cout << "Saidaaa";
+#define VIDA 100
+#define ATAQUE 10
+#define DEFESA 80
+#define NOME "HEROI"
+#define VIVO true
+
+TEST_CASE("1 - [Heroi] - Construtor/Getters ") {
+    Heroi heroi = Heroi(100, 10, 80, "Heroi1");
+
+    CHECK_EQ(heroi.get_pt_vida(), VIDA);
+    CHECK_EQ(heroi.get_pt_ataque(), ATAQUE);
+    CHECK_EQ(heroi.get_pt_defesa(), DEFESA);
+    CHECK_EQ(heroi.get_vivo(), VIVO);
 }
 
-//TEST_CASE("2 - [Heroi] - Getters") {
-//}
-//
-//TEST_CASE("3 - [Heroi] - Diminui vida") {
-//}
-//
-//TEST_CASE("4 - [Heroi] - Realiza ataque") {
-//}
+TEST_CASE("2 - [Heroi] - Construtor/THROWS") {
+    CHECK_THROWS(Heroi(-100, 10, 80, "HEROI"));
+    CHECK_THROWS(Heroi(100, -10, 80, "HEROI"));
+    CHECK_THROWS(Heroi(100, 10, -80, "HEROI"));
+}
 
-//Heroi::Heroi(int pt_vida, int pt_ataque, int defesa);
-    
-//void Heroi::diminui_vida(const int dano_recebido);
+TEST_CASE("3 - [Heroi] - Diminui vida") {
+	Heroi heroi = Heroi(100, 10, 80, "HEROI");
+	heroi.diminui_vida(10);
 
-//const int Heroi::realiza_ataque();
+    CHECK_EQ(heroi.get_pt_vida(), VIDA-10);
+}
 
-//int Heroi::get_ataque_com_bonus();
+TEST_CASE("4 - [Heroi] - Diminui vida/Negativo") {
+	Heroi heroi = Heroi(100, 10, 80, "HEROI");
 
-//bool Heroi::get_vivo();
+    CHECK_THROWS(heroi.diminui_vida(-10));
+}
 
+TEST_CASE("5 - [Heroi] - Realiza ataque") {
+	Heroi heroi = Heroi(100, 10, 80, "HEROI");
 
+    CHECK_EQ(heroi.realiza_ataque(), ATAQUE);
+}
+
+TEST_CASE("6 - [Heroi] - Ataque com bonus") {
+	Heroi heroi = Heroi(100, 10, 80, "HEROI");
+
+    CHECK_EQ(heroi.get_ataque_com_bonus(), ceil(ATAQUE*1.5));
+}
+
+TEST_CASE("7 - [Heroi] - Heroi morto") {
+	Heroi heroi = Heroi(100, 10, 80, "HEROI");
+	heroi.diminui_vida(heroi.get_pt_vida());
+
+    CHECK_EQ(heroi.get_vivo(),!VIVO);
+}

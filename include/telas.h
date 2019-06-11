@@ -7,7 +7,6 @@
 #include <set>
 #include "heroi.h"
 
-
 void tela_inicial();
 void tela_como_jogar();
 void tela_dificuldade();

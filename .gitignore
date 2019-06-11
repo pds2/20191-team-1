@@ -4,5 +4,9 @@
 *.o
 *.exe
 *.out
+*.gcno
+*.gcov
+*.gcda
+*.project
 bin/*
 build/*

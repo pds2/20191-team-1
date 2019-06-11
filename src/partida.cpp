@@ -1,4 +1,6 @@
 #include "partida.h"
+#include "thanos.h"
+#include "equipe.h"
 #include "telas.h"
 
 Partida::Partida(){
@@ -65,7 +67,7 @@ char Partida::get_dificuldade() {
 }
 
 void Partida::set_dificuldade() {
-    char opcao;
+    char opcao = '\0';
 
     tela_dificuldade();
 

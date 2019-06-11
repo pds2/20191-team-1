@@ -8,6 +8,7 @@
 #include "constants.h"
 #include "util.h"
 
+//Importar de arquivos - Sugestao - Ewerton
 std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
             {2,  dado_heroi(70,30,5,"Sem Historia no momento", "Capitão América")},
@@ -78,7 +79,7 @@ void Equipe::mostra_equipe() {
      std::cout<<"====== Seus Herois Ativos ======= : "<<std::endl;
     for(unsigned int i = 0; i < equipe_selecionada.size(); i++){
         if(equipe_selecionada[i].get_vivo() == true){
-            std::cout<<"Slot: "<< i+1<<" Nome: "<<equipe_selecionada[i].get_nome()<<std::endl;
+            std::cout<<"Slot: "<< i+1<<" Nome: "<<equipe_selecionada[i].get_name()<<std::endl;
             std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
             std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
             std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
@@ -86,7 +87,7 @@ void Equipe::mostra_equipe() {
         }
     }
     if(equipe_selecionada.size() >= 5){
-        std::cout<<"O portador da pedra é "<<equipe_selecionada[portador_pedra -1].get_nome() <<std::endl;
+        std::cout<<"O portador da pedra é "<<equipe_selecionada[portador_pedra -1].get_name() <<std::endl;
     }
 }
 
@@ -130,7 +131,7 @@ int Equipe::realiza_ataque(){
 }
 
 int Equipe::sofre_ataque(int dano){
-    int alvo; 
+    int alvo = 0; 
     do{
         alvo = gera_inteiro(0,4);
     }while (equipe_selecionada[alvo].get_vivo() == false);
@@ -142,8 +143,13 @@ void Equipe::set_portador_pedra(const int id_heroi){
     this->portador_pedra = id_heroi;
 }
 
+//Este metodo é realmente necessario ?
 std::string Equipe::get_nome_heroi(const int id_heroi){
-    return equipe_selecionada[id_heroi].get_nome();
+    return equipe_selecionada[id_heroi].get_name();
+}
+
+bool Equipe::get_equipe_completa(){
+	return this->esta_completo;
 }
 
 bool Equipe::portador_pedra_esta_vivo(){

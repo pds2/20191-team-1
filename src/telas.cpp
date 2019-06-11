@@ -8,8 +8,6 @@
 #include "heroi.h"
 #include "constants.h"
 
-
-
 void tela_inicial(){
     limpa_tela();
     std::cout << "\n"

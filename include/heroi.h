@@ -17,13 +17,11 @@ private:
 
 public:
     Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome);
-    void diminui_vida(const unsigned int dano_recebido);
+    
+    // polimorfismos
     const int realiza_ataque();
-    int get_pt_vida() const;
-    int get_pt_ataque() const;
-    int get_pt_defesa() const;
-    std::string get_nome() const;
-    bool get_vivo() const;
+    int get_ataque_com_bonus();
+
 };
 
 #endif
