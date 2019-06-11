@@ -8,6 +8,7 @@
 #define ADD_HEROI2 -1
 #define TIME_COMPLETO false
 
+/*
 TEST_CASE("1 - [Equipe] - Construtor/Getters ") {
     Equipe equipe = Equipe();
 
@@ -51,7 +52,7 @@ TEST_CASE("6 - [Equipe] - Remove Heroi/THROWS") {
     
     CHECK_THROWS(equipe.remove_heroi(ADD_HEROI1));
 }
-
+*/
 /*TEST_CASE("7 - [Equipe] - Remove Heroi/THROWS") {
     Equipe equipe = Equipe();
     

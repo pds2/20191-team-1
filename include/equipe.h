@@ -21,6 +21,7 @@ public:
 	void mostra_equipe();
 	int sofre_ataque(int dano);
 	int realiza_ataque();
+	int get_num_herois_vivos();
 	void set_portador_pedra(const int id_heroi);
 	bool portador_pedra_esta_vivo();
 	std::string get_nome_heroi(const int id_heroi);

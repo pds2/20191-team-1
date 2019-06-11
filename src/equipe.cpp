@@ -25,7 +25,7 @@ std::map<int, dado_heroi> MY_DADOS_HEROIS = {
 
 Equipe::Equipe(){
     this->esta_completo = false;
-    this->herois_vivos = 5;
+    this->herois_vivos = 5;//Numero deve ser 0 , incrementado a cada inserção
     this->portador_pedra = 0;
 }
 
@@ -141,6 +141,10 @@ int Equipe::sofre_ataque(int dano){
 
 void Equipe::set_portador_pedra(const int id_heroi){
     this->portador_pedra = id_heroi;
+}
+
+int Equipe::get_num_herois_vivos(){
+    return this->herois_vivos;
 }
 
 //Este metodo é realmente necessario ?
