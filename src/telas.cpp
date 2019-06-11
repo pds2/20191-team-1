@@ -136,11 +136,25 @@ void tela_monta_equipe(){
 
 void mostra_equipe(std::set<Heroi> equipe) {
     std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
-
-    //todo - qnd tiver algum elemento dentro, completar aqui em baixo
+     //todo - qnd tiver algum elemento dentro, completar aqui em baixo
     for (auto it = equipe.begin(); it != equipe.end(); it++) {
         std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
     }
+}
+
+char Telas::tela_dificuldade() {
+    int opcao;
+
+    system("clear");
+
+    std::cout<< "Selecione a dificuldade do jogo:"<< std::endl;
+    std::cout<< "Digite F para Facil"<< std::endl;
+    std::cout<< "Digite M para Medio"<< std::endl;
+    std::cout<< "Digite D para Dificil"<< std::endl;
+
+    std::cin >> opcao;
+    opcao = tolower(opcao);
+    return opcao;
 }
 
 void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::string nome_ataque){
