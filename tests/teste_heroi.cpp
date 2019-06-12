@@ -1,5 +1,6 @@
 #include "doctest.h"
 #include <cmath>
+#include <iostream>
 #include "heroi.h"
 
 #define VIDA 100
@@ -39,14 +40,15 @@ TEST_CASE("4 - [Heroi] - Diminui vida/Negativo") {
 TEST_CASE("5 - [Heroi] - Realiza ataque") {
 	Heroi heroi = Heroi(100, 10, 80, "HEROI");
 
-    CHECK_EQ(heroi.realiza_ataque(), ATAQUE);
+    CHECK(heroi.realiza_ataque() >= ATAQUE);
+    CHECK(heroi.realiza_ataque() <= (ATAQUE*60));
 }
 
-TEST_CASE("6 - [Heroi] - Ataque com bonus") {
+/*TEST_CASE("6 - [Heroi] - Ataque com bonus") {
 	Heroi heroi = Heroi(100, 10, 80, "HEROI");
 
     CHECK_EQ(heroi.get_ataque_com_bonus(), ceil(ATAQUE*1.5));
-}
+}*/
 
 TEST_CASE("7 - [Heroi] - Heroi morto") {
 	Heroi heroi = Heroi(100, 10, 80, "HEROI");

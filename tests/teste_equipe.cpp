@@ -3,11 +3,16 @@
 #include "equipe.h"
 
 #define NUM_HEROIS_VIVOS 5
+#define NUM_HEROIS_SELEC 0
 #define ID_HEROI 0
-#define ADD_HEROI1 0
+#define ADD_HEROI1 1
 #define ADD_HEROI2 -1
+#define ADD_HEROI3 1
 #define TIME_COMPLETO false
 #define VIVO true
+#define TMIN_ID 1
+#define TMAX_ID 10
+#define TNUM_EQ 5
 
 
 TEST_CASE("1 - [Equipe] - Construtor/Getters ") {
@@ -22,7 +27,7 @@ TEST_CASE("2 - [Equipe] - Adiciona Equipe") {
 	Equipe equipe = Equipe();
 	equipe.adiciona_heroi(ADD_HEROI1);
 
-    CHECK_EQ(equipe.get_num_herois_vivos(), NUM_HEROIS_VIVOS+1);
+    CHECK_EQ(equipe.get_herois_selecionados(), NUM_HEROIS_SELEC+1);
 }
 
 TEST_CASE("3 - [Equipe] - Adiciona Heroi/Repitido") {
@@ -62,8 +67,8 @@ TEST_CASE("7 - [Equipe] - Remove Heroi/THROWS") {
 
 TEST_CASE("8 - [Equipe] - Set portador pedra") {
     Equipe equipe = Equipe();
-    equipe.adiciona_heroi(0);
-    equipe.set_portador_pedra(0);
+    equipe.adiciona_heroi(1);
+    equipe.set_portador_pedra(1);
 
     CHECK_EQ(equipe.get_id_portador_pedra() , ADD_HEROI1);
 }
@@ -75,16 +80,16 @@ TEST_CASE("9 - [Equipe] - Set portador pedra/THROWS/Vazio") {
 }
 TEST_CASE("10 - [Equipe] - Set portador pedra/THROWS/Invalido") {
     Equipe equipe = Equipe();
-    equipe.adiciona_heroi(0);
+    equipe.adiciona_heroi(1);
 
-    CHECK_THROWS(equipe.set_portador_pedra(ADD_HEROI2));
+    CHECK_THROWS(equipe.set_portador_pedra(TMP_MAX+1));
 }
 
 TEST_CASE("11 - [Equipe] - Portador Vivo") {
     Equipe equipe = Equipe();
     
-    equipe.adiciona_heroi(0);
-    equipe.set_portador_pedra(0);
+    equipe.adiciona_heroi(1);
+    equipe.set_portador_pedra(1);
     
     CHECK_EQ(equipe.portador_pedra_esta_vivo(),!VIVO);
 }
@@ -131,8 +136,8 @@ TEST_CASE("12 - [Equipe] - Equipe Completa/Total") {
 
 TEST_CASE("12 - [Equipe] - Equipe Completa/ Parcial") {
     Equipe equipe = Equipe();
-    int i = 0;
-    for(i=1;i<=5;i++)
+    int i = 1;
+    for(i=1;i<=4;i++)
         equipe.adiciona_heroi(i);
 
     CHECK_EQ(equipe.get_equipe_completa() , TIME_COMPLETO);

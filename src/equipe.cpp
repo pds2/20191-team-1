@@ -8,6 +8,10 @@
 #include "constants.h"
 #include "util.h"
 
+#define MIN_ID 1
+#define MAX_ID 10
+#define NUM_EQ 5
+
 //Importar de arquivos - Sugestao - Ewerton
 std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
@@ -64,14 +68,21 @@ void Equipe::monta_equipe(Equipe& equipe){
 }
 
 void Equipe::adiciona_heroi(const int id_heroi){
-    std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id_heroi);
-    Heroi *heroi = new Heroi(itMap->second._pt_vida, itMap->second._pt_ataque, itMap->second._pt_defesa, itMap->second._nome);
+    if(this->equipe_selecionada.size() < NUM_EQ && id_heroi >= MIN_ID && id_heroi <= MAX_ID){
+        std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id_heroi);
 
-    this->equipe_selecionada.push_back(*heroi);
-    std::cout<<equipe_selecionada.size()<<std::endl;
-    
-    if(equipe_selecionada.size() == 5)
-        this->esta_completo = true;
+        Heroi *heroi = new Heroi(itMap->second._pt_vida, itMap->second._pt_ataque, itMap->second._pt_defesa, itMap->second._nome);
+
+        this->equipe_selecionada.push_back(*heroi);
+        std::cout<<equipe_selecionada.size()<<std::endl;
+        
+        if(equipe_selecionada.size() == NUM_EQ)
+            this->esta_completo = true;
+
+    }else if(id_heroi < MIN_ID || id_heroi > MAX_ID)
+        throw "Id do heroi invalido.";
+    else if(this->equipe_selecionada.size() == NUM_EQ )
+        throw "Equipe esta completa.";
 }
 
 void Equipe::mostra_equipe() {
@@ -137,7 +148,12 @@ int Equipe::sofre_ataque(int dano){
 }
 
 void Equipe::set_portador_pedra(const int id_heroi){
-    this->portador_pedra = id_heroi;
+    if(this->equipe_selecionada.size() > 0 && id_heroi >= MIN_ID && id_heroi <= MAX_ID)
+        this->portador_pedra = id_heroi;
+    else if(id_heroi < MIN_ID || id_heroi > MAX_ID)
+        throw "Id do heroi invalido.";
+    else if(this->equipe_selecionada.size() == 0)
+        throw "Equipe vazia.";
 }
 
 int Equipe::get_id_portador_pedra(){
