@@ -7,7 +7,7 @@ Partida::Partida(){
     this->turno = true;
     this->esta_ativo = true;
     this->equipe = Equipe();
-    this->thanos = new Thanos(200, 20, 50, "Thanos");
+    this->thanos = new Thanos(200, 20, 50, "Thanos");// Criar constante para valores
 }
 
 bool Partida::get_turno(){

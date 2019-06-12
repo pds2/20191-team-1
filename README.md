@@ -1,6 +1,4 @@
-# 20191-team-1 | Todos contra Thanos
-
-Marvel RPG
+# 20191-team-1 | Marvel RPG
 
 > Para User Stories e outros materiais de apoio ao desenvolvimento, verifique o [Wiki] (https://github.com/pds2/20191-team-1/wiki)
 

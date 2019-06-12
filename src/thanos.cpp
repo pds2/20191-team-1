@@ -30,18 +30,3 @@ const int Thanos::realiza_ataque(){
 void Thanos::sofre_ataque(const int dano){
     pt_vida -= dano;
 }
-int Thanos::get_pt_vida(){
-    return this->pt_vida;
-}
-
-int Thanos::get_pt_ataque(){
-    return this->pt_ataque;
-}
-
-int Thanos::get_pt_defesa(){
-    return this->pt_defesa;
-}
-
-bool Thanos::get_vivo() {
-    return this->vivo;
-}

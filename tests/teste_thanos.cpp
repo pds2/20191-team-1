@@ -33,12 +33,12 @@ TEST_CASE("3 - [Thanos] - Diminui vida/Negativo") {
 TEST_CASE("4 - [Thanos] - Realiza ataque") {
 	Thanos thanos = Thanos(10,10,20,"Thanos");
 
-    CHECK_THROWS(thanos.realiza_ataque(), ATAQUE);
+    CHECK_EQ(thanos.realiza_ataque(), ATAQUE);
 }
 
 TEST_CASE("5 - [Thanos] - Thanos morto") {
 	Thanos thanos = Thanos(10,10,20,"Thanos");
-	thanos.diminui_vida(thanos.get_vivo);
+	thanos.diminui_vida(thanos.get_pt_vida());
 
     CHECK_EQ(thanos.get_vivo(),!VIVO);
 }

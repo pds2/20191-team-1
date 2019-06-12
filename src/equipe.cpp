@@ -25,13 +25,13 @@ std::map<int, dado_heroi> MY_DADOS_HEROIS = {
 
 Equipe::Equipe(){
     this->esta_completo = false;
-    this->herois_vivos = 5;//Numero deve ser 0 , incrementado a cada inserção
+    this->herois_vivos = 5;
     this->portador_pedra = 0;
 }
 
 void Equipe::monta_equipe(Equipe& equipe){
-    int id;
-    char opcao;
+    int id = 0;
+    char opcao = '\0';
     while(equipe_selecionada.size() < 5) {
         tela_monta_equipe();
         mostra_equipe();
@@ -40,23 +40,21 @@ void Equipe::monta_equipe(Equipe& equipe){
         opcao = toupper(opcao);
         
         try{
-        
-        if (opcao == 'S') {
-            std::cout << "ID: ";
-            std::cin >> id;
-            std::cout << "Adiciona heroi" << std::endl;
-            this->adiciona_heroi(id);
-        } else if (opcao == 'R') {
-            limpa_tela();
-            mostra_equipe();
-            std::cout << "Digite o Slot do heroi que deseja remover do seu time";
-            std::cin >> id;
-            std::cout << "Remove heroi" << std::endl;
-            this->remove_heroi(id);
-        }else{
-            throw std::invalid_argument("Opção Inválida");
-        }
-
+            if (opcao == 'S') {
+                std::cout << "ID: ";
+                std::cin >> id;
+                std::cout << "Adiciona heroi" << std::endl;
+                this->adiciona_heroi(id);
+            } else if (opcao == 'R') {
+                limpa_tela();
+                mostra_equipe();
+                std::cout << "Digite o Slot do heroi que deseja remover do seu time";
+                std::cin >> id;
+                std::cout << "Remove heroi" << std::endl;
+                this->remove_heroi(id);
+            }else{
+                throw std::invalid_argument("Opção Inválida");
+            }
         }catch(const std::invalid_argument& e){
             std::cout<<"Opção invalida, favor digitar uma opção valida!"<<std::endl;
             std::cin>>opcao;
@@ -68,11 +66,12 @@ void Equipe::monta_equipe(Equipe& equipe){
 void Equipe::adiciona_heroi(const int id_heroi){
     std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id_heroi);
     Heroi *heroi = new Heroi(itMap->second._pt_vida, itMap->second._pt_ataque, itMap->second._pt_defesa, itMap->second._nome);
+
     this->equipe_selecionada.push_back(*heroi);
     std::cout<<equipe_selecionada.size()<<std::endl;
-    if(equipe_selecionada.size() == 5){
+    
+    if(equipe_selecionada.size() == 5)
         this->esta_completo = true;
-    }
 }
 
 void Equipe::mostra_equipe() {
@@ -83,7 +82,6 @@ void Equipe::mostra_equipe() {
             std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
             std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
             std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
-                  
         }
     }
     if(equipe_selecionada.size() >= 5){
@@ -99,8 +97,8 @@ int Equipe::realiza_ataque(){
     std::cout<< "  Digite A  para escolher um herói para atacar"<< std::endl;
     std::cout<< "  Digite M  para mover a pera para outro herói"<< std::endl;
     bool aguardando_escolha = true;
-    char opcao;
-    int id;
+    char opcao = '\0';
+    int id = 0;
     std::cin >> opcao;
     opcao = toupper(opcao);
 
@@ -120,7 +118,6 @@ int Equipe::realiza_ataque(){
             } else {
                 throw std::invalid_argument("Opção Inválida");
             }
-
         }catch(const std::invalid_argument& e){
             std::cout<<"Opção invalida, favor digitar uma opção valida!"<<std::endl;
             std::cin >> opcao;
@@ -143,6 +140,14 @@ void Equipe::set_portador_pedra(const int id_heroi){
     this->portador_pedra = id_heroi;
 }
 
+int Equipe::get_id_portador_pedra(){
+    return this->portador_pedra;
+}
+
+int Equipe::get_herois_selecionados(){//Mudar nome do metodo
+    return this->equipe_selecionada.size();
+}
+
 int Equipe::get_num_herois_vivos(){
     return this->herois_vivos;
 }
@@ -156,12 +161,18 @@ bool Equipe::get_equipe_completa(){
 	return this->esta_completo;
 }
 
-bool Equipe::portador_pedra_esta_vivo(){
-    return equipe_selecionada[portador_pedra].get_vivo();
+bool Equipe::portador_pedra_esta_vivo(){//Melhorar condicao de verificacao
+    if(this->equipe_selecionada.size())
+        return equipe_selecionada[portador_pedra].get_vivo();
+    else 
+        return false;
 }
 
 void Equipe::remove_heroi(const int id_heroi){
-      equipe_selecionada.erase(equipe_selecionada.begin()+id_heroi);
+    if(this->equipe_selecionada.size())
+        equipe_selecionada.erase(equipe_selecionada.begin()+id_heroi);
+    else
+        throw "A equipe nao possui Herois";
 }
 
 bool Equipe::get_status_heroi(const int id_heroi){
