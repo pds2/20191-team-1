@@ -48,7 +48,12 @@ void Equipe::monta_equipe(Equipe& equipe){
                 std::cout << "ID: ";
                 std::cin >> id;
                 std::cout << "Adiciona heroi" << std::endl;
-                this->adiciona_heroi(id);
+                if(id >= MIN_ID && id <= MAX_ID){
+                    this->adiciona_heroi(id);
+                }else{
+                    std::cout << "\tId do Heroi invalido";    
+                    continue;
+                }
             } else if (opcao == 'R') {
                 limpa_tela();
                 mostra_equipe();
