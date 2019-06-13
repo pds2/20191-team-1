@@ -198,6 +198,7 @@ int Equipe::sofre_ataque(int dano){
     do{
         alvo = gera_inteiro(0,4);
     }while (equipe_selecionada[alvo].get_vivo() == false);
+
     equipe_selecionada[alvo].diminui_vida(dano);
     return alvo;
 }

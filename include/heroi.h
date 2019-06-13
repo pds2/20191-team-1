@@ -21,6 +21,7 @@ public:
     // polimorfismos
     const int realiza_ataque();
     int get_ataque_com_bonus();
+    int get_pt_defesa();
 
 };
 

@@ -35,3 +35,7 @@ const int Heroi::realiza_ataque() {
 int Heroi::get_ataque_com_bonus(){
 	return ceill(this->pt_ataque * (1 + this->bonus_ataque));
 }
+
+int Heroi::get_pt_defesa(){
+    return this->_pt_defesa;
+}
