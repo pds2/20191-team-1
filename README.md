@@ -16,14 +16,14 @@ Para compilar é necessario ter:
 Como compilar
 ----------
 Para compilar basta:
-1. Clonar o repositorio `$: git clone 'https://github.com/pds2/20191-team-1.git'`
-2. Acessar diretório do projeto ($: cd 20191-team-1/ )
-3. No diretório raiz do projeto execute o Makefile ($: make) 
+1. Clonar o repositorio `git clone 'https://github.com/pds2/20191-team-1.git'`
+2. Acessar diretório do projeto `cd 20191-team-1/`
+3. No diretório raiz do projeto execute o Makefile `make`
 
 Como executar
 ----------
-1. Acessar diretório do projeto ($: cd 20191-team-1/ )
-2. No diretório raiz do projeto execute: ("$: make run" ou "$: ./bin/main" ) 
+1. Acessar diretório do projeto `cd 20191-team-1/`
+2. No diretório raiz do projeto execute: `make run` ou `./bin/main`
 
 Como jogar
 ----------
