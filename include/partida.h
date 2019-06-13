@@ -29,6 +29,4 @@ public:
 	void set_esta_ativo(bool esta_ativo);
 };
 
-
-
 #endif

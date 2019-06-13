@@ -1,23 +1,35 @@
-# 20191-team-1
+# 20191-team-1 | Marvel RPG
 
-Marvel RPG
-
-> For User Stories and other development suport material, check the [Wiki](https://github.com/pds2/20191-team-1/wiki)
+> Para User Stories e outros materiais de apoio ao desenvolvimento, verifique o [Wiki] (https://github.com/pds2/20191-team-1/wiki)
 
 
-Can you protect the universe from semi-total annihilation? 
-Thanos is about to reach the last Infinity Stone but it is hidden with one of our marvel heroes. 
-Make smart choices to avoid being killed while holding the stone.
+Você pode proteger o universo da aniquilação semi-total?
+Thanos está prestes a alcançar a última Infinity Stone, mas está escondida com um dos nossos heróis da Marvel.
+Faça escolhas inteligentes para evitar ser morto enquanto segura a pedra.
 
-How to play
+Requisitos para compilação
 ----------
-1. You control a set of 5 heroes that will take turns atacking and being atacked by Thanos
-2. In you turn, choose one character and one action (atack, cure or pass the stone)
-3. Do not let a hero die when in possesion of the stone or else you will forever live in shame, for Thanos will have won
-4. Kill Thanos to be granted to title of saviour of the universe
+Para compilar é necessario ter:
+1. Compilador g++, versão 11
+2. Comando Make ser funcional
 
-Can you handle the battle?
+Como compilar
+----------
+Para compilar basta:
+1. Clonar o repositorio `git clone 'https://github.com/pds2/20191-team-1.git'`
+2. Acessar diretório do projeto `cd 20191-team-1/`
+3. No diretório raiz do projeto execute o Makefile `make`
 
+Como executar
+----------
+1. Acessar diretório do projeto `cd 20191-team-1/`
+2. No diretório raiz do projeto execute: `make run` ou `./bin/main`
 
+Como jogar
+----------
+1. Você controla um conjunto de 5 heróis que se revezam em atacar e serem atacados por Thanos
+2. No turno, escolha um personagem e uma ação (ataque, cure ou passe a pedra)
+3. Não deixe um herói morrer quando em posse da pedra, senão você viverá para sempre com vergonha, pois Thanos terá vencido
+4. Matar Thanos para ser concedido ao título de salvador do universo
 
-
+Você pode lidar com a batalha?

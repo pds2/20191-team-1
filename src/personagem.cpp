@@ -1,37 +1,86 @@
+#include <iostream>
 #include "personagem.h"
 
-//=======================
-//======= COMPLETA ======
-//=======================
-
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string nome){
-	this->nome = nome;
-    this->pt_vida = pt_vida;
-    this->pt_ataque = pt_ataque;
-    this->pt_defesa = pt_defesa;
-    this->vivo = true;
+	if(pt_vida <= 0)
+        throw "Pontos de vida do Personagem deve ser maior que Zero (0)";
+    else if(pt_ataque <= 0) 
+        throw "Pontos de ataque do Personagem deve ser maior que Zero (0)";
+    else if(pt_defesa <= 0)
+        throw "Pontos de defesa do Personagem deve ser maior que Zero (0)";
+    else{
+        this->nome = nome;
+        this->pt_vida = pt_vida;
+        this->pt_ataque = pt_ataque;
+        this->pt_defesa = pt_defesa;
+        this->vivo = true;
+    }
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Personagem::get_pt_vida(){
     return this->pt_vida;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Personagem::get_pt_ataque(){
     return this->pt_ataque;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Personagem::get_pt_defesa(){
     return this->pt_defesa;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 std::string Personagem::get_name(){
     return this->nome;
 }
 
-void Personagem::diminui_vida(const unsigned int dano_recebido){
-    this->pt_vida -= dano_recebido;
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
+bool Personagem::get_vivo(){
+    return this->vivo;
+}
 
-    if (this->pt_vida <=0){
-        this->vivo = false;
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
+void Personagem::diminui_vida(const int dano_recebido){
+
+    int dano = dano_recebido - this->pt_defesa;
+
+    if(dano < 0) {
+        dano = 0;
+    } else{        
+        this->pt_vida -= dano;
+        if (this->pt_vida <=0)
+            this->vivo = false;
     }
 }

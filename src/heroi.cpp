@@ -1,41 +1,41 @@
-#include <string>
+#include <cmath>
 #include "heroi.h"
-#include "telas.h"
+#include "personagem.h"
 #include "constants.h"
 
+#define BONUS 0.5
+
+/*
+ *  @method {Construtor do tipo Herois}
+ *  @param {int pt_vida - Pontos de vida do Heroi} 
+ *  @param {int pt_ataque - Pontos de ataque do Heroi} 
+ *  @param {int pt_defesa - Pontos de defesa do Heroi} 
+ *  @param {std::string nome - Nome do heroi} 
+ *  @return {void}
+*/
 Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
-    Personagem( pt_vida, pt_ataque, pt_defesa, nome){}
+    Personagem( pt_vida, pt_ataque, pt_defesa, nome),
+    bonus_ataque(BONUS)
+{}
 
-
+/*
+ *  @method {Retorna um valor ate 6 vezes o valor de ataque do Heroi}
+ *  @param {void} 
+ *  @return {const int - Valor do ataque}
+*/
 const int Heroi::realiza_ataque() {
-    int dado = gera_inteiro(1, 6);
-    int dano = get_pt_ataque();
-    return dado*dano;
+    return this->get_pt_ataque() * gera_inteiro(1, 6);
 }
 
-void Heroi::diminui_vida(const unsigned int dano_recebido) {
-    pt_vida = get_pt_vida() - dano_recebido;
-    if(pt_vida <= 0) {
-        this->vivo = false;  
-    }
+/*
+ *  @method {Retorna um valor ate 6 vezes o valor de ataque do Heroi vezes um bonus}
+ *  @param {void} 
+ *  @return {int - Valor do ataque com bonus}
+*/
+int Heroi::get_ataque_com_bonus(){
+	return ceill(this->pt_ataque * (1 + this->bonus_ataque));
 }
 
-std::string Heroi::get_nome() const{
-    return this->nome;
+int Heroi::get_pt_defesa(){
+    return this->_pt_defesa;
 }
-
-bool Heroi::get_vivo() const {
-	return this->vivo;
-}
-
-int Heroi::get_pt_vida() const{
-    return this->pt_vida;
-}
-
-int Heroi::get_pt_ataque() const{
-    return this->pt_ataque;
-}
-
-int Heroi::get_pt_defesa() const{
-    return this->pt_defesa;
-}    
