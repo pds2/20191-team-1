@@ -78,9 +78,9 @@ bool Personagem::get_vivo(){
 */
 void Personagem::diminui_vida(const int dano_recebido){
 
-    if(dano_recebido < 0)
+    if(dano_recebido < 0) {
         throw "Dano nao poder ser negativo";
-    else{        
+    } else{        
         this->pt_vida -= dano_recebido;
 
         if (this->pt_vida <=0)
