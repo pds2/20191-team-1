@@ -8,11 +8,44 @@
 #include "heroi.h"
 #include "constants.h"
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
+void tela_resultado_ataque_jogador(string heroi, int dano_causado, int hp_thanos){
+    limpa_tela();
+    std::cout << "                                                         `                                         \n"
+                 "                                      -s+`              -ohh            `-o/                   .-.  \n"
+                 "         `-`                         :hyyh+`         `/yyyyN.        `:oyydd:::::::::   .-/+oshms.  \n"
+                 "          :yyo+:-`                  +hyyyyhh/`     -oyyyyyymo     ./syhyhydd.----../hosyyyyyhms.    \n"
+                 "           .ohyyyyyo+:-`          `ohyyyyyyyhy: `/syyyyyyyyso:+:/yyso/:-hymd.......dyyyyyyddo.      \n"
+                 "            `:yyyyyyyyyyso/:.`   `syyyyyyyyyyyhsyyyyyyyhyys-..-hh:--....myhy....../dyyyydd+.        \n"
+                 "              .ohyyyyyyyyyyyyyso/yyyyhssoosyhyyyyyhyso/-/hs....sh:.....:dyyy......hhyhdd+`          \n"
+                 "               `:yyyyyyyyyyyyyyyyyhs/-------/shyyh:--...-hs..../d:...-./dyyy.....-dyhms-.`          \n"
+                 "     ``..--::/++oyyyhhyyssyhyyyyyy/--........-/hyh/......oy.....d:...-.+hyyy...-.+dyhhyyyyyssoo+++. \n"
+                 "   .+syyyyyyyyyyyys+/:-----:yyyyy:-.-........../hyy......-y.-...s/...-.ohyyy.....shyyyyyyyyyhdhy+-` \n"
+                 "     `.:osyhyhs+:--.........:dyh:.....-.--......ohh/......o...../+.....ohyys.....yyyyyyyhhhyo:.`    \n"
+                 "         `.:+y+...-.........-dh+......-oyyo-....-dyh..-...-.....-/.....ohyyy:/++ohyyyhdhs/.`        \n"
+                 "         `.:+ys.....-/+/....+dh-......yhyyhs.....dyh/............-...-.ohyyyyhhhhhyydh+-`           \n"
+                 "     `.:+syhyyh....-:dy:.../dys......+dyyyyh:....dyyy.........-........+hyyys/:::/yyyyyyso/-.       \n"
+                 "  .:+syhyyyyyyh-....-/-.--+dyyo......hyyyyyh/...-dyyh:........+......../dyy:--....shyhhhhyyo:`      \n"
+                 "  :osyyyyyyyyyh/.....-..-shyyys......hyyyyyh:...ohyyho........y:.......-dyo.....-+mhyo/:.`          \n"
+                 "    `.-/oyyhyyys......-+hhyyyyy-.....ohyyyy+...:dyyyyh-.......yo..--:/oshyyo//+syhhy+-`             \n"
+                 "         `-:+yhy.....:yhyyyyyyh+.-...-/oo+:...-hhyyyyh:...-:/+hy/oyyhhyyyyyyhhhyyyyyyhs+-`          \n"
+                 "            -yyd.-...+hyyyyyyyyh/............:hhyyyyyys:+syyhhyyhyyyyyyyyyyyyyyyyyyyyyyyhs+-`       \n"
+                 "          .+hyyd-....-dyyyyyyyyyh+-..-....--+hhyyyyyyyhhhyyyyyyyyyyyyyyyyyydhyyyyyyyyyhhhhhhyo-.    \n"
+                 "        `:yyyyyh/.....hyyyyyyyyyyhyo/::::+shhyyyyyhyyyyyyyyyyyhmsyyyyyyyyyydy```...--:::://++oso/`  \n"
+                 "       .ohyyyyyyo..--:yyyyyyyyyyyyhdyhhhhhyyyyyyyhdsyyyyyyyyyydd -/oyyyyyyyym/                      \n"
+                 "     `/yyhhhhhhhs:++/ohyyyyyyyyyydm/.+yyyyyyyyyyhN: -+yyyyyyyymo    `:+yyyyyhm.                     \n"
+                 "    `+hyso+/-.` `.`   ohyyyyyyyydh.   `:syyyyyyyms    `:syyyyyN-        -/syydh                     \n"
+                 "                       syyyyyyhmo`       -+yyyydm`       .+yyhm            `:+d/                    \n"
+                 "                       `yyyyydd:           `/yhN-           :ss                .                    \n"
+                 "                        `yyhmy`               -:                                                    " <<  endl;
+
+    std::cout << "\n" << heroi << " atacou Thanos causando " <<  dano_causado << " de dano "<< std::endl;
+    std::cout << "Faltam " << hp_thanos << " pra você derrotar Thanos!"<< std::endl;
+    std::cout << std::endl;
+}
+
+
+
 void tela_inicial(){
     limpa_tela();
     std::cout << "\n"
@@ -36,11 +69,6 @@ void tela_inicial(){
 
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void tela_como_jogar() {
     limpa_tela();
     std::cout << "\n"
@@ -74,11 +102,6 @@ void tela_como_jogar() {
     std::cout << "\nOpção: ";
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void tela_dificuldade() {
     limpa_tela();
 
@@ -101,11 +124,6 @@ void tela_dificuldade() {
     std::cout << "\nOpção: ";
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void tela_monta_equipe(){
 
     limpa_tela();
@@ -152,24 +170,6 @@ void tela_monta_equipe(){
 
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
-void mostra_equipe(std::set<Heroi> equipe) {
-    std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
-     //todo - qnd tiver algum elemento dentro, completar aqui em baixo
-    for (auto it = equipe.begin(); it != equipe.end(); it++) {
-        std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
-    }
-}
-
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::string nome_ataque){
     limpa_tela();
 
@@ -225,11 +225,6 @@ void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::stri
     pause();
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void tela_vitoria_jogador(){
     limpa_tela();
 
@@ -251,11 +246,6 @@ void tela_vitoria_jogador(){
 
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void tela_vitoria_thanos(){
     limpa_tela();
 
@@ -276,11 +266,6 @@ void tela_vitoria_thanos(){
     std::cout << "Que tal tentar novamente?\n\n" << std::endl;
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void tela_morte_heroi_sem_pedra(std::string nome_heroi){
     limpa_tela();
 
