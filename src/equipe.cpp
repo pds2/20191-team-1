@@ -25,23 +25,27 @@ std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {10,  dado_heroi(70,30,5,"Sem Historia no momento", "Viuva Negra")}
 };
 
-/*
- *  @method {Metodo construtor do objeto Equipe}
- *  @param {void} 
- *  @return {void}
-*/
+
 Equipe::Equipe(){
+    /*
+     *  @method {Metodo construtor do objeto Equipe}
+     *  @param {void}
+     *  @return {void}
+    */
+
     this->esta_completo = false;
     this->herois_vivos = NUM_EQ;
     this->portador_pedra = ID_PEDRA;
 }
 
-/*
- *  @method {Metodo que monta equipe segundo escolhar do jogador}
- *  @param {Equipe& equipe - Referencia de um objeto do tipo Equipe} 
- *  @return {void}
-*/
+
 void Equipe::monta_equipe(Equipe& equipe){
+    /*
+     *  @method {Metodo que monta equipe segundo escolhar do jogador}
+     *  @param {Equipe& equipe - Referencia de um objeto do tipo Equipe}
+     *  @return {void}
+    */
+
     int id = 0;
     char opcao = '\0';
     while(equipe_selecionada.size() < 5) {
@@ -90,12 +94,13 @@ void Equipe::monta_equipe(Equipe& equipe){
     this->portador_pedra = gera_inteiro(0,4);
 }
 
-/*
- *  @method {Metodo que adiciona uma Heroi a Equipe}
- *  @param {const int id_heroi - Id do Heroi a ser adicionado} 
- *  @return {void}
-*/
+
 void Equipe::adiciona_heroi(const int id_heroi){
+    /*
+     *  @method {Metodo que adiciona uma Heroi a Equipe}
+     *  @param {const int id_heroi - Id do Heroi a ser adicionado}
+     *  @return {void}
+    */
     if(this->equipe_selecionada.size() < NUM_EQ && id_heroi >= MIN_ID && id_heroi <= MAX_ID){
         std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id_heroi);
 
@@ -114,13 +119,24 @@ void Equipe::adiciona_heroi(const int id_heroi){
         throw "Equipe esta completa.";
 }
 
-/*
- *  @method {Exibe Herois selecionados para a Equipe}
- *  @param {void} 
- *  @return {void}
-*/
+
 void Equipe::mostra_equipe() {
-     std::cout<<"====== Seus Herois Ativos ======= : "<<std::endl;
+    /*
+     *  @method {Exibe Herois selecionados para a Equipe}
+     *  @param {void}
+     *  @return {void}
+    */
+
+     std::cout<<"\n\n\n"
+                "   _____                                _            \n"
+                "  / ____|                              (_)           \n"
+                " | (___  _   _  __ _    ___  __ _ _   _ _ _ __   ___ \n"
+                "  \\___ \\| | | |/ _` |  / _ \\/ _` | | | | | '_ \\ / _ \\\n"
+                "  ____) | |_| | (_| | |  __/ (_| | |_| | | |_) |  __/\n"
+                " |_____/ \\__,_|\\__,_|  \\___|\\__, |\\__,_|_| .__/ \\___|\n"
+                "                               | |       | |         \n"
+                "                               |_|       |_|          \n\n"<<std::endl;
+
     for(unsigned int i = 0; i < equipe_selecionada.size(); i++){
         if(equipe_selecionada[i].get_vivo() == true){
             std::cout<<"Slot: "<< i+1<<" Nome: "<<equipe_selecionada[i].get_name()<<std::endl;
