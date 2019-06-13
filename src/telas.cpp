@@ -9,7 +9,7 @@
 #include "constants.h"
 
 
-void tela_resultado_ataque_jogador(string heroi, int dano_causado, int hp_thanos){
+void tela_resultado_ataque_jogador(int dano_causado, int hp_thanos){
     limpa_tela();
     std::cout << "                                                         `                                         \n"
                  "                                      -s+`              -ohh            `-o/                   .-.  \n"
@@ -37,9 +37,9 @@ void tela_resultado_ataque_jogador(string heroi, int dano_causado, int hp_thanos
                  "    `+hyso+/-.` `.`   ohyyyyyyyydh.   `:syyyyyyyms    `:syyyyyN-        -/syydh                     \n"
                  "                       syyyyyyhmo`       -+yyyydm`       .+yyhm            `:+d/                    \n"
                  "                       `yyyyydd:           `/yhN-           :ss                .                    \n"
-                 "                        `yyhmy`               -:                                                    " <<  endl;
+                 "                        `yyhmy`               -:                                                    " <<  std::endl;
 
-    std::cout << "\n" << heroi << " atacou Thanos causando " <<  dano_causado << " de dano "<< std::endl;
+    std::cout << "\n" << "Você atacou Thanos causando " <<  dano_causado << " de dano "<< std::endl;
     std::cout << "Faltam " << hp_thanos << " pra você derrotar Thanos!"<< std::endl;
     std::cout << std::endl;
 }

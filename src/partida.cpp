@@ -2,12 +2,9 @@
 #include "thanos.h"
 #include "equipe.h"
 #include "telas.h"
+#include "util.h"
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 Partida::Partida(){
     this->turno = true;
     this->esta_ativo = true;
@@ -15,47 +12,25 @@ Partida::Partida(){
     this->thanos = new Thanos(200, 20, 50, "Thanos");// Criar constante para valores
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 bool Partida::get_turno(){
     return  this->turno;
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 void Partida::set_turno(bool turno){
     this->turno = turno;
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 bool Partida::get_esta_ativo() {
     return this->esta_ativo;
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
 void Partida::set_esta_ativo(bool esta_ativo){
    this->esta_ativo = esta_ativo;
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 void Partida::roda_partida() {
     this->equipe.monta_equipe(this->equipe);
     while(get_esta_ativo() == true) {
@@ -68,13 +43,23 @@ void Partida::roda_partida() {
     }
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 void Partida::turno_jogador() {
     int dano = equipe.realiza_ataque();
+    int hp_thanos = thanos->get_pt_vida();
+
+    if(dano<0) {
+        limpa_tela();
+        std::cout << "\n\n\n\n\n" << std::endl;
+        std::cout << " Pedra passada!" << std::endl;
+        std::cout << "\n\n\n\n\n" << std::endl;
+        pause();
+        std::cout << "Teste" << std::endl;
+    }else {
+        tela_resultado_ataque_jogador(dano, hp_thanos);
+        pause();
+    }
+
     if(dano > 0){
         thanos->sofre_ataque(dano);
     }
@@ -84,11 +69,7 @@ void Partida::turno_jogador() {
     }
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 void Partida::turno_thanos() {
     int dano = thanos->realiza_ataque();
     int target = equipe.sofre_ataque(dano);
@@ -102,20 +83,12 @@ void Partida::turno_thanos() {
     }
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 char Partida::get_dificuldade() {
     return this->dificuldade;
 }
 
-/*
- *  @method {}
- *  @param {} 
- *  @return {}
-*/
+
 void Partida::set_dificuldade() {
     char opcao = '\0';
 
