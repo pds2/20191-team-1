@@ -24,6 +24,7 @@ public:
     bool get_vivo();
     std::string get_name();
     void diminui_vida(const int dano_recebido);
+    //virtual const int realiza_ataque();
     //virtual const int realiza_ataque() = 0;
 };
 
