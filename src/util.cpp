@@ -1,9 +1,9 @@
 #include "util.h"
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Metodo que inicializa jogo}
+ *  @param {void} 
+ *  @return {void}
 */
 void inicio_jogo() {
 	tela_inicial();
