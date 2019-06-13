@@ -8,12 +8,10 @@
 #include "constants.h"
 #include "util.h"
 
-#define MIN_ID 1
-#define MAX_ID 10
 #define NUM_EQ 5
 #define ID_PEDRA 0
-
-
+#define MIN_ID 1
+#define MAX_ID 10
 std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
             {2,  dado_heroi(70,30,5,"Sem Historia no momento", "Capitão América")},
@@ -66,7 +64,7 @@ void Equipe::monta_equipe(Equipe& equipe){
             if (opcao == 'S') {
                 std::cout << "ID: ";
                 std::cin >> id;
-                if(id >= MIN_ID && id <= MAX_ID){
+                if(id >= 1 && id <= 10){
                     std::cout << "Adiciona heroi" << std::endl;
                     this->adiciona_heroi(id);
                 }else{
@@ -78,9 +76,9 @@ void Equipe::monta_equipe(Equipe& equipe){
                 mostra_equipe();
                 std::cout << "Digite o Slot do heroi que deseja remover do seu time";
                 std::cin >> id;
-                if(id >= MIN_ID && id <= MAX_ID){
+                if(id >= 0 && id <= 9){
                     std::cout << "Remove heroi" << std::endl;
-                    this->adiciona_heroi(id);
+                    this->remove_heroi(id-1);
                 }else{
                     std::cout << std::endl << "\tId do Heroi invalido" << std::endl;
                     pause();
@@ -114,8 +112,9 @@ void Equipe::adiciona_heroi(const int id_heroi){
         if(equipe_selecionada.size() == NUM_EQ)
             this->esta_completo = true;
 
-    }else if(id_heroi < MIN_ID || id_heroi > MAX_ID)
+    }else if(id_heroi < 1 || id_heroi > 10) {
         throw "Id do heroi invalido.";
+    }
     else if(this->equipe_selecionada.size() == NUM_EQ )
         throw "Equipe esta completa.";
 }
@@ -287,8 +286,6 @@ bool Equipe::portador_pedra_esta_vivo(){//Melhorar condicao de verificacao
 void Equipe::remove_heroi(const int id_heroi){
     if(this->equipe_selecionada.size())
         equipe_selecionada.erase(equipe_selecionada.begin()+id_heroi);
-    else
-        throw "A equipe nao possui Herois";
 }
 
 /*

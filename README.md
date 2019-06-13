@@ -10,20 +10,20 @@ Faça escolhas inteligentes para evitar ser morto enquanto segura a pedra.
 Requisitos para compilação
 ----------
 Para compilar é necessario ter:
-1. Compilador g++, versão XXXXX
-2. Comando Make ser funcinal
+1. Compilador g++, versão 11
+2. Comando Make ser funcional
 
 Como compilar
 ----------
 Para compilar basta:
-1. Clonar o repositorio ($: git clone 'https://github.com/pds2/20191-team-1.git')
-2. Acessar diretório do projeto ($: cd 20191-team-1/ )
-3. No diretório raiz do projeto execute o Makefile ($: make) 
+1. Clonar o repositorio `git clone 'https://github.com/pds2/20191-team-1.git'`
+2. Acessar diretório do projeto `cd 20191-team-1/`
+3. No diretório raiz do projeto execute o Makefile `make`
 
 Como executar
 ----------
-1. Acessar diretório do projeto ($: cd 20191-team-1/ )
-2. No diretório raiz do projeto execute: ("$: make run" ou "$: ./bin/main" ) 
+1. Acessar diretório do projeto `cd 20191-team-1/`
+2. No diretório raiz do projeto execute: `make run` ou `./bin/main`
 
 Como jogar
 ----------
