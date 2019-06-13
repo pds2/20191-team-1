@@ -160,7 +160,7 @@ int Equipe::realiza_ataque(){
                 std::cin >> id;
                 aguardando_escolha = false;
                 return equipe_selecionada[id].realiza_ataque();
-            } else if (opcao == 'S') {
+            } else if (opcao == 'M') {
                 std::cout << "ID: ";
                 std::cin >> id;
                 aguardando_escolha = false;
