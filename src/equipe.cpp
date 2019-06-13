@@ -26,13 +26,22 @@ std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {10,  dado_heroi(70,30,5,"Sem Historia no momento", "Viuva Negra")}
 };
 
-
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 Equipe::Equipe(){
     this->esta_completo = false;
     this->herois_vivos = 5;
     this->portador_pedra = 0;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void Equipe::monta_equipe(Equipe& equipe){
     int id = 0;
     char opcao = '\0';
@@ -82,6 +91,11 @@ void Equipe::monta_equipe(Equipe& equipe){
     this->portador_pedra = gera_inteiro(0,4);
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void Equipe::adiciona_heroi(const int id_heroi){
     if(this->equipe_selecionada.size() < NUM_EQ && id_heroi >= MIN_ID && id_heroi <= MAX_ID){
         std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id_heroi);
@@ -100,6 +114,11 @@ void Equipe::adiciona_heroi(const int id_heroi){
         throw "Equipe esta completa.";
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void Equipe::mostra_equipe() {
      std::cout<<"====== Seus Herois Ativos ======= : "<<std::endl;
     for(unsigned int i = 0; i < equipe_selecionada.size(); i++){
@@ -115,6 +134,11 @@ void Equipe::mostra_equipe() {
     }
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Equipe::realiza_ataque(){
     limpa_tela();
     mostra_equipe();
@@ -153,6 +177,11 @@ int Equipe::realiza_ataque(){
     return 0;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Equipe::sofre_ataque(int dano){
     int alvo = 0; 
     do{
@@ -162,6 +191,11 @@ int Equipe::sofre_ataque(int dano){
     return alvo;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void Equipe::set_portador_pedra(const int id_heroi){
     if(this->equipe_selecionada.size() > 0 && id_heroi >= MIN_ID && id_heroi <= MAX_ID)
         this->portador_pedra = id_heroi;
@@ -171,27 +205,57 @@ void Equipe::set_portador_pedra(const int id_heroi){
         throw "Equipe vazia.";
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Equipe::get_id_portador_pedra(){
     return this->portador_pedra;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Equipe::get_herois_selecionados(){//Mudar nome do metodo
     return this->equipe_selecionada.size();
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Equipe::get_num_herois_vivos(){
     return this->herois_vivos;
 }
 
-//Este metodo é realmente necessario ?
+//||
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 std::string Equipe::get_nome_heroi(const int id_heroi){
     return equipe_selecionada[id_heroi].get_name();
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 bool Equipe::get_equipe_completa(){
 	return this->esta_completo;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 bool Equipe::portador_pedra_esta_vivo(){//Melhorar condicao de verificacao
     if(this->equipe_selecionada.size())
         return equipe_selecionada[portador_pedra].get_vivo();
@@ -199,6 +263,11 @@ bool Equipe::portador_pedra_esta_vivo(){//Melhorar condicao de verificacao
         return false;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void Equipe::remove_heroi(const int id_heroi){
     if(this->equipe_selecionada.size())
         equipe_selecionada.erase(equipe_selecionada.begin()+id_heroi);
@@ -206,6 +275,11 @@ void Equipe::remove_heroi(const int id_heroi){
         throw "A equipe nao possui Herois";
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 bool Equipe::get_status_heroi(const int id_heroi){
     return equipe_selecionada[id_heroi].get_vivo();
 }

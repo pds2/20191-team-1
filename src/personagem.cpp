@@ -5,6 +5,11 @@
 //======= COMPLETA ======
 //=======================
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string nome){
 	if(pt_vida <= 0)
         throw "Pontos de vida do Personagem deve ser maior que Zero (0)";
@@ -21,26 +26,56 @@ Personagem::Personagem(int pt_vida, int pt_ataque, int pt_defesa, std::string no
     }
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Personagem::get_pt_vida(){
     return this->pt_vida;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Personagem::get_pt_ataque(){
     return this->pt_ataque;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 int Personagem::get_pt_defesa(){
     return this->pt_defesa;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 std::string Personagem::get_name(){
     return this->nome;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 bool Personagem::get_vivo(){
     return this->vivo;
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void Personagem::diminui_vida(const int dano_recebido){
 
     if(dano_recebido < 0)

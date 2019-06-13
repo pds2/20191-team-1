@@ -1,5 +1,10 @@
 #include "util.h"
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void inicio_jogo() {
 	tela_inicial();
 	bool aguardando_opcao_valida = true;
@@ -34,6 +39,11 @@ void inicio_jogo() {
 	}
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void limpa_tela() {
     int clear = system("clear");
     if(clear != 0){
@@ -41,6 +51,11 @@ void limpa_tela() {
     }
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void pause() {
   std::cout << std::endl << "Digite 1 para continuar...";
   int aux;

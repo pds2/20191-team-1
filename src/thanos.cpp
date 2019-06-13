@@ -4,10 +4,20 @@
 #include "thanos.h"
 #include "randomize.h"
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 Thanos::Thanos(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
     Personagem( pt_vida, pt_ataque, pt_defesa, nome)
 {}
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 const int Thanos::realiza_ataque(){
 
     std::map<int, std::pair<int, std::string>> ataque_thanos = {
@@ -27,6 +37,12 @@ const int Thanos::realiza_ataque(){
     // Batalha::turno_vilao deve decidir em quem vai ser o dano
     return dano_causado;
 }
+
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void Thanos::sofre_ataque(const int dano){
     pt_vida -= dano;
 }

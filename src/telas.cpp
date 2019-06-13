@@ -8,6 +8,11 @@
 #include "heroi.h"
 #include "constants.h"
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_inicial(){
     limpa_tela();
     std::cout << "\n"
@@ -31,6 +36,11 @@ void tela_inicial(){
 
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_como_jogar() {
     limpa_tela();
     std::cout << "\n"
@@ -64,6 +74,11 @@ void tela_como_jogar() {
     std::cout << "\nOpção: ";
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_dificuldade() {
     limpa_tela();
 
@@ -86,6 +101,11 @@ void tela_dificuldade() {
     std::cout << "\nOpção: ";
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_monta_equipe(){
 
     limpa_tela();
@@ -132,6 +152,11 @@ void tela_monta_equipe(){
 
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void mostra_equipe(std::set<Heroi> equipe) {
     std::cout << "1 " << "2 " << "3 " << "4 " << "5 " << std::endl;
      //todo - qnd tiver algum elemento dentro, completar aqui em baixo
@@ -140,7 +165,11 @@ void mostra_equipe(std::set<Heroi> equipe) {
     }
 }
 
-
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::string nome_ataque){
     limpa_tela();
 
@@ -196,6 +225,11 @@ void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::stri
     pause();
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_vitoria_jogador(){
     limpa_tela();
 
@@ -217,6 +251,11 @@ void tela_vitoria_jogador(){
 
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_vitoria_thanos(){
     limpa_tela();
 
@@ -235,9 +274,13 @@ void tela_vitoria_thanos(){
                  "                                                                                                                                                                                                 " << std::endl;
     std::cout << "Você não foi capaz de enganar Thanos... e perdeu a última pedra do infinito." << std::endl;
     std::cout << "Que tal tentar novamente?\n\n" << std::endl;
-
 }
 
+/*
+ *  @method {}
+ *  @param {} 
+ *  @return {}
+*/
 void tela_morte_heroi_sem_pedra(std::string nome_heroi){
     limpa_tela();
 
