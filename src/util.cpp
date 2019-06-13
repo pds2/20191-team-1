@@ -14,13 +14,11 @@ void inicio_jogo() {
 		std::cin>>opcao;
 		opcao = toupper(opcao);
 		
-		try
-		{
+		try {
 			if (opcao == 'C') {
 				tela_como_jogar();
 			} else if (opcao == 'S'){
 				tela_inicial();
-	//            aguardando_opcao_valida = false;
 			}else if (opcao == 'A') {
 				std::cout << "Carregando seu jogo..." << std::endl;
 				aguardando_opcao_valida = false;
@@ -30,8 +28,7 @@ void inicio_jogo() {
 			} else{
 				throw std::invalid_argument("Opção Inválida");
 			}
-			
-		}catch(const std::invalid_argument& e){
+		} catch(const std::invalid_argument& e) {
             std::cout<<std::endl<<"Desculpe, esta opção é invalida!"<<std::endl;
             inicio_jogo();
 		}
@@ -40,9 +37,9 @@ void inicio_jogo() {
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Metodo para limpar o terminal}
+ *  @param {void} 
+ *  @return {void}
 */
 void limpa_tela() {
     int clear = system("clear");
@@ -52,9 +49,9 @@ void limpa_tela() {
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Metodo para  manter uma tela fixa até o usuario interagir com ela}
+ *  @param {void} 
+ *  @return {void}
 */
 void pause() {
   std::cout << std::endl << "Digite 1 para continuar...";
