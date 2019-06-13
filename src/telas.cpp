@@ -8,10 +8,7 @@
 #include "heroi.h"
 #include "constants.h"
 
-//------------ GLOBALS------------------
 
-
-//------------FUNCTIONS---------------
 
 void tela_inicial(){
     limpa_tela();
@@ -29,9 +26,9 @@ void tela_inicial(){
              << std::endl;
 
     std::cout<< "MENU"<< std::endl;
-    std::cout<< "Aperte 1 - Iniciar o jogo"<< std::endl;
-    std::cout<< "Aperte 2 - Como jogar"<< std::endl;
-    std::cout<< "Aperte 3 - Sair"<< std::endl;
+    std::cout<< "Aperte A - Iniciar o jogo"<< std::endl;
+    std::cout<< "Aperte C - Como jogar"<< std::endl;
+    std::cout<< "Aperte Q - Sair"<< std::endl;
     std::cout<< "\nOpção: ";
 
 }
@@ -63,8 +60,9 @@ void tela_como_jogar() {
 
     // =========MENU=============
     std::cout << "\nMENU" << std::endl;
-    std::cout << "Aperte 1 - Iniciar Jogo" << std::endl;
-    std::cout << "Aperte 3 - Sair" << std::endl;
+    std::cout << "Aperte A - Avançar para o jogo" << std::endl;
+    std::cout << "Aperte S - Voltar para a Tela Inicial" << std::endl;
+    std::cout << "Aperte Q - Para sair" << std::endl;
     std::cout << "\nOpção: ";
 }
 
@@ -87,7 +85,7 @@ void tela_dificuldade() {
     std::cout<< " F - Facil. A cada herói morto, recupere 10% dos pontos de vida"<< std::endl;
     std::cout<< " M - Medio. A cada herói morto, recupere 5% dos pontos de vida"<< std::endl;
     std::cout<< " D - Dificil. Não recupera pontos de vida!\n"<< std::endl;
-
+    std::cout << "\nOpção: ";
 }
 
 void tela_monta_equipe(){
@@ -149,7 +147,6 @@ void tela_resultado_ataque_thanos(std::string heroi, int dano_causado, std::stri
     limpa_tela();
 
     std::cout << "\n"
-                 "                                                          .y                                         \n"
                  "                                                        +mN-                                        \n"
                  "                              -y:                     .hh`oy                                        \n"
                  "                              `Myds-                 /m+  .N`                                       \n"

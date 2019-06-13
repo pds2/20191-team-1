@@ -72,7 +72,11 @@ void Equipe::mostra_equipe() {
             std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
             std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
             std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
+                  
         }
+    }
+    if(equipe_selecionada.size() >= 5){
+        std::cout<<"O portador da pedra é "<<equipe_selecionada[portador_pedra -1].get_nome() <<std::endl;
     }
 }
 
