@@ -9,7 +9,7 @@ Partida::Partida(){
     this->turno = true;
     this->esta_ativo = true;
     this->equipe = Equipe();
-    this->thanos = new Thanos(200, 20, 50, "Thanos");// Criar constante para valores
+    this->thanos = new Thanos(200, 80, 50, "Thanos");// Criar constante para valores
 }
 
 
@@ -58,11 +58,9 @@ void Partida::turno_jogador() {
     }else {
         tela_resultado_ataque_jogador(dano, hp_thanos);
         pause();
-    }
-
-    if(dano > 0){
         thanos->sofre_ataque(dano);
     }
+
     if(thanos->get_pt_vida() <= 0) {
         tela_vitoria_jogador();
         set_esta_ativo(false);
