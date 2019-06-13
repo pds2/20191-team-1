@@ -11,6 +11,7 @@
 #define MIN_ID 1
 #define MAX_ID 10
 #define NUM_EQ 5
+#define ID_PEDRA 0
 
 //Importar de arquivos - Sugestao - Ewerton
 std::map<int, dado_heroi> MY_DADOS_HEROIS = {
@@ -27,20 +28,20 @@ std::map<int, dado_heroi> MY_DADOS_HEROIS = {
 };
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Metodo construtor do objeto Equipe}
+ *  @param {void} 
+ *  @return {void}
 */
 Equipe::Equipe(){
     this->esta_completo = false;
-    this->herois_vivos = 5;
-    this->portador_pedra = 0;
+    this->herois_vivos = NUM_EQ;
+    this->portador_pedra = ID_PEDRA;
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Metodo que monta equipe segundo escolhar do jogador}
+ *  @param {Equipe& equipe - Referencia de um objeto do tipo Equipe} 
+ *  @return {void}
 */
 void Equipe::monta_equipe(Equipe& equipe){
     int id = 0;
@@ -92,9 +93,9 @@ void Equipe::monta_equipe(Equipe& equipe){
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Metodo que adiciona uma Heroi a Equipe}
+ *  @param {const int id_heroi - Id do Heroi a ser adicionado} 
+ *  @return {void}
 */
 void Equipe::adiciona_heroi(const int id_heroi){
     if(this->equipe_selecionada.size() < NUM_EQ && id_heroi >= MIN_ID && id_heroi <= MAX_ID){
@@ -115,9 +116,9 @@ void Equipe::adiciona_heroi(const int id_heroi){
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Exibe Herois selecionados para a Equipe}
+ *  @param {void} 
+ *  @return {void}
 */
 void Equipe::mostra_equipe() {
      std::cout<<"====== Seus Herois Ativos ======= : "<<std::endl;
@@ -135,14 +136,14 @@ void Equipe::mostra_equipe() {
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Realiza a escolha entre atacar ou trocar o portador da pedra }
+ *  @param {void} 
+ *  @return { int - Dano realizado pelo Heroi}
 */
 int Equipe::realiza_ataque(){
     limpa_tela();
     mostra_equipe();
-    std::cout<< "\nMENU"<< std::endl;
+    std::cout<< std::endl << "MENU"<< std::endl;
     std::cout<< "Selecione a Opção"<< std::endl;
     std::cout<< "  Digite A  para escolher um herói para atacar"<< std::endl;
     std::cout<< "  Digite M  para mover a pera para outro herói"<< std::endl;
@@ -178,9 +179,9 @@ int Equipe::realiza_ataque(){
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Difere um ataque aleatorio sobre um Heroi aleatorio}
+ *  @param {int dano - Dano inferido sobre a Equipe} 
+ *  @return {int - Id do heroi afetado}
 */
 int Equipe::sofre_ataque(int dano){
     int alvo = 0; 
@@ -192,41 +193,45 @@ int Equipe::sofre_ataque(int dano){
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Define o id do Heroi portador da pedra}
+ *  @param {const int id_heroi - Id do novo portador da pedra} 
+ *  @return {void}
 */
 void Equipe::set_portador_pedra(const int id_heroi){
+
+    //Verifica se id esta em intervalo valido ou se existe Heroi na Equipe
     if(this->equipe_selecionada.size() > 0 && id_heroi >= MIN_ID && id_heroi <= MAX_ID)
         this->portador_pedra = id_heroi;
+    //Verifica se o Id e invalido
     else if(id_heroi < MIN_ID || id_heroi > MAX_ID)
         throw "Id do heroi invalido.";
+    //Verifica se Equipe esta vazia
     else if(this->equipe_selecionada.size() == 0)
         throw "Equipe vazia.";
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Retorna id do portador da pedra}
+ *  @param {void} 
+ *  @return {int - Id do atual portador da pedra}
 */
 int Equipe::get_id_portador_pedra(){
     return this->portador_pedra;
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Retorna quandidade de herois selecionados para Equipe}
+ *  @param {void} 
+ *  @return {int - Quanidade de herois na Equipe}
 */
 int Equipe::get_herois_selecionados(){//Mudar nome do metodo
     return this->equipe_selecionada.size();
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Retorna a quatidade de Herois ainda vivos}
+ *  @param {void} 
+ *  @return {int - Numero de Herois vivos}
 */
 int Equipe::get_num_herois_vivos(){
     return this->herois_vivos;
@@ -234,27 +239,27 @@ int Equipe::get_num_herois_vivos(){
 
 //||
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Retorna o nome de um Heroi da Equipe}
+ *  @param {const int id_heroi - Id de um Heroi} 
+ *  @return {std::string - Nome do Heori}
 */
 std::string Equipe::get_nome_heroi(const int id_heroi){
     return equipe_selecionada[id_heroi].get_name();
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Checa se a Equipe esta completa}
+ *  @param {void} 
+ *  @return {bool - true[Equipe completa], false[Equipe incomleta]}
 */
 bool Equipe::get_equipe_completa(){
 	return this->esta_completo;
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Verifica se o Heroi portador da pedra esta vivo}
+ *  @param {void} 
+ *  @return {bool - true[Heroi morto], false[Heroi vivo]}
 */
 bool Equipe::portador_pedra_esta_vivo(){//Melhorar condicao de verificacao
     if(this->equipe_selecionada.size())
@@ -264,9 +269,9 @@ bool Equipe::portador_pedra_esta_vivo(){//Melhorar condicao de verificacao
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Remove um Heroi da Equipe}
+ *  @param {const int id_heroi - Id do Heroi a ser removido da Equipe} 
+ *  @return {void}
 */
 void Equipe::remove_heroi(const int id_heroi){
     if(this->equipe_selecionada.size())
@@ -276,9 +281,9 @@ void Equipe::remove_heroi(const int id_heroi){
 }
 
 /*
- *  @method {}
- *  @param {} 
- *  @return {}
+ *  @method {Retorna status de vida de um Heroi da Equipe}
+ *  @param {const int id_heroi - Id de um Heroi} 
+ *  @return {bool - true[Heroi morto], false[Heroi vivo]}
 */
 bool Equipe::get_status_heroi(const int id_heroi){
     return equipe_selecionada[id_heroi].get_vivo();
