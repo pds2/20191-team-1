@@ -8,6 +8,9 @@
 #define NOME "PERSONAGEM"
 #define VIVO true
 
+/* 
+*   @method {Para testar o metodo construtor e sets Personagem}
+*/
 TEST_CASE("1 - [Personagem] - Construtor/Getters ") {
     Personagem personagem = Personagem(100, 10, 80, "Heroi1");
 
@@ -17,12 +20,18 @@ TEST_CASE("1 - [Personagem] - Construtor/Getters ") {
     CHECK_EQ(personagem.get_vivo(), VIVO);
 }
 
+/* 
+*   @method {Para testar o metodo exceptions do construtor Personagem}
+*/
 TEST_CASE("2 - [Personagem] - Construtor/THROWS") {
     CHECK_THROWS(Personagem(-100, 10, 80, "PERSONAGEM"));
     CHECK_THROWS(Personagem(100, -10, 80, "PERSONAGEM"));
     CHECK_THROWS(Personagem(100, 10, -80, "PERSONAGEM"));
 }
 
+/* 
+*   @method {Para testar o metodo que reduz vida do Personagem}
+*/
 TEST_CASE("3 - [Personagem] - Diminui vida") {
 	Personagem personagem = Personagem(100, 10, 80, "PERSONAGEM");
 	personagem.diminui_vida(10);
@@ -30,15 +39,22 @@ TEST_CASE("3 - [Personagem] - Diminui vida") {
     CHECK_EQ(personagem.get_pt_vida(), VIDA-10);
 }
 
+/* 
+*   @method {Para testar erro no metodo que reduz vida do Personagem}
+*/
 TEST_CASE("4 - [Personagem] - Diminui vida/Negativo") {
 	Personagem personagem = Personagem(100, 10, 80, "PERSONAGEM");
 
     CHECK_THROWS(personagem.diminui_vida(-10));
 }
 
-TEST_CASE("7 - [Personagem] - Personagem morto") {
+/* 
+*   @method {Para testar o metodo que verifica status de vida do Personagem}
+*/
+TEST_CASE("6 - [Personagem] - Personagem morto") {
 	Personagem personagem = Personagem(100, 10, 80, "PERSONAGEM");
 	personagem.diminui_vida(personagem.get_pt_vida());
 
     CHECK_EQ(personagem.get_vivo(),!VIVO);
 }
+
