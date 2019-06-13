@@ -37,8 +37,13 @@ void Equipe::monta_equipe(Equipe& equipe){
     int id = 0;
     char opcao = '\0';
     while(equipe_selecionada.size() < 5) {
+        opcao = '\0';
+        id = 0;
+
         tela_monta_equipe();
         mostra_equipe();
+        
+        std::cin.clear();
         std::cout<< "\nOpção: ";
         std::cin>>opcao;
         opcao = toupper(opcao);
@@ -47,20 +52,25 @@ void Equipe::monta_equipe(Equipe& equipe){
             if (opcao == 'S') {
                 std::cout << "ID: ";
                 std::cin >> id;
-                std::cout << "Adiciona heroi" << std::endl;
                 if(id >= MIN_ID && id <= MAX_ID){
+                    std::cout << "Adiciona heroi" << std::endl;
                     this->adiciona_heroi(id);
                 }else{
-                    std::cout << "\tId do Heroi invalido";    
-                    continue;
+                    std::cout << std::endl << "\tId do Heroi invalido" << std::endl;
+                    pause();
                 }
             } else if (opcao == 'R') {
                 limpa_tela();
                 mostra_equipe();
                 std::cout << "Digite o Slot do heroi que deseja remover do seu time";
                 std::cin >> id;
-                std::cout << "Remove heroi" << std::endl;
-                this->remove_heroi(id);
+                if(id >= MIN_ID && id <= MAX_ID){
+                    std::cout << "Remove heroi" << std::endl;
+                    this->adiciona_heroi(id);
+                }else{
+                    std::cout << std::endl << "\tId do Heroi invalido" << std::endl;
+                    pause();
+                }
             }else{
                 throw std::invalid_argument("Opção Inválida");
             }
