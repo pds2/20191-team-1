@@ -17,11 +17,9 @@ private:
 
 public:
     Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome);
-    
-    // polimorfismos
-    const int realiza_ataque();
     int get_ataque_com_bonus();
-    int get_pt_defesa();
+
+    const int realiza_ataque();
 
 };
 

@@ -120,12 +120,12 @@ void Equipe::adiciona_heroi(const int id_heroi){
 }
 
 
+/*
+ *  @method {Exibe Herois selecionados para a Equipe}
+ *  @param {void}
+ *  @return {void}
+*/
 void Equipe::mostra_equipe() {
-    /*
-     *  @method {Exibe Herois selecionados para a Equipe}
-     *  @param {void}
-     *  @return {void}
-    */
 
      std::cout<<"\n\n\n"
                 "=====================================================\n"
@@ -137,7 +137,8 @@ void Equipe::mostra_equipe() {
             std::cout<<"Slot: "<< i+1<<" Nome: "<<equipe_selecionada[i].get_name()<<std::endl;
             std::cout<<"Atributos: "<<"vida - "<<equipe_selecionada[i].get_pt_vida();
             std::cout<<" ataque - "<<equipe_selecionada[i].get_pt_ataque();
-            std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa()<<std::endl;
+            std::cout<<" defesa - "<<equipe_selecionada[i].get_pt_defesa();
+            std::cout<<" Vivo - "<<equipe_selecionada[i].get_vivo()<<std::endl;
         }
     }
     if(equipe_selecionada.size() >= 5){
