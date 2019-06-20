@@ -35,18 +35,19 @@ TEST_CASE("2 - [Heroi] - Construtor/THROWS") {
 */
 TEST_CASE("3 - [Heroi] - Diminui vida") {
 	Heroi heroi = Heroi(100, 10, 80, "HEROI");
-	heroi.diminui_vida(10);
+    //80 referente aos pontos de defesa
+	heroi.diminui_vida(10 + 80);
 
     CHECK_EQ(heroi.get_pt_vida(), VIDA-10);
 }
 
 /* 
-*   @method {Para testar erro no metodo que reduz vida do Heroi}
+*   @method {Para testar erro no metodo que reduz vida do Heroi, danos negativos não curam}
 */
 TEST_CASE("4 - [Heroi] - Diminui vida/Negativo") {
 	Heroi heroi = Heroi(100, 10, 80, "HEROI");
-
-    CHECK_THROWS(heroi.diminui_vida(-10));
+    heroi.diminui_vida(-10);
+    CHECK_EQ(heroi.get_pt_vida(), VIDA);
 }
 
 /* 
@@ -60,20 +61,11 @@ TEST_CASE("5 - [Heroi] - Realiza ataque") {
 }
 
 /* 
-*   @method {Para testar o metodo de ataque com bonus do Heroi}
-*/
-/*TEST_CASE("6 - [Heroi] - Ataque com bonus") {
-	Heroi heroi = Heroi(100, 10, 80, "HEROI");
-
-    CHECK_EQ(heroi.get_ataque_com_bonus(), ceil(ATAQUE*1.5));
-}*/
-
-/* 
 *   @method {Para testar o metodo que verifica status de vida do Heroi}
 */
-TEST_CASE("7 - [Heroi] - Heroi morto") {
+TEST_CASE("6 - [Heroi] - Heroi morto") {
 	Heroi heroi = Heroi(100, 10, 80, "HEROI");
-	heroi.diminui_vida(heroi.get_pt_vida());
+	heroi.diminui_vida(heroi.get_pt_vida()+heroi.get_pt_defesa());
 
     CHECK_EQ(heroi.get_vivo(),!VIVO);
 }

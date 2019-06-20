@@ -58,7 +58,7 @@ void Partida::turno_jogador() {
     }else {
         tela_resultado_ataque_jogador(dano, hp_thanos);
         pause();
-        thanos->sofre_ataque(dano);
+        thanos->diminui_vida(dano);
     }
 
     if(thanos->get_pt_vida() <= 0) {

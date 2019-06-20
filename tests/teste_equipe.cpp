@@ -62,27 +62,29 @@ TEST_CASE("5 - [Equipe] - Remove Heroi") {
     int i = 0;
     for(i=1;i<=5;i++)
         equipe.adiciona_heroi(i);
-
     equipe.remove_heroi(i);    
     CHECK_EQ(equipe.get_num_herois_vivos() , i-1);
 }
 
 /* 
-*   @method {Para testar erros ao remover Heroi fora da Equipe}
+*   @method {Manter a execução mesmo removendo herois invalidos}
 */
 TEST_CASE("6 - [Equipe] - Remove Heroi/THROWS") {
     Equipe equipe = Equipe();
-    
-    CHECK_THROWS(equipe.remove_heroi(ADD_HEROI1));
+    equipe.remove_heroi(-5);
+     CHECK_EQ(equipe.get_herois_selecionados() , 0);
 }
 
 /* 
 *   @method {Para testar erros ao remover Heroi fora da Equipe com id invalido}
 */
-TEST_CASE("7 - [Equipe] - Remove Heroi/THROWS") {
+TEST_CASE("7 - [Equipe] - Remove Heroi") {
     Equipe equipe = Equipe();
-    
-    CHECK_THROWS(equipe.remove_heroi(ADD_HEROI2));
+    equipe.adiciona_heroi(1);
+    equipe.adiciona_heroi(2);
+    equipe.remove_heroi(1);
+   CHECK_EQ(equipe.get_herois_selecionados() , 1);
+
 }
 
 /* 

@@ -31,11 +31,3 @@ const int Thanos::realiza_ataque(){
     return dano_causado;
 }
 
-/*
- *  @method {Reduz a vida do thanos de acordo com o dano recebido}
- *  @param {int} 
- *  @return {void}
-*/
-void Thanos::sofre_ataque(const int dano){
-    pt_vida -= dano;
-}
