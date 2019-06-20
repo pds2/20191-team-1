@@ -25,35 +25,27 @@ TEST_CASE("1 - [Thanos] - Construtor/Getters ") {
 */
 TEST_CASE("2 - [Thanos] - Diminui vida") {
 	Thanos thanos = Thanos(100,10,20,"THANOS");
-	thanos.diminui_vida(10);
+    //20 Referente a defesa, 10 ataque efetivo
+	thanos.diminui_vida(10 + 20);
 
     CHECK_EQ(thanos.get_pt_vida(), VIDA-10);
 }
 
 /* 
-*   @method {Para testar o metodo que reduz vida do Thanos}
+*   @method {Para testar o metodo que reduz vida do Thanos, nao curar thanos}
 */
 TEST_CASE("3 - [Thanos] - Diminui vida/Negativo") {
 	Thanos thanos = Thanos(10,10,20,"Thanos");
+    thanos.diminui_vida(-10);
 	
-    CHECK_THROWS(thanos.diminui_vida(-10));
+    CHECK_EQ(thanos.get_pt_vida(), 10);
 }
-
-/* 
-*   @method {Para testar erro no metodo que reduz vida do Thanos}
-*/
-/*TEST_CASE("4 - [Thanos] - Realiza ataque") {
-	Thanos thanos = Thanos(10,10,20,"Thanos");
-
-    CHECK_EQ(thanos.realiza_ataque(), ATAQUE);
-}*/
-
 /* 
 *   @method {Para testar o metodo que verifica status de vida do Thanos}
 */
 TEST_CASE("5 - [Thanos] - Thanos morto") {
 	Thanos thanos = Thanos(10,10,20,"Thanos");
-	thanos.diminui_vida(thanos.get_pt_vida());
+	thanos.diminui_vida(thanos.get_pt_vida() + thanos.get_pt_defesa());
 
-    CHECK_EQ(thanos.get_vivo(),!VIVO);
+    CHECK_EQ(thanos.get_pt_vida(),0);
 }
