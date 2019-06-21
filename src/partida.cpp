@@ -5,6 +5,11 @@
 #include "util.h"
 
 
+/*
+    *  @method {Metodo construtor da partida}
+    *  @param {void}
+    *  @return {void}
+*/
 Partida::Partida(){
     this->turno = true;
     this->esta_ativo = true;
@@ -12,25 +17,47 @@ Partida::Partida(){
     this->thanos = new Thanos(200, 80, 50, "Thanos");// Criar constante para valores
 }
 
-
+/*
+    *  @method {Metodo get turno}
+    *  @param {void}
+    *  @return {bool - retorna um booleano que define de quem é a vez no jogo}
+*/
 bool Partida::get_turno(){
     return  this->turno;
 }
 
-
+/*
+    *  @method {Metodo que define de quem é o turno no jogo setando o atributo turno para true ou false}
+    *  @param {bool - turno}
+    *  @return {void}
+*/
 void Partida::set_turno(bool turno){
     this->turno = turno;
 }
 
+/*
+    *  @method {Metodo que retorna se um personagem está ativo}
+    *  @param {void}
+    *  @return {bool - Atribute que define se o personagem está ou não ativo}
+*/
 bool Partida::get_esta_ativo() {
     return this->esta_ativo;
 }
 
+/*
+    *  @method {Metodo que define se o personagem está ativo}
+    *  @param {bool - valor booleano que define se o personagem está ativo}
+    *  @return {void}
+*/
 void Partida::set_esta_ativo(bool esta_ativo){
    this->esta_ativo = esta_ativo;
 }
 
-
+/*
+    *  @method {Metodo roda partida: monta equipe e alterna os turnos}
+    *  @param {void}
+    *  @return {void}
+*/
 void Partida::roda_partida() {
     this->equipe.monta_equipe(this->equipe);
     while(get_esta_ativo() == true) {
@@ -43,7 +70,11 @@ void Partida::roda_partida() {
     }
 }
 
-
+/*
+    *  @method {Metodo que realiza as ações de acordo com a escolha do usuário no turno do jogador}
+    *  @param {void}
+    *  @return {void}
+*/
 void Partida::turno_jogador() {
     int dano = equipe.realiza_ataque();
     int hp_thanos = thanos->get_pt_vida();
@@ -67,7 +98,11 @@ void Partida::turno_jogador() {
     }
 }
 
-
+/*
+    *  @method {Metodo que realiza as ações no turno Thanos (turno da máquina)}
+    *  @param {void}
+    *  @return {void}
+*/
 void Partida::turno_thanos() {
     int dano = thanos->realiza_ataque();
     int target = equipe.sofre_ataque(dano);
@@ -84,12 +119,20 @@ void Partida::turno_thanos() {
     }
 }
 
-
+/*
+    *  @method {Metodo que retorna a dificuldade do jogo, sendo Fácil, Médio ou dificil}
+    *  @param {void}
+    *  @return {char - Dificuldade do jogo}
+*/
 char Partida::get_dificuldade() {
     return this->dificuldade;
 }
 
-
+/*
+    *  @method {Metodo que define a dificuldade do jogo de acordo com a escolha do usuário}
+    *  @param {void}
+    *  @return {void}
+*/
 void Partida::set_dificuldade() {
     char opcao = '\0';
 

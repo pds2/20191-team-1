@@ -3,6 +3,10 @@
 
 #include <string>
 
+/**
+ * Definição do contrato da classe Personagem.h
+ */
+
 class Personagem {
 
 protected:

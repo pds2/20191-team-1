@@ -7,6 +7,10 @@
 #include <set>
 #include "heroi.h"
 
+/**
+ * Definição do contrato da classe Telas.h
+ */
+
 void tela_inicial();
 void tela_como_jogar();
 void tela_dificuldade();

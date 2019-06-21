@@ -7,6 +7,10 @@
 #include "thanos.h"
 #include "randomize.h"
 
+/**
+ * Definição do contrato da classe Partida.h
+ */
+
 class Partida {
 
 private:

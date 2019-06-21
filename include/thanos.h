@@ -2,6 +2,9 @@
 #define THANOS_H
 #include "personagem.h"
 
+/**
+ * Definição do contrato da classe Thanos.h
+ */
 
 class Thanos: public Personagem {
 
