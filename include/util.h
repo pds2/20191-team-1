@@ -6,6 +6,10 @@
 #include <map>
 #include "telas.h"
 
+/**
+ * Definição do contrato da classe Util.h
+ */
+
 void inicio_jogo();
 void limpa_tela();
 void pause() ;

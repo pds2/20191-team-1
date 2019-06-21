@@ -4,6 +4,10 @@
 #include <string>
 #include <map>
 
+/**
+ * Definição do contrato da classe Constants.h
+ */
+
 struct dado_heroi {
  	std::string _historia;
  	std::string _nome;

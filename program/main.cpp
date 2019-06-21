@@ -6,6 +6,11 @@
 #include "partida.h"
 #include "util.h"
 
+/**
+ * No main do programa é chamado a função que exibe a tela inicial, logo após instanciamos um objeto da
+ * classe partida e chamamos o método para definir dificuldade e o método que inicializa o jogo.
+ */
+
 int main() {
 
     inicio_jogo();

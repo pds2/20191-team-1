@@ -18,11 +18,21 @@ Heroi::Heroi(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
     bonus_ataque(BONUS)
 {}
 
+/*
+    *  @method {Metodo que realiza ataque}
+    *  @param {void}
+    *  @return {const int - resultado em pontos do ataque realizado}
+*/
 const int Heroi::realiza_ataque() {
     return this->get_pt_ataque() * gera_inteiro(1, 6);
 }
 
 
+/*
+    *  @method {Metodo que realiza ataque com bônus}
+    *  @param {void}
+    *  @return {int - retorna pontuação do ataque com bônus}
+*/
 int Heroi::get_ataque_com_bonus(){
 	return ceill(this->pt_ataque * (1 + this->bonus_ataque));
 }

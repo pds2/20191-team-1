@@ -5,6 +5,10 @@
 #include <string>
 #include "heroi.h"
 
+/**
+ * Definição do contrato da classe Equipe.h
+ */
+
 class Equipe {
 
 private:

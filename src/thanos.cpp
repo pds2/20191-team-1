@@ -5,7 +5,7 @@
 #include "randomize.h"
 
 /*
- *  @method {}
+ *  @method {Método construtor da classe Thanos}
  *  @param {} 
  *  @return {}
 */
@@ -16,7 +16,7 @@ Thanos::Thanos(int pt_vida, int pt_ataque, int pt_defesa, std::string nome):
 /*
  *  @method {Seleciona de maneira aleatoria quais bonus Thanos vai obter com as pedras do infinito}
  *  @param {void} 
- *  @return {int}
+ *  @return {int - Dano causado}
 */
 const int Thanos::realiza_ataque(){
     std::map<int, std::pair<int, std::string>> ataque_thanos = {

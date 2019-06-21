@@ -8,10 +8,11 @@
 #include "constants.h"
 #include "util.h"
 
-#define NUM_EQ 5
+#define NUM_EQ 5 //número máximo de integrantes de uma equipe.
 #define ID_PEDRA 0
-#define MIN_ID 1
-#define MAX_ID 10
+#define MIN_ID 1 // O ID do personagem não pode ser menor que 0
+#define MAX_ID 10 // O ID do personagem não pode ser maior que 10
+
 std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {1,  dado_heroi(80,20,5,"Sem Historia no momento", "Capitã Marvel")},
             {2,  dado_heroi(70,30,5,"Sem Historia no momento", "Capitão América")},
@@ -23,15 +24,16 @@ std::map<int, dado_heroi> MY_DADOS_HEROIS = {
             {8,  dado_heroi(60,40,5,"Sem Historia no momento", "Visao")},
             {9,  dado_heroi(90,10,5,"Sem Historia no momento", "Pantera Negra")},
             {10,  dado_heroi(70,30,5,"Sem Historia no momento", "Viuva Negra")}
-};
+}; //Map que armazena os dados (Nome e descrição) de cada Héroi.
 
+
+/*
+    *  @method {Metodo construtor do objeto Equipe}
+    *  @param {void}
+    *  @return {void}
+*/
 
 Equipe::Equipe(){
-    /*
-     *  @method {Metodo construtor do objeto Equipe}
-     *  @param {void}
-     *  @return {void}
-    */
 
     this->esta_completo = false;
     this->herois_vivos = NUM_EQ;
@@ -39,12 +41,13 @@ Equipe::Equipe(){
 }
 
 
+/*
+    *  @method {Metodo que monta equipe segundo escolhar do jogador}
+    *  @param {Equipe& equipe - Referencia de um objeto do tipo Equipe}
+    *  @return {void}
+*/
 void Equipe::monta_equipe(Equipe& equipe){
-    /*
-     *  @method {Metodo que monta equipe segundo escolhar do jogador}
-     *  @param {Equipe& equipe - Referencia de um objeto do tipo Equipe}
-     *  @return {void}
-    */
+
 
     int id = 0;
     char opcao = '\0';
@@ -95,12 +98,13 @@ void Equipe::monta_equipe(Equipe& equipe){
 }
 
 
+/*
+    *  @method {Metodo que adiciona uma Heroi a Equipe}
+    *  @param {const int id_heroi - Id do Heroi a ser adicionado}
+    *  @return {void}
+*/
 void Equipe::adiciona_heroi(const int id_heroi){
-    /*
-     *  @method {Metodo que adiciona uma Heroi a Equipe}
-     *  @param {const int id_heroi - Id do Heroi a ser adicionado}
-     *  @return {void}
-    */
+
     if(this->equipe_selecionada.size() < NUM_EQ && id_heroi >= MIN_ID && id_heroi <= MAX_ID){
         std::map<int, dado_heroi>::const_iterator itMap = MY_DADOS_HEROIS.find(id_heroi);
 
@@ -121,9 +125,9 @@ void Equipe::adiciona_heroi(const int id_heroi){
 
 
 /*
- *  @method {Exibe Herois selecionados para a Equipe}
- *  @param {void}
- *  @return {void}
+*  @method {Exibe Herois selecionados para a Equipe}
+*  @param {void}
+*  @return {void}
 */
 void Equipe::mostra_equipe() {
 
@@ -146,12 +150,14 @@ void Equipe::mostra_equipe() {
     }
 }
 
+
 /*
- *  @method {Realiza a escolha entre atacar ou trocar o portador da pedra }
- *  @param {void} 
- *  @return { int - Dano realizado pelo Heroi}
+*  @method {Realiza a escolha entre atacar ou trocar o portador da pedra }
+*  @param {void} 
+*  @return { int - Dano realizado pelo Heroi}
 */
 int Equipe::realiza_ataque(){
+
     limpa_tela();
     mostra_equipe();
     std::cout<< std::endl << "MENU"<< std::endl;

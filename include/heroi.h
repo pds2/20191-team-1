@@ -5,6 +5,10 @@
 #include "randomize.h"
 #include "personagem.h"
 
+/**
+ * Definição do contrato da classe Heroi.h
+ */
+
 class Heroi : public Personagem {
 
 private:

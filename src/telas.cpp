@@ -8,6 +8,9 @@
 #include "heroi.h"
 #include "constants.h"
 
+/*
+*   Classe que contém as funções que exibem todas as telas do jogo
+*/
 
 void tela_resultado_ataque_jogador(int dano_causado, int hp_thanos){
     limpa_tela();
